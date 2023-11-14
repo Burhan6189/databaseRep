@@ -1,6 +1,10 @@
 import React from "react";
 
 const Signup = () => {
+
+
+
+
   return (
     <div>
       <div className='Signup-Page-BG'>
@@ -17,7 +21,7 @@ const Signup = () => {
           <label for='name' className='input-label'>Email</label>
         </div>
         <div className='Signup-Page-Input-3'>
-          <input type="text" name='name' id='name' className='input-field' placeholder='Username' autoComplete='off' />
+          <input type="text" name='name' id='name' className='input-field' placeholder='Password' autoComplete='off' />
           <label for='name' className='input-label'>Password</label>
         </div>
         <div className="Signup-Button">

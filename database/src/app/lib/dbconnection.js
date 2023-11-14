@@ -1,0 +1,1 @@
+export const DBcon = "mongodb+srv://burhanshabbir6189:dental123@cluster0.iczn4f0.mongodb.net/Dental?retryWrites=true&w=majority";

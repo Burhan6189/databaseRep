@@ -416,7 +416,7 @@ margin-bottom: 50px;
     height: 920px;
     border-radius: 30px;
     margin: auto;
-    background-color: white;
+    /* background-color: white; */
 }
 .Patient-Details-BG .Main-Div h3{
     padding-top: 20px;

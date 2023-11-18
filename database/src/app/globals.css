@@ -541,15 +541,11 @@ justify-content: space-between;
     margin-top:20px ;
     background-color: #637A73;
     width: 50px;
+    font-size: 25px;
     height: 50px;
+    color: white;
 border: 1px solid #2a5749;
     border-radius: 50px;
-}
-.Patient-Details-BG .Add-Btn h2{
-font-size: 34px;
-font-weight: 400;
-cursor: pointer;
-color: white;
 }
 
 /*================== End Patient Details ===============*/

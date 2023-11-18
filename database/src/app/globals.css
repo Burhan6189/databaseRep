@@ -516,7 +516,7 @@ justify-content: space-between;
     color: #000;
 }
 .Patient-Details-BG .Main-Div .Details-Inputs{
-    margin-top: 30px;
+    margin-top: 5px;
 } 
 .Patient-Details-BG .Main-Div .Details-Inputs .side-input{
     width: 180px;
@@ -530,6 +530,7 @@ justify-content: space-between;
     padding: 10px;
     outline: none;
 }
+
 .Patient-Details-BG .Add-Btn{
     margin: auto;
     margin-top:20px ;

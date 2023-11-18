@@ -2,9 +2,12 @@
 import React, { useState } from "react";
 
 const PatientDashboard = () => {
-  const myfun = async () => {
+
+
+  const myfun=async()=>{
     alert("new table addeed");
-  };
+  }
+
 
   const inputArr = [
     {
@@ -14,7 +17,7 @@ const PatientDashboard = () => {
     },
   ];
 
-  const [arr, setArr] = useState(inputArr);
+  const [arr, setArr] = useState([]);
 
   const addInput = () => {
     setArr((s) => {
@@ -37,8 +40,12 @@ const PatientDashboard = () => {
       newArr[index].value = e.target.value;
 
       return newArr;
-    });
-  };
+    });}
+
+
+
+
+
 
   return (
     <>
@@ -215,6 +222,13 @@ const PatientDashboard = () => {
             <a href="/TreatmentPlan">Treatment Plan</a>
           </button>
           <div className="Details-Inputs">
+
+             <div>
+              <input className="side-input" type="text" />
+              <input className="center-input" type="text" />
+              <input className="side-input" type="text" />
+            </div>
+
             <div>
               <input className="side-input" type="text" />
               <input className="center-input" type="text" />

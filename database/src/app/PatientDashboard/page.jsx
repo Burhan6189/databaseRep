@@ -4,11 +4,6 @@ import React, { useState } from "react";
 const PatientDashboard = () => {
 
 
-  const myfun=async()=>{
-    alert("new table addeed");
-  }
-
-
   const inputArr = [
     {
       type: "text",
@@ -17,7 +12,7 @@ const PatientDashboard = () => {
     }
   ];
 
-  const [arr, setArr] = useState(inputArr);
+  const [arr, setArr] = useState([]);
 
   const addInput = () => {
     setArr(s => {
@@ -41,8 +36,6 @@ const PatientDashboard = () => {
 
       return newArr;
     });}
-
-
 
 
 
@@ -232,8 +225,6 @@ const PatientDashboard = () => {
               <input className="center-input" type="text" />
               <input className="side-input" type="text" />
             </div>
-
-          
            
           </div>
         </div>

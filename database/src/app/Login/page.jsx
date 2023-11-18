@@ -2,7 +2,7 @@
 'use client'
 import React, { useState } from "react";
 import bcrypt from "bcryptjs";
-
+import { setCookie } from "cookies-next";
 
 const Login = () => {
 
@@ -32,6 +32,7 @@ const myfun= async ()=>{
 
         bcrypt.compare(Password, items.Password).then((res) => {
        if(res){
+        setCookie('Patient');
           setStatus("true");
           alert("success");
               window.location.href=("http://localhost:3000/PatientDashboard");  

@@ -3,11 +3,21 @@ import React, { useState } from "react";
 
 const PatientDashboard = () => {
 
+  const [Name, setName]=useState("");
+  const [Email, setEmail]=useState("");
+  const [Number, setNumber]=useState("");
+  const [Dateofbirth, setDateofbirth]=useState("");
+  const [Bloodgroup, setBloodgroup]=useState("");
+  const [Sex, setSex]=useState("");
+  const [Memberstatus, setMemberstatus]=useState("");
+  const [Dateofregistration, setDateofregistration]=useState("");
+  const [Attendingdoctor, setAttendingdoctor]=useState("");
+  const [Clientid, setClientid]=useState("");
+  const [Checkuptime, setCheckuptime]=useState("");
+  const [Date, setDate]=useState("");
 
-  const myfun=async()=>{
-    alert("new table addeed");
-  }
 
+ 
 
   const inputArr = [
     {
@@ -268,7 +278,9 @@ const PatientDashboard = () => {
       
       <button onClick={addInput} className="Add-Btn">
         +
-      </button>
+      </button><br></br>
+
+      <button>    Submit   </button>
     </div>
         </div>
        

@@ -222,9 +222,13 @@ const PatientDashboard = () => {
             <a href="/TreatmentPlan">Treatment Plan</a>
           </button>
           <div className="Details-Inputs">
-<h3></h3>
+            <div className="Detail-Heading-Text">
+            <h3>Date</h3>
+            <h3>Description</h3>
+            <h3>Total</h3>
+            </div>
              <div>
-              <input className="side-input" type="text" />
+              <input className="side-input" />
               <input className="center-input" type="text" />
               <input className="side-input" type="text" />
             

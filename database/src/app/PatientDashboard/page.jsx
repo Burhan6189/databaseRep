@@ -227,14 +227,14 @@ const PatientDashboard = () => {
               <input className="side-input" type="text" />
               <input className="center-input" type="text" />
               <input className="side-input" type="text" />
+            
             </div>
-
             <div>
               <input className="side-input" type="text" />
               <input className="center-input" type="text" />
               <input className="side-input" type="text" />
+            
             </div>
-
             {arr.map((item, i) => {
             return (
               <div className="Details-Inputs">
@@ -260,13 +260,14 @@ const PatientDashboard = () => {
             );
           })}
           </div>
-        </div>
-        <div>
+          <div>
       
-          <button onClick={addInput} className="Add-Btn">
-            +
-          </button>
+      <button onClick={addInput} className="Add-Btn">
+        +
+      </button>
+    </div>
         </div>
+       
       </div>
     </>
   );

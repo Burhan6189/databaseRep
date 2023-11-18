@@ -515,9 +515,6 @@ justify-content: space-between;
     text-decoration: none;
     color: #000;
 }
-.Patient-Details-BG .Main-Div .Details-Inputs{
-    margin-top: 5px;
-} 
 .Patient-Details-BG .Main-Div .Details-Inputs .side-input{
     width: 180px;
     padding: 10px;

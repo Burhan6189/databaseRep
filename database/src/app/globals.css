@@ -15,13 +15,12 @@
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: auto;
 }
 
 .Login-Signup-Page-BG .Logo {
-    padding-top: 250px;
-    padding-bottom: 70px;
-    width: 558px;
+    padding: 250px 15px 70px 15px;
+    max-width: 558px;
     height: auto;
     text-align: center;
     margin: auto;
@@ -32,11 +31,11 @@
 }
 
 .Login-Signup-Page-BG .Login-Signup-Page-Button {
-    width: 500px;
+    max-width: 500px;
     margin: auto;
 }
 
-.Login-Signup-Page-BG .Login-Signup-Page-Button button {
+.Login-Signup-Page-BG .Login-Signup-Page-Button button a {
     width: 100%;
     margin-top: 10px;
     background-color: white;
@@ -47,11 +46,15 @@
     border-radius: 50px;
     padding: 7px;
     font-weight: 500;
-}
-
-.Login-Signup-Page-BG .Login-Signup-Page-Button button a {
     text-decoration: none;
     color: black;
+}
+
+.Login-Signup-Page-BG .Login-Signup-Page-Button button {
+    border: none;
+    display: flex;
+    width: 100%;
+    background: none;
 }
 
 .Login-Signup-Page-Texts {
@@ -87,11 +90,11 @@
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: auto;
 }
 
 .Login-Page-BG .Logo {
-    padding-top: 250px;
+    padding: 250px 15px 70px 15px;
     padding-bottom: 70px;
     max-width: 558px;
     height: auto;
@@ -115,17 +118,17 @@
 }
 
 .Login-Page-Input-2 {
-  max-width: 400px;
-  margin: auto;
-  align-items: center;
-  min-height: 80px;
-  justify-content: center;
-  position: relative;
-  display: flex;
+    max-width: 400px;
+    margin: auto;
+    align-items: center;
+    min-height: 80px;
+    justify-content: center;
+    position: relative;
+    display: flex;
 }
 
 .Login-Page-BG button {
-    width: 350px;
+    width: 100%;
     margin-top: 10px;
     background-color: white;
     border: #dcdcdc 1px solid;
@@ -238,12 +241,11 @@
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: auto;
 }
 
 .Signup-Page-BG .Logo {
-    padding-top: 250px;
-    padding-bottom: 70px;
+    padding: 250px 15px 70px 15px;
     max-width: 558px;
     height: auto;
     text-align: center;
@@ -396,8 +398,8 @@
 
 /*================== End Signup =========================*/
 
-/*================== Start Patient Details ===============*/
 
+/*================== Start Patient Details ===============*/
 
 .Patient-Details-BG {
     background-image: url('/img/Login-Signup-BG1.jpg');
@@ -405,38 +407,45 @@
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: auto;
 }
+
 .Patient-Details-BG .Patient-Details-Logo {
     margin-top: 50px;
-margin-bottom: 50px;
+    margin-bottom: 50px;
 }
-.Patient-Details-BG .Main-Div{
+
+.Patient-Details-BG .Main-Div {
     width: 1400px;
     height: 920px;
     border-radius: 30px;
     margin: auto;
     /* background-color: white; */
 }
-.Patient-Details-BG .Main-Div h3{
+
+.Patient-Details-BG .Main-Div h3 {
     padding-top: 20px;
     font-size: 25px;
     font-weight: 500;
 }
-.Patient-Details-BG .Main-Div .Input-Flex .row-1{
+
+.Patient-Details-BG .Main-Div .Input-Flex .row-1 {
     display: flex;
-justify-content: space-between;
+    justify-content: space-between;
 }
-.Patient-Details-BG .Main-Div .Input-Flex .row-2{
-    display: flex;
-    margin-top: 40px;
-justify-content: space-between;
-}
-.Patient-Details-BG .Main-Div .Input-Flex .row-3{
+
+.Patient-Details-BG .Main-Div .Input-Flex .row-2 {
     display: flex;
     margin-top: 40px;
-justify-content: space-between;
+    justify-content: space-between;
 }
+
+.Patient-Details-BG .Main-Div .Input-Flex .row-3 {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
 .field-group {
     max-width: 600px;
     position: relative;
@@ -488,6 +497,7 @@ justify-content: space-between;
     font-size: 1em;
     color: #637A73;
 }
+
 .Patient-Details-Inputs {
     max-width: 400px;
     margin: auto;
@@ -497,6 +507,7 @@ justify-content: space-between;
     padding: 0 15px;
     display: flex;
 }
+
 .Patient-Details-BG button {
     width: 400px;
     margin-top: 10px;
@@ -511,67 +522,87 @@ justify-content: space-between;
     padding: 7px;
     font-weight: 500;
 }
-.Patient-Details-BG button a{
+
+.Patient-Details-BG button a {
     text-decoration: none;
     color: #000;
 }
-.Patient-Details-BG .Main-Div .Details-Inputs .side-input{
+
+.Patient-Details-BG .Main-Div .Details-Inputs .side-input {
     width: 180px;
     padding: 10px;
     border: 1px solid #D9D9D9;
     outline: none;
 }
-.Patient-Details-BG .Main-Div .Details-Inputs .center-input{
+
+.Patient-Details-BG .Main-Div .Details-Inputs .center-input {
     width: 850px;
     border: 1px solid #D9D9D9;
     padding: 10px;
     outline: none;
-}.Patient-Details-BG .Main-Div .Details-Inputs .Detail-Heading-Text h3{
+}
+
+.Patient-Details-BG .Main-Div .Details-Inputs .Detail-Heading-Text h3 {
     font-size: 20px;
 }
-.Patient-Details-BG .Main-Div .Details-Inputs .Detail-Heading-Text{
+
+.Patient-Details-BG .Main-Div .Details-Inputs .Detail-Heading-Text {
     display: flex;
     justify-content: center;
     gap: 31%;
     margin-bottom: 10px;
 }
 
-.Patient-Details-BG .Add-Btn{
+.Patient-Details-BG .Add-Btn {
     margin: auto;
-    margin-top:20px ;
+    margin-top: 20px;
     background-color: #637A73;
     width: 50px;
     font-size: 25px;
     height: 50px;
     color: white;
-border: 1px solid #2a5749;
+    border: 1px solid #2a5749;
     border-radius: 50px;
 }
 
+
 /*================== End Patient Details ===============*/
+
 
 /*================== Start Treatment Plan ==================*/
 
-.Treatment-Plan-BG{
+.Treatment-Plan-BG {
     background-image: url('/img/Login-Signup-BG1.jpg');
     background-position: center;
     background-size: cover;
     text-align: center;
     background-repeat: no-repeat;
-    height: 100vh;
-}
-.Treatment-Plan-BG .Logo{
-width: auto;
-height: auto;
-margin-top: 100px;
+    height: auto;
 }
 
-.Treatment-Plan-Flex{
- width: 1200px;
- margin: auto;
+.Treatment-Plan-BG .Logo {
+    padding: 250px 15px 70px 15px;
+    max-width: 558px;
+    height: auto;
+    text-align: center;
+    margin: auto;
 }
-.Treatment-Plan-BG .Treatment-Plan-Flex .teeth{
+
+.Treatment-Plan-BG .Logo img {
+    width: 100%;
+}
+
+.Treatment-Plan-Flex {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.Treatment-Plan-Flex .teeth img {
     margin-top: 50px;
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
 }
+
 
 /*================== End Treatment Plan ==================*/

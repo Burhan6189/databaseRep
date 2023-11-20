@@ -564,6 +564,12 @@
     border: 1px solid #2a5749;
     border-radius: 50px;
 }
+.Date-Description-Total{
+    width: 700px;
+    height: 700px;
+    transform: 0.5s;
+    background: white;
+}
 
 
 /*================== End Patient Details ===============*/

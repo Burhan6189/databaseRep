@@ -317,9 +317,11 @@ const PatientDashboard = () => {
       <button onClick={myfun}>    Submit   </button> <br></br>
 
       <Popup trigger={<button> Click to open popup </button>}  
-     position="top center"> 
+     position="center"> 
+     <div className="Date-Description-Total">
       <div>GeeksforGeeks</div> 
       <button>Click here</button> 
+      </div>
     </Popup> 
     </div>
         </div>

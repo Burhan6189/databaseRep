@@ -1,43 +1,58 @@
 "use client";
 import React, { useState } from "react";
-import Popup from 'reactjs-popup'; 
+import Popup from "reactjs-popup";
 
 const PatientDashboard = () => {
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Dateofbirth, setDateofbirth] = useState("");
+  const [Bloodgroup, setBloodgroup] = useState("");
+  const [Sex, setSex] = useState("");
+  const [Memberstatus, setMemberstatus] = useState("");
+  const [Dateofregistration, setDateofregistration] = useState("");
+  const [Attendingdoctor, setAttendingdoctor] = useState("");
+  const [Clientid, setClientid] = useState("");
+  const [Checkuptime, setCheckuptime] = useState("");
+  const [Date, setDate] = useState("");
 
-  const [Name, setName]=useState("");
-  const [Email, setEmail]=useState("");
-  const [Number, setNumber]=useState("");
-  const [Dateofbirth, setDateofbirth]=useState("");
-  const [Bloodgroup, setBloodgroup]=useState("");
-  const [Sex, setSex]=useState("");
-  const [Memberstatus, setMemberstatus]=useState("");
-  const [Dateofregistration, setDateofregistration]=useState("");
-  const [Attendingdoctor, setAttendingdoctor]=useState("");
-  const [Clientid, setClientid]=useState("");
-  const [Checkuptime, setCheckuptime]=useState("");
-  const [Date, setDate]=useState("");
-
-
- const myfun=async()=>{
-
-  if(Name!="" && Email!="" && Number!="" && Dateofbirth!="" && Bloodgroup!="" && Sex!="" && Memberstatus!="" && Dateofregistration!="" && Attendingdoctor!="" && Clientid!="" && Checkuptime!="" && Date!=""){
-   
-    const data = await fetch("http://localhost:3000/api/patientdetails",{
-      method:"POST",
-      body:JSON.stringify({Name,Email,Number,Dateofbirth,Bloodgroup,Sex,Memberstatus,Dateofregistration,Attendingdoctor,Clientid,Checkuptime,Date})
-      
-    });
-    alert("success");
-  }
-  else{
-
-    alert("all fields are required");
-  }
-  
-
-  }
-
- 
+  const myfun = async () => {
+    if (
+      Name != "" &&
+      Email != "" &&
+      Number != "" &&
+      Dateofbirth != "" &&
+      Bloodgroup != "" &&
+      Sex != "" &&
+      Memberstatus != "" &&
+      Dateofregistration != "" &&
+      Attendingdoctor != "" &&
+      Clientid != "" &&
+      Checkuptime != "" &&
+      Date != ""
+    ) {
+      const data = await fetch("http://localhost:3000/api/patientdetails", {
+        method: "POST",
+        body: JSON.stringify({
+          Name,
+          Email,
+          Number,
+          Dateofbirth,
+          Bloodgroup,
+          Sex,
+          Memberstatus,
+          Dateofregistration,
+          Attendingdoctor,
+          Clientid,
+          Checkuptime,
+          Date,
+        }),
+      });
+      alert("success");
+    } else {
+      alert("all fields are required");
+    }
+  };
 
   const inputArr = [
     {
@@ -70,14 +85,8 @@ const PatientDashboard = () => {
       newArr[index].value = e.target.value;
 
       return newArr;
-    });}
-
-
-
-
-
-
-
+    });
+  };
 
   return (
     <>
@@ -91,7 +100,9 @@ const PatientDashboard = () => {
                 <input
                   type="name"
                   name="name"
-                  onChange={(e)=>{setName(e.target.value)}}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                   id="name"
                   className="input-field-1"
                   placeholder="name"
@@ -105,7 +116,9 @@ const PatientDashboard = () => {
                 <input
                   type="email"
                   name="email"
-                  onChange={(e)=>{setEmail(e.target.value)}}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   id="email"
                   className="input-field-1"
                   placeholder="email"
@@ -119,7 +132,9 @@ const PatientDashboard = () => {
                 <input
                   type="text"
                   name="number"
-                  onChange={(e)=>{setNumber(e.target.value)}}
+                  onChange={(e) => {
+                    setNumber(e.target.value);
+                  }}
                   id="number"
                   className="input-field-1"
                   placeholder="number"
@@ -133,7 +148,9 @@ const PatientDashboard = () => {
                 <input
                   type="text"
                   name="date0fbirth"
-                  onChange={(e)=>{setDateofbirth(e.target.value)}}
+                  onChange={(e) => {
+                    setDateofbirth(e.target.value);
+                  }}
                   id="date0fbirth"
                   className="input-field-1"
                   placeholder="date0fbirth"
@@ -149,7 +166,9 @@ const PatientDashboard = () => {
                 <input
                   type="sex"
                   name="sex"
-                  onChange={(e)=>{setSex(e.target.value)}}
+                  onChange={(e) => {
+                    setSex(e.target.value);
+                  }}
                   id="sex"
                   className="input-field-1"
                   placeholder="sex"
@@ -163,7 +182,9 @@ const PatientDashboard = () => {
                 <input
                   type="bloodgroup"
                   name="bloodgroup"
-                  onChange={(e)=>{setBloodgroup(e.target.value)}}
+                  onChange={(e) => {
+                    setBloodgroup(e.target.value);
+                  }}
                   id="bloodgroup"
                   className="input-field-1"
                   placeholder="bloodgroup"
@@ -177,7 +198,9 @@ const PatientDashboard = () => {
                 <input
                   type="text"
                   name="memberstatus"
-                  onChange={(e)=>{setMemberstatus(e.target.value)}}
+                  onChange={(e) => {
+                    setMemberstatus(e.target.value);
+                  }}
                   id="memberstatus"
                   className="input-field-1"
                   placeholder="memberstatus"
@@ -191,7 +214,9 @@ const PatientDashboard = () => {
                 <input
                   type="text"
                   name="dateofregistration"
-                  onChange={(e)=>{setDateofregistration(e.target.value)}}
+                  onChange={(e) => {
+                    setDateofregistration(e.target.value);
+                  }}
                   id="dateofregistration"
                   className="input-field-1"
                   placeholder="dateofregistration"
@@ -207,7 +232,9 @@ const PatientDashboard = () => {
                 <input
                   type="attendingdoctor"
                   name="attendingdoctor"
-                  onChange={(e)=>{setAttendingdoctor(e.target.value)}}
+                  onChange={(e) => {
+                    setAttendingdoctor(e.target.value);
+                  }}
                   id="attendingdoctor"
                   className="input-field-1"
                   placeholder="attendingdoctor"
@@ -221,7 +248,9 @@ const PatientDashboard = () => {
                 <input
                   type="clientid"
                   name="clientid"
-                  onChange={(e)=>{setClientid(e.target.value)}}
+                  onChange={(e) => {
+                    setClientid(e.target.value);
+                  }}
                   id="clientid"
                   className="input-field-1"
                   placeholder="clientid"
@@ -235,7 +264,9 @@ const PatientDashboard = () => {
                 <input
                   type="text"
                   name="checkuptime"
-                  onChange={(e)=>{setCheckuptime(e.target.value)}}
+                  onChange={(e) => {
+                    setCheckuptime(e.target.value);
+                  }}
                   id="checkuptime"
                   className="input-field-1"
                   placeholder="checkuptime"
@@ -249,7 +280,9 @@ const PatientDashboard = () => {
                 <input
                   type="text"
                   name="date"
-                  onChange={(e)=>{setDate(e.target.value)}}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                  }}
                   id="date"
                   className="input-field-1"
                   placeholder="date"
@@ -267,63 +300,103 @@ const PatientDashboard = () => {
           </button>
           <div className="Details-Inputs">
             <div className="Detail-Heading-Text">
-            <h3>Date</h3>
-            <h3>Description</h3>
-            <h3>Total</h3>
+              <h3>Date</h3>
+              <h3>Description</h3>
+              <h3>Total</h3>
             </div>
-             <div>
+            <div>
               <input className="side-input" />
               <input className="center-input" type="text" />
               <input className="side-input" type="text" />
-            
             </div>
-            <div>
-              <input className="side-input" type="text" />
-              <input className="center-input" type="text" />
-              <input className="side-input" type="text" />
-            
-            </div>
+
             {arr.map((item, i) => {
-            return (
-              <div className="Details-Inputs">
-                <input
-                  className="side-input"
-                  type={item.type}
-                  id={i}
-                  size="40"
-                />
-                <input
-                  className="center-input"
-                  type={item.type}
-                  id={i}
-                  size="40"
-                />
-                <input
-                  className="side-input"
-                  type={item.type}
-                  id={i}
-                  size="40"
-                />
-              </div>
-            );
-          })}
+              return (
+                <div className="Details-Inputs">
+                  <input
+                    className="side-input"
+                    type={item.type}
+                    id={i}
+                    size="40"
+                  />
+                  <input
+                    className="center-input"
+                    type={item.type}
+                    id={i}
+                    size="40"
+                  />
+                  <input
+                    className="side-input"
+                    type={item.type}
+                    id={i}
+                    size="40"
+                  />
+                </div>
+              );
+            })}
           </div>
-          <div>
-      
-      <button onClick={addInput} className="Add-Btn">
-        +
-      </button><br></br>
-
-      <button onClick={myfun}>    Submit   </button> <br></br>
-
-      <Popup trigger={<button> Click to open popup </button>}  
-     position="top center"> 
-      <div>GeeksforGeeks</div> 
-      <button>Click here</button> 
-    </Popup> 
-    </div>
+          <Popup
+            trigger={<button className="Plus-Btn"> +</button>}
+            position="center"
+          >
+            <div className="Tooth-Description-Total">
+              <div className="Details-Inputs">
+                <div className="Detail-Heading-Text">
+                  <h3>Tooth</h3>
+                  <h3>Description</h3>
+                  <h3>Price</h3>
+                </div>
+                <div className="side-input-main-flex">
+                  <div className="side-input-flex">
+                    <div>
+                      <input maxlength="2" className="side-input" />
+                      <input maxlength="2" className="side-input" />
+                    </div>
+                    <div>
+                      <input maxlength="2" className="side-input" />
+                      <input maxlength="2" className="side-input" />
+                    </div>
+                  </div>
+                  <textarea className="center-input" type="text" rows={3} />
+                  <input className="side-input-price" type="number" />
+                </div>
+                {arr.map((item, i) => {
+                  return (
+                    <div className="Details-Inputs">
+                      <input
+                        className="side-input"
+                        type={item.type}
+                        id={i}
+                        size="40"
+                      />
+                      <input
+                        className="center-input"
+                        type={item.type}
+                        id={i}
+                        size="40"
+                      />
+                      <input
+                        className="side-input"
+                        type={item.type}
+                        id={i}
+                        size="40"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <div>
+                <button onClick={addInput} className="Add-Btn">
+                  +
+                </button>
+              </div>
+              <button className="Submit-Btn">
+                  Submit
+                </button>
+            </div>
+            {/* <input id="partitioned" type="text" maxlength="4" /> */}
+          </Popup>
         </div>
-       
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Popup from 'reactjs-popup'; 
 
 const PatientDashboard = () => {
 
@@ -70,6 +71,8 @@ const PatientDashboard = () => {
 
       return newArr;
     });}
+
+
 
 
 
@@ -311,7 +314,13 @@ const PatientDashboard = () => {
         +
       </button><br></br>
 
-      <button onClick={myfun}>    Submit   </button>
+      <button onClick={myfun}>    Submit   </button> <br></br>
+
+      <Popup trigger={<button> Click to open popup </button>}  
+     position="top center"> 
+      <div>GeeksforGeeks</div> 
+      <button>Click here</button> 
+    </Popup> 
     </div>
         </div>
        

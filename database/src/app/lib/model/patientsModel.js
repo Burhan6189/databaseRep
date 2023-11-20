@@ -14,8 +14,9 @@ const mModel = new mongoose.Schema({
     Attendingdoctor: String,
     Clientid: String,
     Checkuptime: String,
-    Date: String
-
+    Date: String,
+    Description: String,
+    Price: String
 });
 
 mModel.plugin(mongooseUniqueValidator);

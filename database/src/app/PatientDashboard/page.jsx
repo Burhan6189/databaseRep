@@ -1,6 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
+
+
+const today = new Date();
+const month = today.getMonth() + 1;
+const year = today.getFullYear();
+const date = today.getDate();
+const currentDate = date + "/" + month + "/" + year;
+
+
+
 
 const PatientDashboard = () => {
   const [Name, setName] = useState("");
@@ -15,6 +25,25 @@ const PatientDashboard = () => {
   const [Clientid, setClientid] = useState("");
   const [Checkuptime, setCheckuptime] = useState("");
   const [Date, setDate] = useState("");
+
+
+  const [Description, setDescription] = useState("");
+  const [Price, setPrice] = useState("");
+
+
+  // fetched data's useStates
+
+  const [TreatmentData, setTreatmentData] = useState([]);
+
+  const treatmentdata = async () => {
+
+    const fetchtreatment = await fetch("http://localhost:3000/api/treatmentdetails");
+    const jsontreatment = await fetchtreatment.json();
+    setTreatmentData(jsontreatment);
+  }
+  useEffect(() => { treatmentdata(); }, []);
+
+
 
   const myfun = async () => {
     if (
@@ -46,6 +75,8 @@ const PatientDashboard = () => {
           Clientid,
           Checkuptime,
           Date,
+
+
         }),
       });
       alert("success");
@@ -53,6 +84,27 @@ const PatientDashboard = () => {
       alert("all fields are required");
     }
   };
+
+
+  const backtodata = async () => {
+
+    if (Description != "" && Price != "" && Clientid != "") {
+
+
+      const getdata = await fetch("http://localhost:3000/api/treatmentdetails", {
+        method: "POST",
+        body: JSON.stringify({ Description, Price, Clientid })
+      });
+      alert("success")
+      window.location.href = "http://localhost:3000/PatientDashboard";
+
+
+    } else {
+      alert("can't be empty")
+    }
+
+
+  }
 
   const inputArr = [
     {
@@ -62,18 +114,35 @@ const PatientDashboard = () => {
     },
   ];
 
+  // this is to add popup data with client id from patient details
+
   const [arr, setArr] = useState([]);
 
-  const addInput = () => {
-    setArr((s) => {
-      return [
-        ...s,
-        {
-          type: "text",
-          value: "",
-        },
-      ];
-    });
+  const addInput = async () => {
+
+    if (Description != "" && Price != "" && Clientid != "") {
+
+
+      const getdata = await fetch("http://localhost:3000/api/treatmentdetails", {
+        method: "POST",
+        body: JSON.stringify({ Description, Price, Clientid })
+      });
+
+      setArr((s) => {
+        return [
+          ...s,
+          {
+            type: "text",
+            value: "",
+          },
+        ];
+      });
+      alert("success");
+
+    } else {
+      alert("cant be empty");
+    }
+
   };
 
   const handleChange = (e) => {
@@ -305,12 +374,26 @@ const PatientDashboard = () => {
               <h3>Total</h3>
             </div>
             <div>
-              <input className="side-input" />
-              <input className="center-input" type="text" />
-              <input className="side-input" type="text" />
+              <input className="side-input" name="Date" value={currentDate} />
+              {
+                TreatmentData.map((items) => (
+
+                  <input className="side-input" type="text" name="Total" value={items.Description} />
+
+                ))
+
+              }
+              {
+                TreatmentData.map((items) => (
+
+                  <input className="side-input" type="text" name="Price" value={items.Price} />
+
+                ))
+              }
+
             </div>
           </div>
-          
+
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"
@@ -325,40 +408,43 @@ const PatientDashboard = () => {
                 <div className="side-input-main-flex">
                   <div className="side-input-flex">
                     <div>
-                      <input maxlength="2" className="side-input" />
-                      <input maxlength="2" className="side-input" />
+                      <input maxlength="2" name="upperL" className="side-input" />
+                      <input maxlength="2" name="upperR" className="side-input" />
                     </div>
                     <div>
-                      <input maxlength="2" className="side-input" />
-                      <input maxlength="2" className="side-input" />
+                      <input maxlength="2" name="lowwerL" className="side-input" />
+                      <input maxlength="2" name="lowwerR" className="side-input" />
                     </div>
                   </div>
-                  <textarea className="center-input" type="text" rows={3} />
-                  <input className="side-input-price" type="number" />
+                  <textarea className="center-input" name="description" onChange={(e) => { setDescription(e.target.value) }} type="text" rows={3} />
+                  <input className="side-input-price" name="price" onChange={(e) => { setPrice(e.target.value) }} type="number" />
                 </div>
+
+                {/* This is popup array for adding new textboxes  below*/}
+
                 {arr.map((item, i) => {
                   return (
 
                     <div className="side-input-main-flex">
-                  <div className="side-input-flex">
-                    <div>
-                      <input maxlength="2" className="side-input"   type={item.type}
-                        id={i}/>
-                      <input maxlength="2" className="side-input"  type={item.type}
-                        id={i}/>
-                    </div>
-                    <div>
-                      <input maxlength="2" className="side-input"  type={item.type}
-                        id={i}/>
-                      <input maxlength="2" className="side-input"  type={item.type}
-                        id={i}/>
-                    </div>
-                  </div>
-                  <textarea className="center-input"  rows={3}  type={item.type}
-                        id={i}/>
-                  <input className="side-input-price"  type={item.type}
+                      <div className="side-input-flex">
+                        <div>
+                          <input maxlength="2" className="side-input" name="upperL" type={item.type}
+                            id={i} />
+                          <input maxlength="2" className="side-input" name="upperR" type={item.type}
+                            id={i} />
+                        </div>
+                        <div>
+                          <input maxlength="2" className="side-input" name="lowwerL" type={item.type}
+                            id={i} />
+                          <input maxlength="2" className="side-input" name="lowwerR" type={item.type}
+                            id={i} />
+                        </div>
+                      </div>
+                      <textarea className="center-input" onChange={(e) => { setDescription(e.target.value) }} name="description" rows={3} type={item.type}
                         id={i} />
-                </div>
+                      <input className="side-input-price" onChange={(e) => { setPrice(e.target.value) }} name="price" type="number"
+                        id={i} />
+                    </div>
 
                   );
                 })}
@@ -368,12 +454,18 @@ const PatientDashboard = () => {
                   +
                 </button>
               </div>
-              <button className="Submit-Btn">
-                  Submit
-                </button>
+              <button onClick={backtodata} className="Submit-Btn">
+                Submit
+              </button>
             </div>
             {/* <input id="partitioned" type="text" maxlength="4" /> */}
           </Popup>
+          <div>
+            <button onClick={myfun} className="Submit-Btn">
+              Submit
+            </button>
+          </div>
+
         </div>
       </div>
     </>

@@ -309,32 +309,8 @@ const PatientDashboard = () => {
               <input className="center-input" type="text" />
               <input className="side-input" type="text" />
             </div>
-
-            {arr.map((item, i) => {
-              return (
-                <div className="Details-Inputs">
-                  <input
-                    className="side-input"
-                    type={item.type}
-                    id={i}
-                    size="40"
-                  />
-                  <input
-                    className="center-input"
-                    type={item.type}
-                    id={i}
-                    size="40"
-                  />
-                  <input
-                    className="side-input"
-                    type={item.type}
-                    id={i}
-                    size="40"
-                  />
-                </div>
-              );
-            })}
           </div>
+          
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"
@@ -362,26 +338,28 @@ const PatientDashboard = () => {
                 </div>
                 {arr.map((item, i) => {
                   return (
-                    <div className="Details-Inputs">
-                      <input
-                        className="side-input"
-                        type={item.type}
-                        id={i}
-                        size="40"
-                      />
-                      <input
-                        className="center-input"
-                        type={item.type}
-                        id={i}
-                        size="40"
-                      />
-                      <input
-                        className="side-input"
-                        type={item.type}
-                        id={i}
-                        size="40"
-                      />
+
+                    <div className="side-input-main-flex">
+                  <div className="side-input-flex">
+                    <div>
+                      <input maxlength="2" className="side-input"   type={item.type}
+                        id={i}/>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
                     </div>
+                    <div>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
+                    </div>
+                  </div>
+                  <textarea className="center-input"  rows={3}  type={item.type}
+                        id={i}/>
+                  <input className="side-input-price"  type={item.type}
+                        id={i} />
+                </div>
+
                   );
                 })}
               </div>

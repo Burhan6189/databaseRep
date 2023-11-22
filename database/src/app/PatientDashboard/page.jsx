@@ -368,37 +368,7 @@ const PatientDashboard = () => {
               </div>
             </div>
           </div>
-          <button>
-            {" "}
-            <a href="/TreatmentPlan">Treatment Plan</a>
-          </button>
-          <div className="Details-Inputs">
-            <div className="Detail-Heading-Text">
-              <h3>Date</h3>
-              <h3>Description</h3>
-              <h3>Total</h3>
-            </div>
-            <div>
-              <input className="side-input" name="Date" value={currentDate} />
-              {
-                TreatmentData.map((items) => (
-
-                  <input className="side-input" type="text" name="Total" value={items.Description} />
-
-                ))
-
-              }
-              {
-                TreatmentData.map((items) => (
-
-                  <input className="side-input" type="text" name="Price" value={items.Price} />
-
-                ))
-              }
-
-            </div>
-          </div>
-
+          
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"
@@ -462,13 +432,13 @@ const PatientDashboard = () => {
                   Submit
                 </button>
             </div>
-            {/* <input id="partitioned" type="text" maxlength="4" /> */}
           </Popup>
+          <button className="Save-Btn">Save</button>
+          </div>
           <div>
           </div>
 
         </div>
-      </div>
     </>
   );
 };

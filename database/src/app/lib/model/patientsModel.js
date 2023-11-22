@@ -11,9 +11,7 @@ const mModel = new mongoose.Schema({
     Sex: String,
     Memberstatus: String,
     Dateofregistration: String,
-    Clientid: String,
-    Description: String,
-    Price: String
+    Clientid: String
 });
 
 mModel.plugin(mongooseUniqueValidator);

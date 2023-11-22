@@ -6,13 +6,14 @@ export function middleware(request) {
   let patientcookie = request.cookies.get("Patient");
 
   if (!patientcookie) {
-    if (request.nextUrl.pathname.startsWith("/PatientDashboard")) {
+    if (request.nextUrl.pathname.startsWith("/dashboard") ) {
       return NextResponse.rewrite(new URL("/Login", request.url));
     }
+    
   } else {
     if (url.pathname === "/login") {
       if (patientcookie) {
-        url.pathname = "PatientDashboard";
+        url.pathname = "dashboard";
 
         return NextResponse.redirect(url);
       }

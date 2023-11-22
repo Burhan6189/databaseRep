@@ -1,6 +1,6 @@
 import React from "react";
 
-const Things = () => {
+const dashboard = () => {
   return (
     <>
       <div className="Things-BG">
@@ -57,4 +57,4 @@ const Things = () => {
   );
 };
 
-export default Things;
+export default dashboard;

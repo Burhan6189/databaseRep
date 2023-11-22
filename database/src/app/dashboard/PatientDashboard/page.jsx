@@ -64,10 +64,7 @@ const PatientDashboard = () => {
           Memberstatus,
           Dateofregistration,
           Clientid,
-          Checkuptime,
-          Date,
-
-
+          
         }),
       });
 
@@ -409,7 +406,7 @@ const PatientDashboard = () => {
                 </button>
             </div>
           </Popup>
-          <button className="Save-Btn">Save</button>
+          <button onClick={myfun} className="Save-Btn">Save</button>
           </div>
           <div>
           </div>

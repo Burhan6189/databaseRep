@@ -296,22 +296,6 @@ const PatientDashboard = () => {
               <div className="Patient-Details-Inputs">
                 <input
                   type="text"
-                  name="date"
-                  onChange={(e) => {
-                    setDate(e.target.value);
-                  }}
-                  id="date"
-                  className="input-field-1"
-                  placeholder="date"
-                  autoComplete="off"
-                />
-                <label for="date" className="input-label">
-                  Date :
-                </label>
-              </div>
-              <div className="Patient-Details-Inputs">
-                <input
-                  type="text"
                   name="dateofregistration"
                   onChange={(e) => {
                     setDateofregistration(e.target.value);

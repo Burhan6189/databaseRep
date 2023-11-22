@@ -367,22 +367,6 @@ const PatientDashboard = () => {
               </div>
             </div>
           </div>
-          <button>
-            {" "}
-            <a href="/TreatmentPlan">Treatment Plan</a>
-          </button>
-          <div className="Details-Inputs">
-            <div className="Detail-Heading-Text">
-              <h3>Date</h3>
-              <h3>Description</h3>
-              <h3>Total</h3>
-            </div>
-            <div>
-              <input className="side-input" />
-              <input className="center-input" type="text" />
-              <input className="side-input" type="text" />
-            </div>
-          </div>
           
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
@@ -450,9 +434,6 @@ const PatientDashboard = () => {
             {/* <input id="partitioned" type="text" maxlength="4" /> */}
           </Popup>
           <div>
-            <button onClick={myfun} className="Submit-Btn">
-              Submit
-            </button>
           </div>
 
         </div>

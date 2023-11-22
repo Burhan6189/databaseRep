@@ -8,11 +8,11 @@
 
 /*====================== Start Header ==========================*/
 
-.Patient-Details-BG .Header {
-  display: flex;
-  justify-content: space-around;
+.Header .Header-Flex{
+display: flex;
+justify-content: space-around;
 }
-.Patient-Details-BG .Header .User-Login {
+.Header .User-Login {
   display: flex;
   align-items: center;
   text-align: left;
@@ -20,13 +20,20 @@
   margin-right: -250px;
   justify-content: space-around;
 }
-.Patient-Details-BG .Header .User-Login-Pic {
+.Header .User-Login-Pic {
   width: 100px;
   border-radius: 50px;
   height: 100px;
 }
-.Patient-Details-BG .Header .User-Login h3 {
+.Header .User-Login h3 {
   font-weight: 500;
+}
+.Header .Logo {
+  padding: 60px 15px 70px 15px;
+  width: 120px;
+  height: auto;
+  text-align: center;
+  margin: auto;
 }
 
 /*====================== End Header ==========================*/
@@ -551,7 +558,7 @@
   font-size: 28px;
   cursor: pointer;
   font-weight: 500;
-  background: #E77070;
+  background: #e77070;
   width: 200px;
   color: #fff;
 }
@@ -752,7 +759,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  padding-bottom:150px;
+  padding-bottom: 150px;
 }
 .Things-BG .Logo {
   padding: 80px 15px 70px 15px;
@@ -772,7 +779,7 @@
   font-weight: 400;
   padding-bottom: 20px;
 }
-.Things-BG .Box-Flex a{
+.Things-BG .Box-Flex a {
   text-decoration: none;
   color: black;
 }
@@ -788,8 +795,8 @@
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #FFD978;
-  border: 4px solid #E9C058;
+  background: #ffd978;
+  border: 4px solid #e9c058;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-01:hover {
@@ -799,7 +806,7 @@
 .Things-BG .Box-Flex .Box-01 .Box-Text h3 {
   margin-bottom: 50px;
   font-weight: 500;
- line-height: 0.5;
+  line-height: 0.5;
   font-size: 40px;
 }
 .Things-BG .Box-Flex .Box-01 .Box-Text p {
@@ -817,7 +824,6 @@
   text-align: center;
 }
 
-
 /*=========================== Box 1 ==========================*/
 
 /*========================= Box 2 ==========================*/
@@ -831,8 +837,8 @@
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #BAD6FF;
-  border: 4px solid #8DA4C7;
+  background: #bad6ff;
+  border: 4px solid #8da4c7;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-02:hover {
@@ -842,7 +848,7 @@
 .Things-BG .Box-Flex .Box-02 .Box-Text h3 {
   margin-bottom: 50px;
   font-weight: 400;
- line-height: 0.5;
+  line-height: 0.5;
   font-size: 40px;
 }
 .Things-BG .Box-Flex .Box-02 .Box-Text p {
@@ -870,8 +876,8 @@
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #C6FFDD;
-  border: 4px solid #81AE93;
+  background: #c6ffdd;
+  border: 4px solid #81ae93;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-03:hover {
@@ -881,7 +887,7 @@
 .Things-BG .Box-Flex .Box-03 .Box-Text h3 {
   margin-bottom: 50px;
   font-weight: 400;
- line-height: 0.5;
+  line-height: 0.5;
   font-size: 40px;
 }
 .Things-BG .Box-Flex .Box-03 .Box-Text p {
@@ -899,3 +905,98 @@
 /*========================= Box 3 ==========================*/
 
 /*================== End Things ==================*/
+
+/*====================== All Patient =================*/
+
+.All-Patient-BG {
+  background-image: url("/img/Login-Signup-BG1.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.All-Patient-BG .Logo {
+  padding: 80px 15px 70px 15px;
+  padding-bottom: 70px;
+  max-width: 120px;
+  height: auto;
+  text-align: center;
+  margin: auto;
+}
+.All-Patient-BG .All-Patient-Header{
+  display: flex;
+  justify-content: space-around;
+}
+.All-Patient-BG .Appointment-Button{
+  display: flex;
+  align-items: center;
+}
+.All-Patient-BG .Appointment-Button button{
+  /* padding: 10px; */
+  width: 50px;
+  border: none;
+  font-size: 30px;
+  font-weight: 500;
+  color: white;
+  background: #E77070;
+  cursor: pointer;
+  border-radius: 50px;
+  height: 50px;
+}
+.All-Patient-BG .Appointment-Button h4{
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+font-weight: 400;
+color: #929292;
+}
+.All-Patient-BG .Appointment-Button input{
+  border: none;
+  transition: 0.5s ease;
+  padding: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
+  0 3px 40px 0 rgba(0, 0, 0, 0.062);
+  outline: none;
+border-radius: 30px;
+width: 300px;
+}
+.All-Patient-BG .All-Patient-Header h2{
+  font-size: 40px;
+  color: #929292;
+  font-weight: 500;
+}
+.All-Patient-BG .First-Patient{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+padding: 10px ;
+border-radius: 20px;
+  background-color: white;
+  width: 1700px;
+  margin: auto;
+  gap: 100px;
+}
+.All-Patient-BG .First-Patient .patient-id{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.All-Patient-BG .First-Patient .patient-id img{
+  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+}
+.All-Patient-BG .Patients-List{
+margin-top: 50px;
+}
+.All-Patient-BG .Patients-List h4{
+  font-size: 20px;
+  font-weight: 500;
+}
+.All-Patient-BG .Patients-List p{
+  font-size: 16px;
+  font-weight:500;
+  color: #929292;
+}
+/*====================== All Patient =================*/

@@ -26,18 +26,19 @@ const PatientDashboard = () => {
   const [Checkuptime, setCheckuptime] = useState("");
   const [Date, setDate] = useState("");
 
+  //two for treatment detail DB
 
   const [Description, setDescription] = useState("");
   const [Price, setPrice] = useState("");
 
 
-  // fetched data's useStates
+  // fetched data's useStates for treatment
 
   const [TreatmentData, setTreatmentData] = useState([]);
 
   const treatmentdata = async () => {
 
-    const fetchtreatment = await fetch("http://localhost:3000/api/treatmentdetails");
+    const fetchtreatment = await fetch("/api/treatmentdetails");
     const jsontreatment = await fetchtreatment.json();
     setTreatmentData(jsontreatment);
   }
@@ -91,12 +92,12 @@ const PatientDashboard = () => {
     if (Description != "" && Price != "" && Clientid != "") {
 
 
-      const getdata = await fetch("http://localhost:3000/api/treatmentdetails", {
+      const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
         body: JSON.stringify({ Description, Price, Clientid })
       });
       alert("success")
-      window.location.href = "http://localhost:3000/PatientDashboard";
+      window.location.href = "/PatientDashboard";
 
 
     } else {
@@ -123,7 +124,7 @@ const PatientDashboard = () => {
     if (Description != "" && Price != "" && Clientid != "") {
 
 
-      const getdata = await fetch("http://localhost:3000/api/treatmentdetails", {
+      const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
         body: JSON.stringify({ Description, Price, Clientid })
       });
@@ -363,33 +364,42 @@ const PatientDashboard = () => {
               </div>
             </div>
           </div>
+
+
           <button>
             {" "}
             <a href="/TreatmentPlan">Treatment Plan</a>
           </button>
+
+
           <div className="Details-Inputs">
             <div className="Detail-Heading-Text">
               <h3>Date</h3>
               <h3>Description</h3>
               <h3>Total</h3>
             </div>
+
             <div>
-              <input className="side-input" name="Date" value={currentDate} />
+              {/* this is tretment detail output */}
               {
                 TreatmentData.map((items) => (
+                
 
-                  <input className="side-input" type="text" name="Total" value={items.Description} />
+                  // below opening and closing tags are require
+                  <>
+                  
+
+                    <input className="side-input" name="Date" value={currentDate} />
+                    <input className="side-input" type="text" name="Description" value={items.Description} />
+                    <input className="side-input" name="Total" value={items.Price} />
+                    <br></br>
+
+                  </>
 
                 ))
 
               }
-              {
-                TreatmentData.map((items) => (
 
-                  <input className="side-input" type="text" name="Price" value={items.Price} />
-
-                ))
-              }
 
             </div>
           </div>

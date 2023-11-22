@@ -14,7 +14,7 @@ const Login = () => {
 const myfun= async ()=>{
 
 
-  const fetchdata = await fetch("http://localhost:3000/api/projects");
+  const fetchdata = await fetch("/api/projects");
   const jsondata = await fetchdata.json();
   
   if(Username=="" || Password==""){
@@ -35,7 +35,7 @@ const myfun= async ()=>{
         setCookie('Patient');
           setStatus("true");
           alert("success");
-              window.location.href=("http://localhost:3000/PatientDashboard");  
+              window.location.href=("/PatientDashboard");  
             }
             else{
               alert("Incorrect Password");
@@ -52,7 +52,7 @@ const myfun= async ()=>{
 
      if(Status=="false"){
       alert("Incorrect Credentials");
-      window.location.href=("http://localhost:3000/Login");
+      window.location.href=("/Login");
      }
     
     }

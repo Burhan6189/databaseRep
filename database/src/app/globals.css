@@ -614,14 +614,14 @@ justify-content: space-around;
 .Tooth-Description-Total .Details-Inputs .side-input {
   width: 100px;
   padding: 10px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #D9D9D9;
   outline: none;
   background: none;
 }
 
 .Tooth-Description-Total .Details-Inputs .center-input {
   width: 850px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #D9D9D9;
   background: none;
 
   padding: 10px;
@@ -651,15 +651,16 @@ justify-content: space-around;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: 0.5s;
   overflow-y: auto;
-  background: url("/img/Banner-BG.jpg");
-  border-radius: 10px;
+  background: #ECECEC;
+  border-radius: 30px;
+  justify-content: center;
   text-align: center;
 }
 .Tooth-Description-Total .Details-Inputs .side-input-price {
   width: 200px;
   padding: 10px;
   background: none;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #D9D9D9;
   outline: none;
 }
 

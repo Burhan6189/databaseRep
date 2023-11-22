@@ -12,7 +12,7 @@ const Signup = () => {
     if (Username == "" || Email == "" || Password == "") {
       alert("all field are required");
     } else if (Username != "" && Email != "" && Password != "") {
-      const fetchdata = await fetch("http://localhost:3000/api/projects");
+      const fetchdata = await fetch("/api/projects");
       const jsondata = await fetchdata.json();
 
       jsondata.map((items) => {
@@ -27,14 +27,14 @@ const Signup = () => {
       if (Status === true) {
         const hashedPassword = await bcrypt.hash(Password, 10);
 
-        const data = await fetch("http://localhost:3000/api/projects", {
+        const data = await fetch("/api/projects", {
           method: "POST",
           body: JSON.stringify({ Username, Email, Password: hashedPassword }),
         });
 
         alert("Successfully registered");
 
-        window.location.href = "http://localhost:3000/Login";
+        window.location.href = "/Login";
       }
     }
   };

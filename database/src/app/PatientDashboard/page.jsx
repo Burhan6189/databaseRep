@@ -26,18 +26,19 @@ const PatientDashboard = () => {
   const [Checkuptime, setCheckuptime] = useState("");
   const [Date, setDate] = useState("");
 
+  //two for treatment detail DB
 
   const [Description, setDescription] = useState("");
   const [Price, setPrice] = useState("");
 
 
-  // fetched data's useStates
+  // fetched data's useStates for treatment
 
   const [TreatmentData, setTreatmentData] = useState([]);
 
   const treatmentdata = async () => {
 
-    const fetchtreatment = await fetch("http://localhost:3000/api/treatmentdetails");
+    const fetchtreatment = await fetch("/api/treatmentdetails");
     const jsontreatment = await fetchtreatment.json();
     setTreatmentData(jsontreatment);
   }
@@ -91,12 +92,12 @@ const PatientDashboard = () => {
     if (Description != "" && Price != "" && Clientid != "") {
 
 
-      const getdata = await fetch("http://localhost:3000/api/treatmentdetails", {
+      const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
         body: JSON.stringify({ Description, Price, Clientid })
       });
       alert("success")
-      window.location.href = "http://localhost:3000/PatientDashboard";
+      window.location.href = "/PatientDashboard";
 
 
     } else {
@@ -123,7 +124,7 @@ const PatientDashboard = () => {
     if (Description != "" && Price != "" && Clientid != "") {
 
 
-      const getdata = await fetch("http://localhost:3000/api/treatmentdetails", {
+      const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
         body: JSON.stringify({ Description, Price, Clientid })
       });
@@ -367,7 +368,7 @@ const PatientDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="Add-Save-Btn"> 
+          
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"

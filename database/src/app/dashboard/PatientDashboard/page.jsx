@@ -179,8 +179,8 @@ const PatientDashboard = () => {
               alt=""
             />
             <div>
-            <h3>Muzzamil Rafique</h3>
-            <p>Desigination</p>
+              <h3>Muzzamil Rafique</h3>
+              <p>Desigination</p>
             </div>
           </div>
         </div>
@@ -193,7 +193,7 @@ const PatientDashboard = () => {
                   type="clientid"
                   name="clientid"
                   onChange={(e) => {
-                    setName(e.target.value);
+                    setClientid(e.target.value);
                   }}
                   id="clientid"
                   className="input-field-1"
@@ -209,7 +209,7 @@ const PatientDashboard = () => {
                   type="name"
                   name="name"
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setName(e.target.value);
                   }}
                   id="name"
                   className="input-field-1"
@@ -225,7 +225,7 @@ const PatientDashboard = () => {
                   type="text"
                   name="email"
                   onChange={(e) => {
-                    setNumber(e.target.value);
+                    setEmail(e.target.value);
                   }}
                   id="email"
                   className="input-field-1"
@@ -241,7 +241,7 @@ const PatientDashboard = () => {
                   type="text"
                   name="number"
                   onChange={(e) => {
-                    setDateofbirth(e.target.value);
+                    setNumber(e.target.value);
                   }}
                   id="number"
                   className="input-field-1"
@@ -323,7 +323,7 @@ const PatientDashboard = () => {
                   type="text"
                   name="date"
                   onChange={(e) => {
-                    setD(e.target.value);
+                    setDate(e.target.value);
                   }}
                   id="date"
                   className="input-field-1"
@@ -353,22 +353,23 @@ const PatientDashboard = () => {
             </div>
           </div>
           <div className="Details-Inputs">
-            <div className="fake-input-flex"> 
+            <div className="fake-input-flex">
               <div className="fake-input" >
-              <h4>Date</h4>
+                <h4>Date</h4>
               </div>
               <div className="fake-input-long" >
-              <h4>Treatment</h4>
+                <h4>Treatment</h4>
               </div>
               <div className="fake-input" >
-              <h4>Dentist</h4>
+                <h4>Dentist</h4>
               </div>
               <div className="fake-input" >
-              <h4>Total Price</h4>
+                <h4>Total Price</h4>
               </div>
             </div>
+            
           </div>
-          
+
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"
@@ -393,6 +394,7 @@ const PatientDashboard = () => {
                   </div>
                   <textarea className="center-input" name="description" onChange={(e) => { setDescription(e.target.value) }} type="text" rows={3} />
                   <input className="side-input-price" name="price" onChange={(e) => { setPrice(e.target.value) }} type="number" />
+
                 </div>
 
                 {/* This is popup array for adding new textboxes  below*/}
@@ -400,25 +402,25 @@ const PatientDashboard = () => {
                 {arr.map((item, i) => {
                   return (
                     <div className="side-input-main-flex">
-                  <div className="side-input-flex">
-                    <div>
-                      <input maxlength="2" className="side-input"   type={item.type}
-                        id={i}/>
-                      <input maxlength="2" className="side-input"  type={item.type}
-                        id={i}/>
-                    </div>
-                    <div>
-                      <input maxlength="2" className="side-input"  type={item.type}
-                        id={i}/>
-                      <input maxlength="2" className="side-input"  type={item.type}
-                        id={i}/>
-                    </div>
-                  </div>
-                  <textarea className="center-input"  rows={3}  type={item.type}
-                        id={i}/>
-                  <input className="side-input-price"  type={item.type}
+                      <div className="side-input-flex">
+                        <div>
+                          <input maxlength="2" className="side-input" type={item.type}
+                            id={i} />
+                          <input maxlength="2" className="side-input" type={item.type}
+                            id={i} />
+                        </div>
+                        <div>
+                          <input maxlength="2" className="side-input" type={item.type}
+                            id={i} />
+                          <input maxlength="2" className="side-input" type={item.type}
+                            id={i} />
+                        </div>
+                      </div>
+                      <textarea className="center-input" rows={3} type={item.type}
                         id={i} />
-                </div>
+                      <input className="side-input-price" type={item.type}
+                        id={i} />
+                    </div>
 
                   );
                 })}
@@ -428,17 +430,17 @@ const PatientDashboard = () => {
                   +
                 </button>
               </div>
-              <button className="Submit-Btn">
-                  Submit
-                </button>
+              <button onClick={backtodata} className="Submit-Btn">
+                Submit
+              </button>
             </div>
           </Popup>
           <button className="Save-Btn">Save</button>
-          </div>
-          <div>
-          </div>
-
         </div>
+        <div>
+        </div>
+
+      </div>
     </>
   );
 };

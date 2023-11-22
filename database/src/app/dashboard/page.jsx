@@ -8,7 +8,11 @@ const dashboard = () => {
           <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
         </div>
         <div className="Box-Flex">
-          <div className="Box-01">
+
+
+        <a style={{textDecoration:"none"}} href="/dashboard/PatientDashboard">
+
+          <div className="Box-01" >
             <div className="Icon-Circle">
               <img src="/img/icon.png" alt="" />
             </div>
@@ -21,6 +25,8 @@ const dashboard = () => {
             </p>
             </div>
           </div>
+          </a>
+
           <div className="Box-01">
             <div className="Icon-Circle">
               <img src="/img/icon.png" alt="" />
@@ -34,6 +40,7 @@ const dashboard = () => {
             </p>
             </div>
           </div>
+
           <div className="Box-01">
             <div className="Icon-Circle">
               <img src="/img/icon.png" alt="" />

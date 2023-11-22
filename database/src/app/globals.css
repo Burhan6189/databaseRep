@@ -6,6 +6,32 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+/*====================== Start Header ==========================*/
+
+.Patient-Details-BG .Header{
+  display: flex;
+justify-content: space-around;  
+}
+.Patient-Details-BG .Header .User-Login{
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  margin-right: -250px;
+  justify-content: space-around;
+}
+.Patient-Details-BG .Header .User-Login-Pic{
+  width: 100px;
+  border-radius: 50px;
+  height: 100px;
+}
+.Patient-Details-BG .Header .User-Login h3{
+  font-weight: 500; 
+}
+
+/*====================== End Header ==========================*/
+
 /*================== Start Login Signup =========================*/
 
 .Login-Signup-Page-BG {
@@ -19,7 +45,7 @@
 
 .Login-Signup-Page-BG .Logo {
   padding: 250px 15px 70px 15px;
-  max-width: 558px;
+  max-width: 120px;
   height: auto;
   text-align: center;
   margin: auto;
@@ -93,7 +119,7 @@
 .Login-Page-BG .Logo {
   padding: 250px 15px 70px 15px;
   padding-bottom: 70px;
-  max-width: 558px;
+  max-width: 120px;
   height: auto;
   text-align: center;
   margin: auto;
@@ -241,7 +267,7 @@
 
 .Signup-Page-BG .Logo {
   padding: 250px 15px 70px 15px;
-  max-width: 558px;
+  max-width: 120px;
   height: auto;
   text-align: center;
   margin: auto;
@@ -404,6 +430,8 @@
 }
 
 .Patient-Details-BG .Patient-Details-Logo {
+  width: 100px;
+  height: auto;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -449,7 +477,7 @@
   width: 100%;
   outline: 0;
   border: 0;
-  border-bottom: 2px solid #999999;
+  border-bottom: 2px solid #d9d9d9;
   padding: 10px 0;
   background: transparent;
   font-size: 20px;
@@ -463,7 +491,7 @@
   position: absolute;
   top: 0;
   font-size: 1em;
-  color: #333333;
+  color: #4d4d4d;
   /* text-transform: uppercase; */
   transition: 0.3s ease;
 }
@@ -497,6 +525,7 @@
   align-items: center;
   min-height: 70px;
   position: relative;
+
   padding: 0 15px;
   display: flex;
 }
@@ -534,7 +563,9 @@
   text-decoration: none;
   color: #000;
 }
-
+.Patient-Details-BG .Details-Inputs {
+  margin-top: 100px;
+}
 .Patient-Details-BG .Details-Inputs .side-input {
   width: 400px;
   text-align: center;
@@ -559,22 +590,17 @@
 .Patient-Details-BG .Details-Inputs .Detail-Heading-Text {
   display: flex;
   justify-content: center;
-  gap: 31%;
+  gap: 20%;
   margin-bottom: 10px;
 }
 
 .Patient-Details-BG .Plus-Btn {
-  background: none;
+  background: #E77070;
+  width: 200px;
   font-size: 35px;
+  color: white;
   transform: 0.5s ease;
   padding: 0px;
-}
-
-.Tooth-Description-Total {
-  width: 700px;
-  height: 700px;
-  transform: 0.5s;
-  background: white;
 }
 .Tooth-Description-Total .Details-Inputs .side-input {
   width: 100px;
@@ -613,9 +639,11 @@
 .Tooth-Description-Total {
   width: 1500px;
   height: 800px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transform: 0.5s;
+  overflow-y: auto;
   background: url("/img/Banner-BG.jpg");
-  border-radius: 40px;
+  border-radius: 10px;
   text-align: center;
 }
 .Tooth-Description-Total .Details-Inputs .side-input-price {
@@ -644,6 +672,24 @@
   font-weight: 500;
   text-decoration: none;
   color: black;
+}
+.Details-Inputs .fake-input-flex{
+  display: flex;
+  justify-content: center;
+}
+.Details-Inputs .fake-input-flex .fake-input{
+  width: 250px;
+  padding: 5px;
+  border: 1px solid #D9D9D9;
+}
+.Details-Inputs .fake-input-flex .fake-input-long{
+  width: 550px;
+  padding: 5px;
+  border: 1px solid #D9D9D9;
+}
+.Details-Inputs .fake-input-flex h4{
+font-size: 20px;
+font-weight: 400;
 }
 /*================== End Patient Details ===============*/
 
@@ -681,5 +727,90 @@
   height: auto;
   padding: 0 10px;
 }
-
 /*================== End Treatment Plan ==================*/
+
+
+/*================== Start Things ==================*/
+
+.Things-BG{
+  background-image: url("/img/Login-Signup-BG1.jpg");
+  background-position: center;
+  background-size: cover;
+  /* text-align: center; */
+  background-repeat: no-repeat;
+  height: auto;
+}
+.Things-BG .Box-Flex
+{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding-bottom: 300px;
+}
+.Things-BG .Logo{
+  padding: 80px 15px 70px 15px;
+  padding-bottom: 70px;
+  max-width: 120px;
+  height: auto;
+  text-align: center;
+  margin: auto;
+}
+.Things-BG .Box-Flex .Box-01{
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075), 0 3px 40px 0 rgba(0, 0, 0, 0.062);
+  padding: 20px;
+  height: 480px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  transition: 0.5s ease;
+}
+.Things-BG .Box-Flex .Box-01:hover{
+  scale: 1.1;
+}
+.Things-BG .Box-Flex .Box-01 .Box-Text{
+  margin-top: 30px;
+}
+.Things-BG .Box-Flex .Box-01 .Box-Text h3{
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 25px;
+}
+.Things-BG .Box-Flex .Box-01 .Box-Text p{
+  margin-bottom: 50px;
+  font-weight: 300;
+  margin: auto;
+  max-width: 300px;
+  font-size: 13px;
+}
+.Things-BG .Box-Flex .Box-01 .Icon-Circle{
+  padding: 15px;
+  background-color: #D65656;
+  width: 100px;
+  height: auto;
+  margin: auto;
+  border-radius: 100%;
+}
+.Things-BG .Box-Flex .Box-01 .Icon-Circle img{
+  width:60px;
+  margin: 0 10px 0 6px ;
+}
+.Things-BG .Bottom-Text{
+  text-align: center;
+}
+.Things-BG .Bottom-Text p{
+  width: 794px; 
+  color: #929292;
+margin: auto;
+margin-bottom: 80px;
+}
+.Things-BG .Bottom-Text h3{
+  font-weight: 400; 
+padding-bottom: 80px;
+}
+/*================== End Things ==================*/
+
+
+

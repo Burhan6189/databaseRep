@@ -161,17 +161,55 @@ const PatientDashboard = () => {
   return (
     <>
       <div className="Patient-Details-BG">
-        <img className="Patient-Details-Logo" src="/img/Logo.png" alt="" />
+        <div className="Header">
+          <div>
+            <img className="Patient-Details-Logo" src="/img/image.png" alt="" />
+          </div>
+          <div>
+            <img
+              className="Patient-Details-Logo"
+              src="http://www.fhgroupoc.com/svg/fhlogog.svg"
+              alt=""
+            />
+          </div>
+          <div className="User-Login">
+            <img
+              className="User-Login-Pic"
+              src="/img/image 2.png"
+              alt=""
+            />
+            <div>
+            <h3>Muzzamil Rafique</h3>
+            <p>Desigination</p>
+            </div>
+          </div>
+        </div>
         <div className="Main-Div">
           <h3>PATIENT PROFILE SECTION</h3>
           <div className="Input-Flex">
             <div className="row-1">
               <div className="Patient-Details-Inputs">
                 <input
+                  type="clientid"
+                  name="clientid"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  id="clientid"
+                  className="input-field-1"
+                  placeholder="clientid"
+                  autoComplete="off"
+                />
+                <label for="clientid" className="input-label">
+                  Client ID :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
                   type="name"
                   name="name"
                   onChange={(e) => {
-                    setName(e.target.value);
+                    setEmail(e.target.value);
                   }}
                   id="name"
                   className="input-field-1"
@@ -179,15 +217,15 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="name" className="input-label">
-                  Name
+                  Name :
                 </label>
               </div>
               <div className="Patient-Details-Inputs">
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setNumber(e.target.value);
                   }}
                   id="email"
                   className="input-field-1"
@@ -195,7 +233,7 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="email" className="input-label">
-                  Email
+                  Email :
                 </label>
               </div>
               <div className="Patient-Details-Inputs">
@@ -203,7 +241,7 @@ const PatientDashboard = () => {
                   type="text"
                   name="number"
                   onChange={(e) => {
-                    setNumber(e.target.value);
+                    setDateofbirth(e.target.value);
                   }}
                   id="number"
                   className="input-field-1"
@@ -211,23 +249,23 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="number" className="input-label">
-                  Number
+                  Number :
                 </label>
               </div>
               <div className="Patient-Details-Inputs">
                 <input
                   type="text"
-                  name="date0fbirth"
+                  name="dateofbirth"
                   onChange={(e) => {
                     setDateofbirth(e.target.value);
                   }}
-                  id="date0fbirth"
+                  id="dateofbirth"
                   className="input-field-1"
-                  placeholder="date0fbirth"
+                  placeholder="dateofbirth"
                   autoComplete="off"
                 />
-                <label for="date0fbirth" className="input-label">
-                  Date of Birth
+                <label for="dateofbirth" className="input-label">
+                  Date of Birth :
                 </label>
               </div>
             </div>
@@ -245,7 +283,7 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="sex" className="input-label">
-                  Sex
+                  Sex :
                 </label>
               </div>
               <div className="Patient-Details-Inputs">
@@ -261,7 +299,7 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="bloodgroup" className="input-label">
-                  Blood Group
+                  Blood Group :
                 </label>
               </div>
               <div className="Patient-Details-Inputs">
@@ -277,7 +315,23 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="memberstatus" className="input-label">
-                  Member Status
+                  Member Status :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="text"
+                  name="date"
+                  onChange={(e) => {
+                    setD(e.target.value);
+                  }}
+                  id="date"
+                  className="input-field-1"
+                  placeholder="date"
+                  autoComplete="off"
+                />
+                <label for="date" className="input-label">
+                  Date :
                 </label>
               </div>
               <div className="Patient-Details-Inputs">
@@ -293,113 +347,54 @@ const PatientDashboard = () => {
                   autoComplete="off"
                 />
                 <label for="dateofregistration" className="input-label">
-                  Date of Registration
-                </label>
-              </div>
-            </div>
-            <div className="row-3">
-              <div className="Patient-Details-Inputs">
-                <input
-                  type="attendingdoctor"
-                  name="attendingdoctor"
-                  onChange={(e) => {
-                    setAttendingdoctor(e.target.value);
-                  }}
-                  id="attendingdoctor"
-                  className="input-field-1"
-                  placeholder="attendingdoctor"
-                  autoComplete="off"
-                />
-                <label for="attendingdoctor" className="input-label">
-                  Attending Doctor
-                </label>
-              </div>
-              <div className="Patient-Details-Inputs">
-                <input
-                  type="clientid"
-                  name="clientid"
-                  onChange={(e) => {
-                    setClientid(e.target.value);
-                  }}
-                  id="clientid"
-                  className="input-field-1"
-                  placeholder="clientid"
-                  autoComplete="off"
-                />
-                <label for="clientid" className="input-label">
-                  Client ID
-                </label>
-              </div>
-              <div className="Patient-Details-Inputs">
-                <input
-                  type="text"
-                  name="checkuptime"
-                  onChange={(e) => {
-                    setCheckuptime(e.target.value);
-                  }}
-                  id="checkuptime"
-                  className="input-field-1"
-                  placeholder="checkuptime"
-                  autoComplete="off"
-                />
-                <label for="checkuptime" className="input-label">
-                  Check up time
-                </label>
-              </div>
-              <div className="Patient-Details-Inputs">
-                <input
-                  type="text"
-                  name="date"
-                  onChange={(e) => {
-                    setDate(e.target.value);
-                  }}
-                  id="date"
-                  className="input-field-1"
-                  placeholder="date"
-                  autoComplete="off"
-                />
-                <label for="date" className="input-label">
-                  Date
+                  Date of Registration :
                 </label>
               </div>
             </div>
           </div>
-
-
+          <div className="Details-Inputs">
+            <div className="fake-input-flex"> 
+              <div className="fake-input" >
+              <h4>Date</h4>
+              </div>
+              <div className="fake-input-long" >
+              <h4>Treatment</h4>
+              </div>
+              <div className="fake-input" >
+              <h4>Dentist</h4>
+              </div>
+              <div className="fake-input" >
+              <h4>Total Price</h4>
+              </div>
+            </div>
+          </div>
           <button>
             {" "}
             <a href="/TreatmentPlan">Treatment Plan</a>
           </button>
-
-
           <div className="Details-Inputs">
             <div className="Detail-Heading-Text">
               <h3>Date</h3>
               <h3>Description</h3>
               <h3>Total</h3>
             </div>
-
             <div>
-              {/* this is tretment detail output */}
+              <input className="side-input" name="Date" value={currentDate} />
               {
                 TreatmentData.map((items) => (
-                
 
-                  // below opening and closing tags are require
-                  <>
-                  
-
-                    <input className="side-input" name="Date" value={currentDate} />
-                    <input className="side-input" type="text" name="Description" value={items.Description} />
-                    <input className="side-input" name="Total" value={items.Price} />
-                    <br></br>
-
-                  </>
+                  <input className="side-input" type="text" name="Total" value={items.Description} />
 
                 ))
 
               }
+              {
+                TreatmentData.map((items) => (
 
+                  <input className="side-input" type="text" name="Price" value={items.Price} />
+
+                ))
+              }
 
             </div>
           </div>
@@ -434,27 +429,26 @@ const PatientDashboard = () => {
 
                 {arr.map((item, i) => {
                   return (
-
                     <div className="side-input-main-flex">
-                      <div className="side-input-flex">
-                        <div>
-                          <input maxlength="2" className="side-input" name="upperL" type={item.type}
-                            id={i} />
-                          <input maxlength="2" className="side-input" name="upperR" type={item.type}
-                            id={i} />
-                        </div>
-                        <div>
-                          <input maxlength="2" className="side-input" name="lowwerL" type={item.type}
-                            id={i} />
-                          <input maxlength="2" className="side-input" name="lowwerR" type={item.type}
-                            id={i} />
-                        </div>
-                      </div>
-                      <textarea className="center-input" onChange={(e) => { setDescription(e.target.value) }} name="description" rows={3} type={item.type}
-                        id={i} />
-                      <input className="side-input-price" onChange={(e) => { setPrice(e.target.value) }} name="price" type="number"
-                        id={i} />
+                  <div className="side-input-flex">
+                    <div>
+                      <input maxlength="2" className="side-input"   type={item.type}
+                        id={i}/>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
                     </div>
+                    <div>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
+                    </div>
+                  </div>
+                  <textarea className="center-input"  rows={3}  type={item.type}
+                        id={i}/>
+                  <input className="side-input-price"  type={item.type}
+                        id={i} />
+                </div>
 
                   );
                 })}
@@ -464,16 +458,13 @@ const PatientDashboard = () => {
                   +
                 </button>
               </div>
-              <button onClick={backtodata} className="Submit-Btn">
-                Submit
-              </button>
+              <button className="Submit-Btn">
+                  Submit
+                </button>
             </div>
             {/* <input id="partitioned" type="text" maxlength="4" /> */}
           </Popup>
           <div>
-            <button onClick={myfun} className="Submit-Btn">
-              Submit
-            </button>
           </div>
 
         </div>

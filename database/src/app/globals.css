@@ -596,11 +596,20 @@ justify-content: space-around;
 .Patient-Details-BG .Plus-Btn {
   background: #E77070;
   width: 200px;
-  font-size: 35px;
+  font-size: 30px;
   color: white;
   transform: 0.5s ease;
   padding: 0px;
 }
+.Patient-Details-BG .Save-Btn {
+  background: #B3E770;
+  width: 200px;
+  font-size: 22px;
+  color: #4D4D4D;
+  transform: 0.5s ease;
+}
+
+
 .Tooth-Description-Total .Details-Inputs .side-input {
   width: 100px;
   padding: 10px;

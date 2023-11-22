@@ -367,7 +367,7 @@ const PatientDashboard = () => {
               </div>
             </div>
           </div>
-          
+          <div className="Add-Save-Btn"> 
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"
@@ -431,8 +431,9 @@ const PatientDashboard = () => {
                   Submit
                 </button>
             </div>
-            {/* <input id="partitioned" type="text" maxlength="4" /> */}
           </Popup>
+          <button className="Save-Btn">Save</button>
+          </div>
           <div>
           </div>
 

@@ -383,8 +383,8 @@ const PatientDashboard = () => {
                       />
                     </div> */}
                   </div>
-                  <textarea className="center-input" name="description" onChange={(e) => { setDescription(e.target.value) }} type="text" rows={3} />
-                  <input className="side-input-price" name="price" onChange={(e) => { setPrice(e.target.value) }} type="number" />
+                  {/* <textarea className="center-input" name="description" onChange={(e) => { setDescription(e.target.value) }} type="text" rows={3} />
+                  <input className="side-input-price" name="price" onChange={(e) => { setPrice(e.target.value) }} type="number" /> */}
                 </div>
 
                 {/* This is popup array for adding new textboxes  below*/}

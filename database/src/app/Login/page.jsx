@@ -35,7 +35,7 @@ const myfun= async ()=>{
         setCookie('Patient');
           setStatus("true");
           alert("success");
-              window.location.href=("/Things");  
+              window.location.href=("/dashboard");  
             }
             else{
               alert("Incorrect Password");

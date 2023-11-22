@@ -9,6 +9,8 @@ const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
 const PatientDashboard = () => {
+
+
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Number, setNumber] = useState("");
@@ -17,10 +19,8 @@ const PatientDashboard = () => {
   const [Sex, setSex] = useState("");
   const [Memberstatus, setMemberstatus] = useState("");
   const [Dateofregistration, setDateofregistration] = useState("");
-  const [Attendingdoctor, setAttendingdoctor] = useState("");
   const [Clientid, setClientid] = useState("");
-  const [Checkuptime, setCheckuptime] = useState("");
-  const [Date, setDate] = useState("");
+  
 
   //two for treatment detail DB
 
@@ -50,12 +50,9 @@ const PatientDashboard = () => {
       Sex != "" &&
       Memberstatus != "" &&
       Dateofregistration != "" &&
-      Attendingdoctor != "" &&
-      Clientid != "" &&
-      Checkuptime != "" &&
-      Date != ""
+      Clientid != "" 
     ) {
-      const data = await fetch("http://localhost:3000/api/patientdetails", {
+      const data = await fetch("/api/patientdetails", {
         method: "POST",
         body: JSON.stringify({
           Name,
@@ -66,13 +63,16 @@ const PatientDashboard = () => {
           Sex,
           Memberstatus,
           Dateofregistration,
-          Attendingdoctor,
           Clientid,
           Checkuptime,
           Date,
+
+
         }),
       });
+
       alert("success");
+
     } else {
       alert("all fields are required");
     }

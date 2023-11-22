@@ -11,10 +11,7 @@ const mModel = new mongoose.Schema({
     Sex: String,
     Memberstatus: String,
     Dateofregistration: String,
-    Attendingdoctor: String,
     Clientid: String,
-    Checkuptime: String,
-    Date: String,
     Description: String,
     Price: String
 });

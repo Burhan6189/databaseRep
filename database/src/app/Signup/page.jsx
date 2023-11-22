@@ -43,7 +43,7 @@ const Signup = () => {
     <div>
       <div className="Signup-Page-BG">
         <div className="Logo">
-          <img src="/img/Logo.png" alt="" />
+          <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
         </div>
         <div className="Signup-Page-Input-1">
           <input

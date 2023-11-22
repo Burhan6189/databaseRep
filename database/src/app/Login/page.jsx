@@ -64,7 +64,7 @@ const myfun= async ()=>{
       <div className='Login-Page-BG'>
         <div className='Logo' >
 
-        <img src="/img/Logo.png" alt="" />
+        <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
         </div>
         <div className='Login-Page-Input-1'>
           <input type="text" value={Username} onChange={(e)=>{setUsername(e.target.value)}} name='name' id='name' className='input-field' placeholder='Username' autoComplete='off' />

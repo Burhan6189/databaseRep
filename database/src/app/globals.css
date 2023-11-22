@@ -760,6 +760,9 @@
   text-align: center;
   margin: auto;
 }
+
+/*================ Box 1 ========================*/
+
 .Things-BG .Box-Flex .Box-01 {
   text-align: center;
   width: 400px;
@@ -802,6 +805,54 @@
   width: 60px;
   margin: 0 10px 0 6px;
 }
+
+/*=========================== Box 1 ==========================*/
+
+/*========================= Box 2 ==========================*/
+
+.Things-BG .Box-Flex .Box-01 {
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
+    0 3px 40px 0 rgba(0, 0, 0, 0.062);
+  padding: 20px;
+  height: 480px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  transition: 0.5s ease;
+}
+.Things-BG .Box-Flex .Box-01:hover {
+  scale: 1.1;
+}
+.Things-BG .Box-Flex .Box-01 .Box-Text {
+  margin-top: 30px;
+}
+.Things-BG .Box-Flex .Box-01 .Box-Text h3 {
+  margin-bottom: 50px;
+  font-weight: 400;
+  font-size: 25px;
+}
+.Things-BG .Box-Flex .Box-01 .Box-Text p {
+  margin-bottom: 50px;
+  font-weight: 300;
+  margin: auto;
+  max-width: 300px;
+  font-size: 13px;
+}
+.Things-BG .Box-Flex .Box-01 .Icon-Circle {
+  padding: 15px;
+  background-color: #d65656;
+  width: 100px;
+  height: auto;
+  margin: auto;
+  border-radius: 100%;
+}
+.Things-BG .Box-Flex .Box-01 .Icon-Circle img {
+  width: 60px;
+  margin: 0 10px 0 6px;
+}
+
 .Things-BG .Bottom-Text {
   text-align: center;
 }
@@ -814,5 +865,9 @@
 .Things-BG .Bottom-Text h3 {
   font-weight: 400;
   padding-bottom: 80px;
+}
+.Things-BG .Box-Flex a{
+  text-decoration: none;
+  color: black;
 }
 /*================== End Things ==================*/

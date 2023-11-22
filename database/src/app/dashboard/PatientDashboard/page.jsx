@@ -2,15 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
-
 const today = new Date();
 const month = today.getMonth() + 1;
 const year = today.getFullYear();
 const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
-
-
-
 
 const PatientDashboard = () => {
 
@@ -31,20 +27,18 @@ const PatientDashboard = () => {
   const [Description, setDescription] = useState("");
   const [Price, setPrice] = useState("");
 
-
   // fetched data's useStates for treatment
 
   const [TreatmentData, setTreatmentData] = useState([]);
 
   const treatmentdata = async () => {
-
     const fetchtreatment = await fetch("/api/treatmentdetails");
     const jsontreatment = await fetchtreatment.json();
     setTreatmentData(jsontreatment);
-  }
-  useEffect(() => { treatmentdata(); }, []);
-
-
+  };
+  useEffect(() => {
+    treatmentdata();
+  }, []);
 
   const myfun = async () => {
     if (
@@ -70,6 +64,9 @@ const PatientDashboard = () => {
           Memberstatus,
           Dateofregistration,
           Clientid,
+          Checkuptime,
+          Date,
+
 
         }),
       });
@@ -81,26 +78,18 @@ const PatientDashboard = () => {
     }
   };
 
-
   const backtodata = async () => {
-
     if (Description != "" && Price != "" && Clientid != "") {
-
-
       const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
-        body: JSON.stringify({ Description, Price, Clientid })
+        body: JSON.stringify({ Description, Price, Clientid }),
       });
-      alert("success")
+      alert("success");
       window.location.href = "/PatientDashboard";
-
-
     } else {
-      alert("can't be empty")
+      alert("can't be empty");
     }
-
-
-  }
+  };
 
   const inputArr = [
     {
@@ -115,13 +104,10 @@ const PatientDashboard = () => {
   const [arr, setArr] = useState([]);
 
   const addInput = async () => {
-
     if (Description != "" && Price != "" && Clientid != "") {
-
-
       const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
-        body: JSON.stringify({ Description, Price, Clientid })
+        body: JSON.stringify({ Description, Price, Clientid }),
       });
 
       setArr((s) => {
@@ -134,11 +120,9 @@ const PatientDashboard = () => {
         ];
       });
       alert("success");
-
     } else {
       alert("cant be empty");
     }
-
   };
 
   const handleChange = (e) => {
@@ -168,11 +152,7 @@ const PatientDashboard = () => {
             />
           </div>
           <div className="User-Login">
-            <img
-              className="User-Login-Pic"
-              src="/img/image 2.png"
-              alt=""
-            />
+            <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
             <div>
               <h3>Muzzamil Rafique</h3>
               <p>Desigination</p>
@@ -348,18 +328,18 @@ const PatientDashboard = () => {
             </div>
           </div>
           <div className="Details-Inputs">
-            <div className="fake-input-flex">
+            <div className="fake-input-flex"> 
               <div className="fake-input" >
-                <h4>Date</h4>
+              <h4>Date</h4>
               </div>
               <div className="fake-input-long" >
-                <h4>Treatment</h4>
+              <h4>Treatment</h4>
               </div>
               <div className="fake-input" >
-                <h4>Dentist</h4>
+              <h4>Dentist</h4>
               </div>
               <div className="fake-input" >
-                <h4>Total Price</h4>
+              <h4>Total Price</h4>
               </div>
             </div>
             
@@ -371,25 +351,40 @@ const PatientDashboard = () => {
           >
             <div className="Tooth-Description-Total">
               <div className="Details-Inputs">
-                <div className="Detail-Heading-Text">
+                {/* <div className="Detail-Heading-Text">
                   <h3>Tooth</h3>
                   <h3>Description</h3>
                   <h3>Price</h3>
-                </div>
+                </div> */}
                 <div className="side-input-main-flex">
                   <div className="side-input-flex">
-                    <div>
-                      <input maxlength="2" name="upperL" className="side-input" />
-                      <input maxlength="2" name="upperR" className="side-input" />
+                    {/* <div>
+                      <input
+                        maxlength="2"
+                        name="upperL"
+                        className="side-input"
+                      />
+                      <input
+                        maxlength="2"
+                        name="upperR"
+                        className="side-input"
+                      />
                     </div>
                     <div>
-                      <input maxlength="2" name="lowwerL" className="side-input" />
-                      <input maxlength="2" name="lowwerR" className="side-input" />
-                    </div>
+                      <input
+                        maxlength="2"
+                        name="lowwerL"
+                        className="side-input"
+                      />
+                      <input
+                        maxlength="2"
+                        name="lowwerR"
+                        className="side-input"
+                      />
+                    </div> */}
                   </div>
-                  <textarea className="center-input" name="description" onChange={(e) => { setDescription(e.target.value) }} type="text" rows={3} />
-                  <input className="side-input-price" name="price" onChange={(e) => { setPrice(e.target.value) }} type="number" />
-
+                  {/* <textarea className="center-input" name="description" onChange={(e) => { setDescription(e.target.value) }} type="text" rows={3} />
+                  <input className="side-input-price" name="price" onChange={(e) => { setPrice(e.target.value) }} type="number" /> */}
                 </div>
 
                 {/* This is popup array for adding new textboxes  below*/}
@@ -397,25 +392,25 @@ const PatientDashboard = () => {
                 {arr.map((item, i) => {
                   return (
                     <div className="side-input-main-flex">
-                      <div className="side-input-flex">
-                        <div>
-                          <input maxlength="2" className="side-input" type={item.type}
-                            id={i} />
-                          <input maxlength="2" className="side-input" type={item.type}
-                            id={i} />
-                        </div>
-                        <div>
-                          <input maxlength="2" className="side-input" type={item.type}
-                            id={i} />
-                          <input maxlength="2" className="side-input" type={item.type}
-                            id={i} />
-                        </div>
-                      </div>
-                      <textarea className="center-input" rows={3} type={item.type}
-                        id={i} />
-                      <input className="side-input-price" type={item.type}
-                        id={i} />
+                  <div className="side-input-flex">
+                    <div>
+                      <input maxlength="2" className="side-input"   type={item.type}
+                        id={i}/>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
                     </div>
+                    <div>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
+                      <input maxlength="2" className="side-input"  type={item.type}
+                        id={i}/>
+                    </div>
+                  </div>
+                  <textarea className="center-input"  rows={3}  type={item.type}
+                        id={i}/>
+                  <input className="side-input-price"  type={item.type}
+                        id={i} />
+                </div>
 
                   );
                 })}
@@ -425,17 +420,17 @@ const PatientDashboard = () => {
                   +
                 </button>
               </div>
-              <button onClick={backtodata} className="Submit-Btn">
-                Submit
-              </button>
+              <button className="Submit-Btn">
+                  Submit
+                </button>
             </div>
           </Popup>
           <button className="Save-Btn">Save</button>
-        </div>
-        <div>
-        </div>
+          </div>
+          <div>
+          </div>
 
-      </div>
+        </div>
     </>
   );
 };

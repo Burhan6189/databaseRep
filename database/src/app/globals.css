@@ -8,9 +8,9 @@
 
 /*====================== Start Header ==========================*/
 
-.Header .Header-Flex{
-display: flex;
-justify-content: space-around;
+.Header .Header-Flex {
+  display: flex;
+  justify-content: space-around;
 }
 .Header .User-Login {
   display: flex;
@@ -531,7 +531,6 @@ justify-content: space-around;
   align-items: center;
   min-height: 70px;
   position: relative;
-
   padding: 0 15px;
   display: flex;
 }
@@ -612,6 +611,18 @@ justify-content: space-around;
   font-size: 22px;
   color: #4d4d4d;
   transform: 0.5s ease;
+}
+.Save-Btn {
+  width: 300px;
+  margin-top: 10px;
+  border-radius: 30px;
+  border: 0px;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  background: #b3e770;
+  width: 200px;
+  color: #4D4D4D;
 }
 
 .Tooth-Description-Total .Details-Inputs .side-input {
@@ -704,7 +715,89 @@ justify-content: space-around;
   font-size: 20px;
   font-weight: 400;
 }
-/*================== End Patient Details ===============*/
+
+.Details-Inputs input {
+  width: 200px;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #d9d9d9;
+  padding: 10px 0;
+  background: transparent;
+  font-size: 20px;
+  color: #000;
+  text-align: left;
+  transition: 0.3s ease;
+}
+.Tooth-Description-Total .Details-Inputs {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-around;
+}
+.Tooth-Description-Total .Details-Inputs .left-side-input {
+  gap: 50px;
+  display: flex;
+}
+.Tooth-Description-Total .Treatment-Price {
+  width: 100px;
+  margin-top: 80px;
+  justify-content: center;
+  display: flex;
+}
+.Tooth-Description-Total .Treatment-Price input {
+  width: 35px;
+  padding: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+.Tooth-Description-Total .Treatment-Price .left-top-input {
+  border: 0;
+  background: none;
+  outline: none;
+  border-bottom: 3px solid #D9D9D9;
+}
+.Tooth-Description-Total .Treatment-Price .right-top-input {
+  border: 0;
+  background: none;
+  outline: none;
+  border-left: 3px solid #D9D9D9;
+  border-bottom: 3px solid #D9D9D9;
+}
+.Tooth-Description-Total .Treatment-Price .left-bottom-input {
+  border: 0;
+  background: none;
+  outline: none;
+}
+.Tooth-Description-Total .Treatment-Price .right-bottom-input {
+  border: 0;
+  background: none;
+  outline: none;
+  border-left: 3px solid #D9D9D9;
+}
+.Tooth-Description-Total .Treatment-Price-Flex{
+  display: flex;
+justify-content: center;
+gap: 10px;
+align-items: center;
+} 
+.Tooth-Description-Total .Treatment-Price-Flex textarea{
+padding: 10px;
+border: 0;
+border-bottom: 2px solid #D9D9D9;
+background: none;
+outline: none;
+margin-top:80px ;
+} 
+.Tooth-Description-Total .Treatment-Price-Flex .Price-input{
+  margin-top: 100px;
+}
+.Tooth-Description-Total .Popup-Buttons{
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/*===============  End Patient Details =================*/
 
 /*================== Start Treatment Plan ==================*/
 
@@ -924,79 +1017,79 @@ justify-content: space-around;
   text-align: center;
   margin: auto;
 }
-.All-Patient-BG .All-Patient-Header{
+.All-Patient-BG .All-Patient-Header {
   display: flex;
   justify-content: space-around;
 }
-.All-Patient-BG .Appointment-Button{
+.All-Patient-BG .Appointment-Button {
   display: flex;
   align-items: center;
 }
-.All-Patient-BG .Appointment-Button button{
+.All-Patient-BG .Appointment-Button button {
   /* padding: 10px; */
   width: 50px;
   border: none;
   font-size: 30px;
   font-weight: 500;
   color: white;
-  background: #E77070;
+  background: #e77070;
   cursor: pointer;
   border-radius: 50px;
   height: 50px;
 }
-.All-Patient-BG .Appointment-Button h4{
+.All-Patient-BG .Appointment-Button h4 {
   font-size: 20px;
   margin-right: 10px;
   margin-left: 20px;
-font-weight: 400;
-color: #929292;
+  font-weight: 400;
+  color: #929292;
 }
-.All-Patient-BG .Appointment-Button input{
+.All-Patient-BG .Appointment-Button input {
   border: none;
   transition: 0.5s ease;
   padding: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
-  0 3px 40px 0 rgba(0, 0, 0, 0.062);
+    0 3px 40px 0 rgba(0, 0, 0, 0.062);
   outline: none;
-border-radius: 30px;
-width: 300px;
+  border-radius: 30px;
+  width: 300px;
 }
-.All-Patient-BG .All-Patient-Header h2{
+.All-Patient-BG .All-Patient-Header h2 {
   font-size: 40px;
   color: #929292;
   font-weight: 500;
 }
-.All-Patient-BG .First-Patient{
+.All-Patient-BG .First-Patient {
   display: flex;
   justify-content: space-around;
   align-items: center;
-padding: 10px ;
-border-radius: 20px;
+  padding: 10px;
+  border-radius: 20px;
   background-color: white;
   width: 1700px;
   margin: auto;
   gap: 100px;
 }
-.All-Patient-BG .First-Patient .patient-id{
+.All-Patient-BG .First-Patient .patient-id {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.All-Patient-BG .First-Patient .patient-id img{
+.All-Patient-BG .First-Patient .patient-id img {
   border-radius: 50px;
   width: 70px;
   height: 70px;
 }
-.All-Patient-BG .Patients-List{
-margin-top: 50px;
+.All-Patient-BG .Patients-List {
+  margin-top: 50px;
 }
-.All-Patient-BG .Patients-List h4{
+.All-Patient-BG .Patients-List h4 {
   font-size: 20px;
   font-weight: 500;
 }
-.All-Patient-BG .Patients-List p{
+.All-Patient-BG .Patients-List p {
   font-size: 16px;
-  font-weight:500;
+  font-weight: 500;
   color: #929292;
 }
 /*====================== All Patient =================*/

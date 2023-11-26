@@ -22,7 +22,17 @@ const PatientDashboard = () => {
   //two for treatment detail DB
 
   const [Description, setDescription] = useState("");
-  const [Price, setPrice] = useState("");
+  let [Price, setPrice] = useState("");
+  const [Date, setDate] = useState("");
+  const [Time, setTime] = useState("");
+  const [Dentist, setDentist] = useState("");
+  const [TotalPrice, setTotalPrice] = useState("");
+  const [LT, setLT] = useState("0");
+  const [RT, setRT] = useState("0");
+  const [LB, setLB] = useState("0");
+  const [RB, setRB] = useState("0");
+
+
 
   // fetched data's useStates for treatment
 
@@ -65,19 +75,21 @@ const PatientDashboard = () => {
       });
 
       alert("success");
-    } else {
+    } 
+    
+    else {
       alert("all fields are required");
     }
   };
 
   const backtodata = async () => {
-    if (Description != "" && Price != "" && Clientid != "") {
+    if (Description != "" && Price != "" && Clientid != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
       const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
-        body: JSON.stringify({ Description, Price, Clientid }),
+        body: JSON.stringify({ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
       });
       alert("success");
-      window.location.href = "/PatientDashboard";
+    
     } else {
       alert("can't be empty");
     }
@@ -96,10 +108,10 @@ const PatientDashboard = () => {
   const [arr, setArr] = useState([]);
 
   const addInput = async () => {
-    if (Description != "" && Price != "" && Clientid != "") {
+    if (Description != "" && Price != "" && Clientid != "" && TotalPrice != "" && Dentist != ""  && Date != "" && Time != "") {
       const getdata = await fetch("/api/treatmentdetails", {
         method: "POST",
-        body: JSON.stringify({ Description, Price, Clientid }),
+        body: JSON.stringify({Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
       });
 
       setArr((s) => {
@@ -305,6 +317,10 @@ const PatientDashboard = () => {
               </div>
             </div>
           </div>
+
+
+
+
           <div className="Details-Inputs">
             <div className="fake-input-flex">
               <div className="fake-input">
@@ -322,6 +338,10 @@ const PatientDashboard = () => {
             </div>
           </div>
 
+
+
+
+
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
             position="center"
@@ -329,12 +349,13 @@ const PatientDashboard = () => {
             <div className="Tooth-Description-Total">
               <div className="Details-Inputs">
                 <div className="left-side-input">
+
                   <div className="Patient-Details-Inputs">
                     <input
                       type="text"
                       name="date"
                       onChange={(e) => {
-                        setDateofregistration(e.target.value);
+                        setDate(e.target.value);
                       }}
                       id="date"
                       className="input-field-1"
@@ -345,13 +366,14 @@ const PatientDashboard = () => {
                       Date :
                     </label>
                   </div>
+
                   <div>
                     <div className="Patient-Details-Inputs">
                       <input
                         type="text"
                         name="time"
                         onChange={(e) => {
-                          setDateofregistration(e.target.value);
+                          setTime(e.target.value);
                         }}
                         id="time"
                         className="input-field-1"
@@ -363,12 +385,14 @@ const PatientDashboard = () => {
                       </label>
                     </div>
                   </div>
+
+
                   <div className="Patient-Details-Inputs">
                     <input
                       type="text"
                       name="dentist"
                       onChange={(e) => {
-                        setDateofregistration(e.target.value);
+                        setDentist(e.target.value);
                       }}
                       id="dentist"
                       className="input-field-1"
@@ -379,15 +403,17 @@ const PatientDashboard = () => {
                       Dentist :
                     </label>
                   </div>
+
                 </div>
+
                 <div>
                   <div className="Patient-Details-Inputs">
                     <input
                       type="text"
                       name="total-price"
-                      onChange={(e) => {
-                        setDateofregistration(e.target.value);
-                      }}
+                      
+                      value={Price}
+                      onChange={(e)=>{setTotalPrice(e.target.value)}}
                       id="total-price"
                       className="input-field-1"
                       placeholder="total-price"
@@ -399,9 +425,8 @@ const PatientDashboard = () => {
                   </div>
                 </div>
 
-                {arr.map((item, i) => {
-                  return <></>;
-                })}
+
+                
               </div>
               <div className="Treatment-Price-Flex">
                 <div className="Treatment-Price">
@@ -409,59 +434,160 @@ const PatientDashboard = () => {
                     <input
                       className="left-top-input"
                       type="text"
-                      maxLength={1}
+                      value={LT}
+                      maxLength={2}
+                      onChange={(e) => {
+                        setLT(e.target.value);
+                      }}
                     />
                     <input
                       className="right-top-input"
                       type="text"
-                      maxLength={1}
+                      maxLength={2}
+                      value={RT}
+                      onChange={(e) => {
+                        setRT(e.target.value);
+                      }}
                     />
                     <input
                       className="left-bottom-input"
                       type="text"
-                      maxLength={1}
+                      maxLength={2}
+                      value={LB}
+                      onChange={(e) => {
+                        setLB(e.target.value);
+                      }}
                     />
                     <input
                       className="right-bottom-input"
                       type="text"
-                      maxLength={1}
+                      maxLength={2}
+                      value={RB}
+                      onChange={(e) => {
+                        setRB(e.target.value);
+                      }}
+
                     />
                   </div>
                 </div>
+
                 <div>
-                  <textarea name="" id="" cols="128" rows="3"></textarea>
+                  <textarea onChange={(e) => {  setDescription(e.target.value)}} name="" id="" cols="128" rows="3"></textarea>
                 </div>
+
                 <div>
                   <div className="Price-input">
-                <div className="Patient-Details-Inputs">
-                    <input
-                      type="text"
-                      name="price"
-                      onChange={(e) => {
-                        setDateofregistration(e.target.value);
-                      }}
-                      id="price"
-                      className="input-field-1"
-                      placeholder="price"
-                      autoComplete="off"
-                    />
-                    <label for="price" className="input-label">
-                    Price :
-                    </label>
-                  </div>
+                    <div className="Patient-Details-Inputs">
+                      <input
+                        type="text"
+                        name="price"
+                        onChange={(e) => {
+                          setPrice(e.target.value);
+                        }}
+                        id="price"
+                        className="input-field-1"
+                        placeholder="price"
+                        autoComplete="off"
+                      />
+                      <label for="price" className="input-label">
+                        Price :
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
-<div className='Popup-Buttons'>
-              <div>
-                <button onClick={addInput} className="Add-Btn">
-                  +
+
+
+              {
+
+arr.map((item, i) => {
+  
+  return <>
+  
+  <div className="Treatment-Price-Flex">
+<div className="Treatment-Price">
+<div>
+  <input
+    className="left-top-input"
+    type="text"
+    value={LT}
+    maxLength={2}
+    onChange={(e) => {
+      setLT(e.target.value);
+    }}
+  />
+  <input
+    className="right-top-input"
+    type="text"
+    maxLength={2}
+    value={RT}
+    onChange={(e) => {
+      setRT(e.target.value);
+    }}
+  />
+  <input
+    className="left-bottom-input"
+    type="text"
+    maxLength={2}
+    value={LB}
+    onChange={(e) => {
+      setLB(e.target.value);
+    }}
+  />
+  <input
+    className="right-bottom-input"
+    type="text"
+    maxLength={2}
+    value={RB}
+    onChange={(e) => {
+      setRB(e.target.value);
+    }}
+
+  />
+</div>
+</div>
+
+<div>
+<textarea onChange={(e) => {  setDescription(e.target.value)}} name="" id="" cols="128" rows="3"></textarea>
+</div>
+
+<div>
+<div className="Price-input">
+  <div className="Patient-Details-Inputs">
+    <input
+      type="text"
+      name="price"
+      onChange={(e) => {
+        setPrice(e.target.value);
+      }}
+   
+      id="price"
+      className="input-field-1"
+      placeholder="price"
+      autoComplete="off"
+    />
+    <label for="price" className="input-label">
+      Price :
+    </label>
+  </div>
+</div>
+</div>
+</div><br></br>
+  
+  </>;
+})}
+
+
+              <div className='Popup-Buttons'>
+                <div>
+                  <button onClick={addInput} className="Add-Btn">
+                    +
+                  </button>
+                </div>
+                <button onClick={backtodata} className="Save-Btn">
+                  Submit
                 </button>
               </div>
-              <button className="Save-Btn">
-            Submit
-          </button>
-            </div>
             </div>
           </Popup>
           <button onClick={myfun} className="Save-Btn">

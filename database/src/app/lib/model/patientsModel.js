@@ -4,14 +4,14 @@ import mongooseUniqueValidator from "mongoose-unique-validator";
 const mModel = new mongoose.Schema({
 
     Name: String,
-    Email:  {type: String, index: true, unique: true, required: true },
+    Email: String,
     Number: String,
     Dateofbirth: String,
     Bloodgroup: String,
     Sex: String,
     Memberstatus: String,
     Dateofregistration: String,
-    Clientid: String
+    Clientid:  {type: String, index: true, unique: true, required: true }
 });
 
 mModel.plugin(mongooseUniqueValidator);

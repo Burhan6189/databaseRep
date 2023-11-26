@@ -1,7 +1,5 @@
 "use client";
-import { DBcon } from "@/app/lib/dbconnection";
-import { treatmentModel } from "@/app/lib/model/treatmentInfoModel";
-import mongoose from "mongoose";
+
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 

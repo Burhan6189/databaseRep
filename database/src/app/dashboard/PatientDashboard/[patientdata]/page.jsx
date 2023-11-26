@@ -1,4 +1,7 @@
 "use client";
+import { DBcon } from "@/app/lib/dbconnection";
+import { treatmentModel } from "@/app/lib/model/treatmentInfoModel";
+import mongoose from "mongoose";
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
@@ -11,14 +14,13 @@ const currentDate = date + "/" + month + "/" + year;
 
 
 
-
-
 const patientdata = (props) => {
 
-// this id is getting from url
+// this id is getting from url to show data
+
     const id =  props.params.patientdata;
 
-// fetching data based on specific id
+// fetching data based on specific id in belowed function
 
     const viewdata = async()=>{
 
@@ -37,10 +39,11 @@ const patientdata = (props) => {
 
     }
 
-    // to print data
+    // to print data using useEffect
+
     useEffect(()=>{viewdata()}, []);
 
-// declaration
+// declaration of fields
 
     const [Name, setName] = useState("");
     const [Email, setEmail] = useState("");
@@ -52,7 +55,7 @@ const patientdata = (props) => {
     const [Dateofregistration, setDateofregistration] = useState("");
     const [Clientid, setClientid] = useState("");
 
-    //two for treatment detail DB
+    //All fields on POP up for treatment detail DB
 
     const [Description, setDescription] = useState("");
     let [Price, setPrice] = useState("");
@@ -72,16 +75,37 @@ const patientdata = (props) => {
     const [TreatmentData, setTreatmentData] = useState([]);
 
     const treatmentdata = async () => {
+
+        
+
         const fetchtreatment = await fetch("/api/treatmentdetails");
         const jsontreatment = await fetchtreatment.json();
+        
         setTreatmentData(jsontreatment);
-    };
+
+        // jsontreatment.map((items)=>{
+        //     if(items.Clientid===Clientid){
+        //         setDescription(items.Description);
+        //         setPrice(items.Price);
+        //         setDate(items.Date);
+        //         setTime(items.Time);
+        //         setDentist(items.Dentist);
+        //         setTotalPrice(items.TotalPrice);
+        //         setLT(items.LT);
+        //         setRT(items.RT);
+        //         setLB(items.LB);
+        //         setRB(items.RB);
+        //     }
+        // })
+
+
+    }
     useEffect(() => {
         treatmentdata();
     }, []);
 
+    // PUT function to update data on output
 
-    // function to update data on output
     const myupdate = async () => {
         if (
             Name != "" &&
@@ -116,7 +140,7 @@ const patientdata = (props) => {
     };
 
 
-// on submit treatment data save to db
+//for POPUP on submit button -- treatment data will save to db
 
     const backtodata = async () => {
         if (Description != "" && Price != "" && Clientid != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
@@ -186,7 +210,7 @@ const patientdata = (props) => {
     };
 
     // html or react output is below
-    
+
 
     return (
         <>
@@ -207,13 +231,13 @@ const patientdata = (props) => {
                             <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
                             <div>
                                 <h3>Muzzamil Rafique</h3>
-                                <p>Desigination</p>
+                                <p>Super Admin</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="Main-Div">
-                    <h3>PATIENT Data View</h3>
+                    <h3>PATIENT DETAILS</h3>
                     <div className="Input-Flex">
                         <div className="row-1">
                             <div className="Patient-Details-Inputs">
@@ -385,6 +409,7 @@ const patientdata = (props) => {
                             </div>
                             <div className="fake-input-long">
                                 <h4>Treatment</h4>
+                            
                             </div>
                             <div className="fake-input">
                                 <h4>Dentist</h4>
@@ -392,10 +417,9 @@ const patientdata = (props) => {
                             <div className="fake-input">
                                 <h4>Total Price</h4>
                             </div>
+
                         </div>
                     </div>
-
-
 
 
 

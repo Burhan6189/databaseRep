@@ -22,7 +22,7 @@ const PatientDashboard = () => {
   //two for treatment detail DB
 
   const [Description, setDescription] = useState("");
-  let [Price, setPrice] = useState("");
+  const [Price, setPrice] = useState("");
   const [Date, setDate] = useState("");
   const [Time, setTime] = useState("");
   const [Dentist, setDentist] = useState("");
@@ -36,16 +36,17 @@ const PatientDashboard = () => {
 
   // fetched data's useStates for treatment
 
-  const [TreatmentData, setTreatmentData] = useState([]);
+  // const [TreatmentData, setTreatmentData] = useState([]);
 
-  const treatmentdata = async () => {
-    const fetchtreatment = await fetch("/api/treatmentdetails");
-    const jsontreatment = await fetchtreatment.json();
-    setTreatmentData(jsontreatment);
-  };
-  useEffect(() => {
-    treatmentdata();
-  }, []);
+  // const treatmentdata = async () => {
+  //   const fetchtreatment = await fetch("/api/treatmentdetails");
+  //   const jsontreatment = await fetchtreatment.json();
+  //   setTreatmentData(jsontreatment);
+  // };
+  // useEffect(() => {
+  //   treatmentdata();
+  // }, []);
+
 
   const myfun = async () => {
     if (
@@ -71,8 +72,19 @@ const PatientDashboard = () => {
           Memberstatus,
           Dateofregistration,
           Clientid,
-        }),
-      });
+          Treatment:[
+            {Description,
+            Price,
+            Date,
+            Time,
+            Dentist,
+            TotalPrice,
+            LT,
+            RT,
+            LB,
+            RB}]
+           
+      }) })
 
       alert("success");
     } 
@@ -82,11 +94,14 @@ const PatientDashboard = () => {
     }
   };
 
+
+// on sumbit popup
+
   const backtodata = async () => {
-    if (Description != "" && Price != "" && Clientid != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
-      const getdata = await fetch("/api/treatmentdetails", {
+    if (Description != "" && Price != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
+      const getdata = await fetch("/api/patientdetails", {
         method: "POST",
-        body: JSON.stringify({ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
+        body: JSON.stringify({ Treatment:[ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price ] }),
       });
       alert("success");
     
@@ -94,6 +109,19 @@ const PatientDashboard = () => {
       alert("can't be empty");
     }
   };
+
+  // const backtodata = async () => {
+  //   if (Description != "" && Price != "" && Clientid != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
+  //     const getdata = await fetch("/api/treatmentdetails", {
+  //       method: "POST",
+  //       body: JSON.stringify({ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
+  //     });
+  //     alert("success");
+    
+  //   } else {
+  //     alert("can't be empty");
+  //   }
+  // };
 
   const inputArr = [
     {
@@ -108,10 +136,10 @@ const PatientDashboard = () => {
   const [arr, setArr] = useState([]);
 
   const addInput = async () => {
-    if (Description != "" && Price != "" && Clientid != "" && TotalPrice != "" && Dentist != ""  && Date != "" && Time != "") {
-      const getdata = await fetch("/api/treatmentdetails", {
+    if (Description != "" && Price != "" && TotalPrice != "" && Dentist != ""  && Date != "" && Time != "") {
+      const getdata = await fetch("/api/patientdetails", {
         method: "POST",
-        body: JSON.stringify({Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
+        body: JSON.stringify({ Treatment:[ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price ] }),
       });
 
       setArr((s) => {
@@ -127,8 +155,9 @@ const PatientDashboard = () => {
     } else {
       alert("cant be empty");
     }
-  };
+  }
 
+  // not used till
   const handleChange = (e) => {
     e.preventDefault();
 
@@ -140,6 +169,9 @@ const PatientDashboard = () => {
       return newArr;
     });
   };
+
+
+// react output body
 
   return (
     <>
@@ -412,7 +444,7 @@ const PatientDashboard = () => {
                       type="text"
                       name="total-price"
                       
-                      value={Price}
+                      
                       onChange={(e)=>{setTotalPrice(e.target.value)}}
                       id="total-price"
                       className="input-field-1"
@@ -548,7 +580,7 @@ arr.map((item, i) => {
 </div>
 
 <div>
-<textarea onChange={(e) => {  setDescription(e.target.value)}} name="" id="" cols="128" rows="3"></textarea>
+<textarea onChange={(e) => {  setDescription(e.target.value)}} name="" id="" value={Description} cols="128" rows="3"></textarea>
 </div>
 
 <div>

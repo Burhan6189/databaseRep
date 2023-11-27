@@ -439,18 +439,17 @@ const patientdata = (props) => {
           <div className="Fill-Inputs">
             <div className="fill-input-flex">
               <div className="fill-input">
-          <input type="text" />
-          <input type="text" />
+                <input type="text" />
+                <input type="text" />
               </div>
               <div className="fill-input-long">
-              <input type="text" />
+                <input type="text" />
               </div>
               <div className="fill-input">
-              <input type="text" />
+                <input type="text" />
               </div>
               <div className="fill-input">
-          <input type="text" />
-                
+                <input type="text" />
               </div>
             </div>
           </div>

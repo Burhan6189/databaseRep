@@ -435,7 +435,7 @@ const PatientDashboard = () => {
                   <div className="Price-input">
                 <div className="Patient-Details-Inputs">
                     <input
-                      type="text"
+                      type="number"
                       name="price"
                       onChange={(e) => {
                         setDateofregistration(e.target.value);

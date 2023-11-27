@@ -776,7 +776,7 @@
 .Tooth-Description-Total .Treatment-Price-Flex{
   display: flex;
 justify-content: center;
-gap: 10px;
+gap: 20px;
 align-items: center;
 } 
 .Tooth-Description-Total .Treatment-Price-Flex textarea{

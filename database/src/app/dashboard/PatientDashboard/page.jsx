@@ -534,7 +534,7 @@ const PatientDashboard = () => {
                           <input
                             className="left-top-input"
                             type="text"
-                            value={LT}
+                            value={i.LT}
                             maxLength={2}
                             onChange={(e) => {
                               setLT(e.target.value);
@@ -544,7 +544,7 @@ const PatientDashboard = () => {
                             className="right-top-input"
                             type="text"
                             maxLength={2}
-                            value={RT}
+                            value={i.RT}
                             onChange={(e) => {
                               setRT(e.target.value);
                             }}
@@ -553,7 +553,7 @@ const PatientDashboard = () => {
                             className="left-bottom-input"
                             type="text"
                             maxLength={2}
-                            value={LB}
+                            value={i.LB}
                             onChange={(e) => {
                               setLB(e.target.value);
                             }}
@@ -562,7 +562,7 @@ const PatientDashboard = () => {
                             className="right-bottom-input"
                             type="text"
                             maxLength={2}
-                            value={RB}
+                            value={i.RB}
                             onChange={(e) => {
                               setRB(e.target.value);
                             }}

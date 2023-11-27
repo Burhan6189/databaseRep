@@ -67,41 +67,7 @@ const patientdata = (props) => {
     const [RB, setRB] = useState("");
 
 
-
-    // fetched data's useStates for treatment
-
-    const [TreatmentData, setTreatmentData] = useState([]);
-
-    const treatmentdata = async () => {
-
-        
-
-        const fetchtreatment = await fetch("/api/treatmentdetails");
-        const jsontreatment = await fetchtreatment.json();
-        
-        setTreatmentData(jsontreatment);
-
-        // jsontreatment.map((items)=>{
-        //     if(items.Clientid===Clientid){
-        //         setDescription(items.Description);
-        //         setPrice(items.Price);
-        //         setDate(items.Date);
-        //         setTime(items.Time);
-        //         setDentist(items.Dentist);
-        //         setTotalPrice(items.TotalPrice);
-        //         setLT(items.LT);
-        //         setRT(items.RT);
-        //         setLB(items.LB);
-        //         setRB(items.RB);
-        //     }
-        // })
-
-
-    }
-    useEffect(() => {
-        treatmentdata();
-    }, []);
-
+    
     // PUT function to update data on output
 
     const myupdate = async () => {

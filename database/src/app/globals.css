@@ -1172,6 +1172,11 @@ margin-top:80px ;
   color: #929292;
   font-weight: 500;
 }
+.All-Patient-BG .All-Patient-Header h2 span {
+  font-size: 40px;
+  color: #B3E770;
+  font-weight: 500;
+}
 .All-Patient-BG .First-Patient {
   display: flex;
   justify-content: space-around;

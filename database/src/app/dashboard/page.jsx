@@ -41,6 +41,10 @@ const dashboard = () => {
             </div>
           </div>
 
+          <a
+            style={{ textDecoration: "none" }}
+            href="/dashboard/AllPatient"
+          >
           <div className="Box-03">
             <div className="Icon-Circle">
               <img src="/img/icon01.png" alt="" />
@@ -54,6 +58,8 @@ const dashboard = () => {
               </p>
             </div>
           </div>
+</a>
+
         </div>
         <div className="Bottom-Text">
           <p>

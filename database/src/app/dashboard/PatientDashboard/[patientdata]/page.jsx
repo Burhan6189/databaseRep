@@ -51,54 +51,47 @@ const patientdata = (props) => {
 
   //All fields on POP up for treatment detail DB
 
-    const [Description, setDescription] = useState("");
-    let [Price, setPrice] = useState("");
-    const [Date, setDate] = useState("");
-    const [Time, setTime] = useState("");
-    const [Dentist, setDentist] = useState("");
-    const [TotalPrice, setTotalPrice] = useState("");
-    const [LT, setLT] = useState("");
-    const [RT, setRT] = useState("");
-    const [LB, setLB] = useState("");
-    const [RB, setRB] = useState("");
+  const [Description, setDescription] = useState("");
+  let [Price, setPrice] = useState("");
+  const [Date, setDate] = useState("");
+  const [Time, setTime] = useState("");
+  const [Dentist, setDentist] = useState("");
+  const [TotalPrice, setTotalPrice] = useState("");
+  const [LT, setLT] = useState("");
+  const [RT, setRT] = useState("");
+  const [LB, setLB] = useState("");
+  const [RB, setRB] = useState("");
 
+  // fetched data's useStates for treatment
 
+  const [TreatmentData, setTreatmentData] = useState([]);
 
-    // fetched data's useStates for treatment
+  const treatmentdata = async () => {
+    const fetchtreatment = await fetch("/api/treatmentdetails");
+    const jsontreatment = await fetchtreatment.json();
 
-    const [TreatmentData, setTreatmentData] = useState([]);
+    setTreatmentData(jsontreatment);
 
-    const treatmentdata = async () => {
+    // jsontreatment.map((items)=>{
+    //     if(items.Clientid===Clientid){
+    //         setDescription(items.Description);
+    //         setPrice(items.Price);
+    //         setDate(items.Date);
+    //         setTime(items.Time);
+    //         setDentist(items.Dentist);
+    //         setTotalPrice(items.TotalPrice);
+    //         setLT(items.LT);
+    //         setRT(items.RT);
+    //         setLB(items.LB);
+    //         setRB(items.RB);
+    //     }
+    // })
+  };
+  useEffect(() => {
+    treatmentdata();
+  }, []);
 
-        
-
-        const fetchtreatment = await fetch("/api/treatmentdetails");
-        const jsontreatment = await fetchtreatment.json();
-        
-        setTreatmentData(jsontreatment);
-
-        // jsontreatment.map((items)=>{
-        //     if(items.Clientid===Clientid){
-        //         setDescription(items.Description);
-        //         setPrice(items.Price);
-        //         setDate(items.Date);
-        //         setTime(items.Time);
-        //         setDentist(items.Dentist);
-        //         setTotalPrice(items.TotalPrice);
-        //         setLT(items.LT);
-        //         setRT(items.RT);
-        //         setLB(items.LB);
-        //         setRB(items.RB);
-        //     }
-        // })
-
-
-    }
-    useEffect(() => {
-        treatmentdata();
-    }, []);
-
-    // PUT function to update data on output
+  // PUT function to update data on output
 
   const myupdate = async () => {
     if (
@@ -443,7 +436,25 @@ const patientdata = (props) => {
               </div>
             </div>
           </div>
-          <div className="Tooth-Description-Fixed">
+          <div className="Fill-Inputs">
+            <div className="fill-input-flex">
+              <div className="fill-input">
+          <input type="text" />
+          <input type="text" />
+              </div>
+              <div className="fill-input-long">
+              <input type="text" />
+              </div>
+              <div className="fill-input">
+              <input type="text" />
+              </div>
+              <div className="fill-input">
+          <input type="text" />
+                
+              </div>
+            </div>
+          </div>
+          {/* <div className="Tooth-Description-Fixed">
             <div className="Treatment-Price-Flex">
               <div className="Treatment-Price">
                 <div>
@@ -520,7 +531,7 @@ const patientdata = (props) => {
               </div>
             </div>
             <br></br>
-          </div>
+          </div> */}
 
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}

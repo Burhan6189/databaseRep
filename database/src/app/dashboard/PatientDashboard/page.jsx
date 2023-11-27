@@ -477,22 +477,22 @@ const PatientDashboard = () => {
 
                 <div>
                   <div className="Price-input">
-                    <div className="Patient-Details-Inputs">
-                      <input
-                        type="text"
-                        name="price"
-                        onChange={(e) => {
-                          setPrice(e.target.value);
-                        }}
-                        id="price"
-                        className="input-field-1"
-                        placeholder="price"
-                        autoComplete="off"
-                      />
-                      <label for="price" className="input-label">
-                        Price :
-                      </label>
-                    </div>
+                <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="price"
+                      onChange={(e) => {
+                        setDateofregistration(e.target.value);
+                      }}
+                      id="price"
+                      className="input-field-1"
+                      placeholder="price"
+                      autoComplete="off"
+                    />
+                    <label for="price" className="input-label">
+                    Price :
+                    </label>
+                  </div>
                   </div>
                 </div>
               </div>

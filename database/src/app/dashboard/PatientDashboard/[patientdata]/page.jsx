@@ -9,51 +9,47 @@ const year = today.getFullYear();
 const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
-
-
-
 const patientdata = (props) => {
+  // this id is getting from url to show data
 
-// this id is getting from url to show data
+  const id = props.params.patientdata;
 
-    const id =  props.params.patientdata;
+  // fetching data based on specific id in belowed function
 
-// fetching data based on specific id in belowed function
+  const viewdata = async () => {
+    const data = await fetch("http://localhost:3000/api/patientdetails/" + id);
+    const jsondata = await data.json();
 
-    const viewdata = async()=>{
+    setName(jsondata.Name);
+    setEmail(jsondata.Email);
+    setNumber(jsondata.Number);
+    setDateofbirth(jsondata.Dateofbirth);
+    setBloodgroup(jsondata.Bloodgroup);
+    setSex(jsondata.Sex);
+    setMemberstatus(jsondata.Memberstatus);
+    setDateofregistration(jsondata.Dateofregistration);
+    setClientid(jsondata.Clientid);
+  };
 
-        const data = await fetch("http://localhost:3000/api/patientdetails/"+id);
-        const jsondata = await data.json();
+  // to print data using useEffect
 
-        setName(jsondata.Name);
-        setEmail(jsondata.Email);
-        setNumber(jsondata.Number);
-        setDateofbirth(jsondata.Dateofbirth);
-        setBloodgroup(jsondata.Bloodgroup);
-        setSex(jsondata.Sex);
-        setMemberstatus(jsondata.Memberstatus);
-        setDateofregistration(jsondata.Dateofregistration);
-        setClientid(jsondata.Clientid);
+  useEffect(() => {
+    viewdata();
+  }, []);
 
-    }
+  // declaration of fields
 
-    // to print data using useEffect
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Number, setNumber] = useState("");
+  const [Dateofbirth, setDateofbirth] = useState("");
+  const [Bloodgroup, setBloodgroup] = useState("");
+  const [Sex, setSex] = useState("");
+  const [Memberstatus, setMemberstatus] = useState("");
+  const [Dateofregistration, setDateofregistration] = useState("");
+  const [Clientid, setClientid] = useState("");
 
-    useEffect(()=>{viewdata()}, []);
-
-// declaration of fields
-
-    const [Name, setName] = useState("");
-    const [Email, setEmail] = useState("");
-    const [Number, setNumber] = useState("");
-    const [Dateofbirth, setDateofbirth] = useState("");
-    const [Bloodgroup, setBloodgroup] = useState("");
-    const [Sex, setSex] = useState("");
-    const [Memberstatus, setMemberstatus] = useState("");
-    const [Dateofregistration, setDateofregistration] = useState("");
-    const [Clientid, setClientid] = useState("");
-
-    //All fields on POP up for treatment detail DB
+  //All fields on POP up for treatment detail DB
 
     const [Description, setDescription] = useState("");
     let [Price, setPrice] = useState("");
@@ -67,582 +63,725 @@ const patientdata = (props) => {
     const [RB, setRB] = useState("");
 
 
-    
+
+    // fetched data's useStates for treatment
+
+    const [TreatmentData, setTreatmentData] = useState([]);
+
+    const treatmentdata = async () => {
+
+        
+
+        const fetchtreatment = await fetch("/api/treatmentdetails");
+        const jsontreatment = await fetchtreatment.json();
+        
+        setTreatmentData(jsontreatment);
+
+        // jsontreatment.map((items)=>{
+        //     if(items.Clientid===Clientid){
+        //         setDescription(items.Description);
+        //         setPrice(items.Price);
+        //         setDate(items.Date);
+        //         setTime(items.Time);
+        //         setDentist(items.Dentist);
+        //         setTotalPrice(items.TotalPrice);
+        //         setLT(items.LT);
+        //         setRT(items.RT);
+        //         setLB(items.LB);
+        //         setRB(items.RB);
+        //     }
+        // })
+
+
+    }
+    useEffect(() => {
+        treatmentdata();
+    }, []);
+
     // PUT function to update data on output
 
-    const myupdate = async () => {
-        if (
-            Name != "" &&
-            Email != "" &&
-            Number != "" &&
-            Dateofbirth != "" &&
-            Bloodgroup != "" &&
-            Sex != "" &&
-            Memberstatus != "" &&
-            Dateofregistration != "" &&
-            Clientid != ""
-        ) {
-            const data = await fetch("/api/patientdetails/"+id, {
-                method: "PUT",
-                body: JSON.stringify({
-                    Name,
-                    Email,
-                    Number,
-                    Dateofbirth,
-                    Bloodgroup,
-                    Sex,
-                    Memberstatus,
-                    Dateofregistration,
-                    Clientid,
-                }),
-            });
+  const myupdate = async () => {
+    if (
+      Name != "" &&
+      Email != "" &&
+      Number != "" &&
+      Dateofbirth != "" &&
+      Bloodgroup != "" &&
+      Sex != "" &&
+      Memberstatus != "" &&
+      Dateofregistration != "" &&
+      Clientid != ""
+    ) {
+      const data = await fetch("/api/patientdetails/" + id, {
+        method: "PUT",
+        body: JSON.stringify({
+          Name,
+          Email,
+          Number,
+          Dateofbirth,
+          Bloodgroup,
+          Sex,
+          Memberstatus,
+          Dateofregistration,
+          Clientid,
+        }),
+      });
 
-            alert("Successfully Updated");
-        } else {
-            alert("all fields are required");
-        }
-    };
+      alert("Successfully Updated");
+    } else {
+      alert("all fields are required");
+    }
+  };
 
+  //for POPUP on submit button -- treatment data will save to db
 
-//for POPUP on submit button -- treatment data will save to db
+  const backtodata = async () => {
+    if (
+      Description != "" &&
+      Price != "" &&
+      Clientid != "" &&
+      Date != "" &&
+      Time != "" &&
+      Dentist != "" &&
+      TotalPrice != ""
+    ) {
+      const getdata = await fetch("/api/treatmentdetails", {
+        method: "POST",
+        body: JSON.stringify({
+          Date,
+          Time,
+          Dentist,
+          TotalPrice,
+          LT,
+          RT,
+          LB,
+          RB,
+          Description,
+          Price,
+          Clientid,
+        }),
+      });
+      alert("success");
+    } else {
+      alert("can't be empty");
+    }
+  };
 
-    const backtodata = async () => {
-        if (Description != "" && Price != "" && Clientid != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
-            const getdata = await fetch("/api/treatmentdetails", {
-                method: "POST",
-                body: JSON.stringify({ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
-            });
-            alert("success");
+  // below array is not used
+  const inputArr = [
+    {
+      type: "text",
+      id: 1,
+      value: "",
+    },
+  ];
 
-        } else {
-            alert("can't be empty");
-        }
-    };
+  // this is to add popup data with client id from patient details
 
+  const [arr, setArr] = useState([]);
 
+  // used to add new textboxes in popup to save data
 
+  const addInput = async () => {
+    if (
+      Description != "" &&
+      Price != "" &&
+      Clientid != "" &&
+      TotalPrice != "" &&
+      Dentist != "" &&
+      Date != "" &&
+      Time != ""
+    ) {
+      const getdata = await fetch("/api/treatmentdetails", {
+        method: "POST",
+        body: JSON.stringify({
+          Date,
+          Time,
+          Dentist,
+          TotalPrice,
+          LT,
+          RT,
+          LB,
+          RB,
+          Description,
+          Price,
+          Clientid,
+        }),
+      });
 
-    // below array is not used
-    const inputArr = [
-        {
+      setArr((s) => {
+        return [
+          ...s,
+          {
             type: "text",
-            id: 1,
             value: "",
-        },
-    ];
+          },
+        ];
+      });
+      alert("success");
+    } else {
+      alert("cant be empty");
+    }
+  };
 
-    // this is to add popup data with client id from patient details
+  // not used till now
 
-    const [arr, setArr] = useState([]);
+  const handleChange = (e) => {
+    e.preventDefault();
 
-    // used to add new textboxes in popup to save data
+    const index = e.target.id;
+    setArr((s) => {
+      const newArr = s.slice();
+      newArr[index].value = e.target.value;
 
-    const addInput = async () => {
-        if (Description != "" && Price != "" && Clientid != "" && TotalPrice != "" && Dentist != "" && Date != "" && Time != "") {
-            const getdata = await fetch("/api/treatmentdetails", {
-                method: "POST",
-                body: JSON.stringify({ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
-            });
+      return newArr;
+    });
+  };
 
-            setArr((s) => {
-                return [
-                    ...s,
-                    {
-                        type: "text",
-                        value: "",
-                    },
-                ];
-            });
-            alert("success");
-        } else {
-            alert("cant be empty");
-        }
-    };
+  // html or react output is below
 
-    // not used till now
-
-    const handleChange = (e) => {
-        e.preventDefault();
-
-        const index = e.target.id;
-        setArr((s) => {
-            const newArr = s.slice();
-            newArr[index].value = e.target.value;
-
-            return newArr;
-        });
-    };
-
-    // html or react output is below
-
-
-    return (
-        <>
-            <div className="Patient-Details-BG">
-                <div className="Header">
-                    <div className="Header-Flex">
-                        <div>
-                            <img src="/img/image.png" alt="" />
-                        </div>
-                        <div>
-                            <img
-                                className="Logo"
-                                src="http://www.fhgroupoc.com/svg/fhlogog.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div className="User-Login">
-                            <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
-                            <div>
-                                <h3>Muzzamil Rafique</h3>
-                                <p>Super Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="Main-Div">
-                    <h3>PATIENT DETAILS</h3>
-                    <div className="Input-Flex">
-                        <div className="row-1">
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="clientid"
-                                    name="clientid"
-                                    onChange={(e) => {
-                                        setClientid(e.target.value);
-                                    }}
-                                    id="clientid"
-                                    value={Clientid}
-                                    className="input-field-1"
-                                    placeholder="clientid"
-                                    disabled
-                                    autoComplete="off"
-                                />
-                                <label for="clientid" className="input-label">
-                                    Client ID :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="name"
-                                    name="name"
-                                    onChange={(e) => {
-                                        setName(e.target.value);
-                                    }}
-                                    value={Name}
-                                    id="name"
-                                    className="input-field-1"
-                                    placeholder="name"
-                                    autoComplete="off"
-                                />
-                                <label for="name" className="input-label">
-                                    Name :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="text"
-                                    name="email"
-                                    onChange={(e) => {
-                                        setEmail(e.target.value);
-                                    }}
-                                    value={Email}
-                                    id="email"
-                                    className="input-field-1"
-                                    placeholder="email"
-                                    autoComplete="off"
-                                />
-                                <label for="email" className="input-label">
-                                    Email :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="text"
-                                    name="number"
-                                    onChange={(e) => {
-                                        setNumber(e.target.value);
-                                    }}
-                                    value={Number}
-                                    id="number"
-                                    className="input-field-1"
-                                    placeholder="number"
-                                    autoComplete="off"
-                                />
-                                <label for="number" className="input-label">
-                                    Number :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="text"
-                                    name="dateofbirth"
-                                    onChange={(e) => {
-                                        setDateofbirth(e.target.value);
-                                    }}
-                                    value={Dateofbirth}
-                                    id="dateofbirth"
-                                    className="input-field-1"
-                                    placeholder="dateofbirth"
-                                    autoComplete="off"
-                                />
-                                <label for="dateofbirth" className="input-label">
-                                    Date of Birth :
-                                </label>
-                            </div>
-                        </div>
-                        <div className="row-2">
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="sex"
-                                    name="sex"
-                                    onChange={(e) => {
-                                        setSex(e.target.value);
-                                    }}
-                                    value={Sex}
-                                    id="sex"
-                                    className="input-field-1"
-                                    placeholder="sex"
-                                    autoComplete="off"
-                                />
-                                <label for="sex" className="input-label">
-                                    Sex :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="bloodgroup"
-                                    name="bloodgroup"
-                                    onChange={(e) => {
-                                        setBloodgroup(e.target.value);
-                                    }}
-                                    value={Bloodgroup}
-                                    id="bloodgroup"
-                                    className="input-field-1"
-                                    placeholder="bloodgroup"
-                                    autoComplete="off"
-                                />
-                                <label for="bloodgroup" className="input-label">
-                                    Blood Group :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="text"
-                                    name="memberstatus"
-                                    onChange={(e) => {
-                                        setMemberstatus(e.target.value);
-                                    }}
-                                    value={Memberstatus}
-                                    id="memberstatus"
-                                    className="input-field-1"
-                                    placeholder="memberstatus"
-                                    autoComplete="off"
-                                />
-                                <label for="memberstatus" className="input-label">
-                                    Member Status :
-                                </label>
-                            </div>
-                            <div className="Patient-Details-Inputs">
-                                <input
-                                    type="text"
-                                    name="dateofregistration"
-                                    onChange={(e) => {
-                                        setDateofregistration(e.target.value);
-                                    }}
-                                    value={Dateofregistration}
-                                    id="dateofregistration"
-                                    className="input-field-1"
-                                    placeholder="dateofregistration"
-                                    autoComplete="off"
-                                />
-                                <label for="dateofregistration" className="input-label">
-                                    Date of Registration :
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <div className="Details-Inputs">
-                        <div className="fake-input-flex">
-                            <div className="fake-input">
-                                <h4>Date</h4>
-                            </div>
-                            <div className="fake-input-long">
-                                <h4>Treatment</h4>
-                            
-                            </div>
-                            <div className="fake-input">
-                                <h4>Dentist</h4>
-                            </div>
-                            <div className="fake-input">
-                                <h4>Total Price</h4>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-                    <Popup
-                        trigger={<button className="Plus-Btn"> +</button>}
-                        position="center"
-                    >
-                        <div className="Tooth-Description-Total">
-                            <div className="Details-Inputs">
-                                <div className="left-side-input">
-
-                                    <div className="Patient-Details-Inputs">
-                                        <input
-                                            type="text"
-                                            name="date"
-                                            onChange={(e) => {
-                                                setDate(e.target.value);
-                                            }}
-                                            id="date"
-                                            className="input-field-1"
-                                            placeholder="date"
-                                            autoComplete="off"
-                                        />
-                                        <label for="date" className="input-label">
-                                            Date :
-                                        </label>
-                                    </div>
-
-                                    <div>
-                                        <div className="Patient-Details-Inputs">
-                                            <input
-                                                type="text"
-                                                name="time"
-                                                onChange={(e) => {
-                                                    setTime(e.target.value);
-                                                }}
-                                                id="time"
-                                                className="input-field-1"
-                                                placeholder="time"
-                                                autoComplete="off"
-                                            />
-                                            <label for="time" className="input-label">
-                                                Time :
-                                            </label>
-                                        </div>
-                                    </div>
-
-
-                                    <div className="Patient-Details-Inputs">
-                                        <input
-                                            type="text"
-                                            name="dentist"
-                                            onChange={(e) => {
-                                                setDentist(e.target.value);
-                                            }}
-                                            id="dentist"
-                                            className="input-field-1"
-                                            placeholder="dentist"
-                                            autoComplete="off"
-                                        />
-                                        <label for="dentist" className="input-label">
-                                            Dentist :
-                                        </label>
-                                    </div>
-
-                                </div>
-
-                                <div>
-                                    <div className="Patient-Details-Inputs">
-                                        <input
-                                            type="text"
-                                            name="total-price"
-
-                                            value={Price}
-                                            onChange={(e) => { setTotalPrice(e.target.value) }}
-                                            id="total-price"
-                                            className="input-field-1"
-                                            placeholder="total-price"
-                                            autoComplete="off"
-                                        />
-                                        <label for="total-price" className="input-label">
-                                            Total Price :
-                                        </label>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-                            <div className="Treatment-Price-Flex">
-                                <div className="Treatment-Price">
-                                    <div>
-                                        <input
-                                            className="left-top-input"
-                                            type="text"
-                                            value={LT}
-                                            maxLength={2}
-                                            onChange={(e) => {
-                                                setLT(e.target.value);
-                                            }}
-                                        />
-                                        <input
-                                            className="right-top-input"
-                                            type="text"
-                                            maxLength={2}
-                                            value={RT}
-                                            onChange={(e) => {
-                                                setRT(e.target.value);
-                                            }}
-                                        />
-                                        <input
-                                            className="left-bottom-input"
-                                            type="text"
-                                            maxLength={2}
-                                            value={LB}
-                                            onChange={(e) => {
-                                                setLB(e.target.value);
-                                            }}
-                                        />
-                                        <input
-                                            className="right-bottom-input"
-                                            type="text"
-                                            maxLength={2}
-                                            value={RB}
-                                            onChange={(e) => {
-                                                setRB(e.target.value);
-                                            }}
-
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <textarea onChange={(e) => { setDescription(e.target.value) }} name="" id="" cols="128" rows="3"></textarea>
-                                </div>
-
-                                <div>
-                                    <div className="Price-input">
-                                        <div className="Patient-Details-Inputs">
-                                            <input
-                                                type="text"
-                                                name="price"
-                                                onChange={(e) => {
-                                                    setPrice(e.target.value);
-                                                }}
-                                                id="price"
-                                                className="input-field-1"
-                                                placeholder="price"
-                                                autoComplete="off"
-                                            />
-                                            <label for="price" className="input-label">
-                                                Price :
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            {
-
-                                arr.map((item, i) => {
-
-                                    return <>
-
-                                        <div className="Treatment-Price-Flex">
-                                            <div className="Treatment-Price">
-                                                <div>
-                                                    <input
-                                                        className="left-top-input"
-                                                        type="text"
-                                                        value={LT}
-                                                        maxLength={2}
-                                                        onChange={(e) => {
-                                                            setLT(e.target.value);
-                                                        }}
-                                                    />
-                                                    <input
-                                                        className="right-top-input"
-                                                        type="text"
-                                                        maxLength={2}
-                                                        value={RT}
-                                                        onChange={(e) => {
-                                                            setRT(e.target.value);
-                                                        }}
-                                                    />
-                                                    <input
-                                                        className="left-bottom-input"
-                                                        type="text"
-                                                        maxLength={2}
-                                                        value={LB}
-                                                        onChange={(e) => {
-                                                            setLB(e.target.value);
-                                                        }}
-                                                    />
-                                                    <input
-                                                        className="right-bottom-input"
-                                                        type="text"
-                                                        maxLength={2}
-                                                        value={RB}
-                                                        onChange={(e) => {
-                                                            setRB(e.target.value);
-                                                        }}
-
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <textarea onChange={(e) => { setDescription(e.target.value) }} name="" id="" cols="128" rows="3"></textarea>
-                                            </div>
-
-                                            <div>
-                                                <div className="Price-input">
-                                                    <div className="Patient-Details-Inputs">
-                                                        <input
-                                                            type="text"
-                                                            name="price"
-                                                            onChange={(e) => {
-                                                                setPrice(e.target.value);
-                                                            }}
-
-                                                            id="price"
-                                                            className="input-field-1"
-                                                            placeholder="price"
-                                                            autoComplete="off"
-                                                        />
-                                                        <label for="price" className="input-label">
-                                                            Price :
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><br></br>
-
-                                    </>;
-                                })}
-
-
-                            <div className='Popup-Buttons'>
-                                <div>
-                                    <button onClick={addInput} className="Add-Btn">
-                                        +
-                                    </button>
-                                </div>
-                                <button onClick={backtodata} className="Save-Btn">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
-                    </Popup>
-                    <button onClick={myupdate} className="Save-Btn">
-                        Update
-                    </button>
-                </div>
-                <div></div>
+  return (
+    <>
+      <div className="Patient-Details-BG">
+        <div className="Header">
+          <div className="Header-Flex">
+            <div>
+              <img src="/img/image.png" alt="" />
             </div>
-        </>
-    );
+            <div>
+              <img
+                className="Logo"
+                src="http://www.fhgroupoc.com/svg/fhlogog.svg"
+                alt=""
+              />
+            </div>
+            <div className="User-Login">
+              <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
+              <div>
+                <h3>Muzzamil Rafique</h3>
+                <p>Super Admin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="Main-Div">
+          <h3>PATIENT DETAILS</h3>
+          <div className="Input-Flex">
+            <div className="row-1">
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="clientid"
+                  name="clientid"
+                  onChange={(e) => {
+                    setClientid(e.target.value);
+                  }}
+                  id="clientid"
+                  value={Clientid}
+                  className="input-field-1"
+                  placeholder="clientid"
+                  disabled
+                  autoComplete="off"
+                />
+                <label for="clientid" className="input-label">
+                  Client ID :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="name"
+                  name="name"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                  value={Name}
+                  id="name"
+                  className="input-field-1"
+                  placeholder="name"
+                  autoComplete="off"
+                />
+                <label for="name" className="input-label">
+                  Name :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="text"
+                  name="email"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  value={Email}
+                  id="email"
+                  className="input-field-1"
+                  placeholder="email"
+                  autoComplete="off"
+                />
+                <label for="email" className="input-label">
+                  Email :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="text"
+                  name="number"
+                  onChange={(e) => {
+                    setNumber(e.target.value);
+                  }}
+                  value={Number}
+                  id="number"
+                  className="input-field-1"
+                  placeholder="number"
+                  autoComplete="off"
+                />
+                <label for="number" className="input-label">
+                  Number :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="text"
+                  name="dateofbirth"
+                  onChange={(e) => {
+                    setDateofbirth(e.target.value);
+                  }}
+                  value={Dateofbirth}
+                  id="dateofbirth"
+                  className="input-field-1"
+                  placeholder="dateofbirth"
+                  autoComplete="off"
+                />
+                <label for="dateofbirth" className="input-label">
+                  Date of Birth :
+                </label>
+              </div>
+            </div>
+            <div className="row-2">
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="sex"
+                  name="sex"
+                  onChange={(e) => {
+                    setSex(e.target.value);
+                  }}
+                  value={Sex}
+                  id="sex"
+                  className="input-field-1"
+                  placeholder="sex"
+                  autoComplete="off"
+                />
+                <label for="sex" className="input-label">
+                  Sex :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="bloodgroup"
+                  name="bloodgroup"
+                  onChange={(e) => {
+                    setBloodgroup(e.target.value);
+                  }}
+                  value={Bloodgroup}
+                  id="bloodgroup"
+                  className="input-field-1"
+                  placeholder="bloodgroup"
+                  autoComplete="off"
+                />
+                <label for="bloodgroup" className="input-label">
+                  Blood Group :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="text"
+                  name="memberstatus"
+                  onChange={(e) => {
+                    setMemberstatus(e.target.value);
+                  }}
+                  value={Memberstatus}
+                  id="memberstatus"
+                  className="input-field-1"
+                  placeholder="memberstatus"
+                  autoComplete="off"
+                />
+                <label for="memberstatus" className="input-label">
+                  Member Status :
+                </label>
+              </div>
+              <div className="Patient-Details-Inputs">
+                <input
+                  type="text"
+                  name="dateofregistration"
+                  onChange={(e) => {
+                    setDateofregistration(e.target.value);
+                  }}
+                  value={Dateofregistration}
+                  id="dateofregistration"
+                  className="input-field-1"
+                  placeholder="dateofregistration"
+                  autoComplete="off"
+                />
+                <label for="dateofregistration" className="input-label">
+                  Date of Registration :
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div className="Details-Inputs">
+            <div className="fake-input-flex">
+              <div className="fake-input">
+                <h4>Date</h4>
+              </div>
+              <div className="fake-input-long">
+                <h4>Treatment</h4>
+              </div>
+              <div className="fake-input">
+                <h4>Dentist</h4>
+              </div>
+              <div className="fake-input">
+                <h4>Total Price</h4>
+              </div>
+            </div>
+          </div>
+          <div className="Tooth-Description-Fixed">
+            <div className="Treatment-Price-Flex">
+              <div className="Treatment-Price">
+                <div>
+                  <input
+                    className="left-top-input"
+                    type="text"
+                    value={LT}
+                    maxLength={2}
+                    onChange={(e) => {
+                      setLT(e.target.value);
+                    }}
+                  />
+                  <input
+                    className="right-top-input"
+                    type="text"
+                    maxLength={2}
+                    value={RT}
+                    onChange={(e) => {
+                      setRT(e.target.value);
+                    }}
+                  />
+                  <input
+                    className="left-bottom-input"
+                    type="text"
+                    maxLength={2}
+                    value={LB}
+                    onChange={(e) => {
+                      setLB(e.target.value);
+                    }}
+                  />
+                  <input
+                    className="right-bottom-input"
+                    type="text"
+                    maxLength={2}
+                    value={RB}
+                    onChange={(e) => {
+                      setRB(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <textarea
+                  onChange={(e) => {
+                    setDescription(e.target.value);
+                  }}
+                  name=""
+                  id=""
+                  cols="128"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div>
+                <div className="Price-input">
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="price"
+                      onChange={(e) => {
+                        setPrice(e.target.value);
+                      }}
+                      id="price"
+                      className="input-field-1"
+                      placeholder="price"
+                      autoComplete="off"
+                    />
+                    <label for="price" className="input-label">
+                      Total Price :
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br></br>
+          </div>
+
+          <Popup
+            trigger={<button className="Plus-Btn"> +</button>}
+            position="center"
+          >
+            <div className="Tooth-Description-Total">
+              <div className="Details-Inputs">
+                <div className="left-side-input">
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="date"
+                      onChange={(e) => {
+                        setDate(e.target.value);
+                      }}
+                      id="date"
+                      className="input-field-1"
+                      placeholder="date"
+                      autoComplete="off"
+                    />
+                    <label for="date" className="input-label">
+                      Date :
+                    </label>
+                  </div>
+
+                  <div>
+                    <div className="Patient-Details-Inputs">
+                      <input
+                        type="text"
+                        name="time"
+                        onChange={(e) => {
+                          setTime(e.target.value);
+                        }}
+                        id="time"
+                        className="input-field-1"
+                        placeholder="time"
+                        autoComplete="off"
+                      />
+                      <label for="time" className="input-label">
+                        Time :
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="dentist"
+                      onChange={(e) => {
+                        setDentist(e.target.value);
+                      }}
+                      id="dentist"
+                      className="input-field-1"
+                      placeholder="dentist"
+                      autoComplete="off"
+                    />
+                    <label for="dentist" className="input-label">
+                      Dentist :
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="total-price"
+                      value={Price}
+                      onChange={(e) => {
+                        setTotalPrice(e.target.value);
+                      }}
+                      id="total-price"
+                      className="input-field-1"
+                      placeholder="total-price"
+                      autoComplete="off"
+                    />
+                    <label for="total-price" className="input-label">
+                      Total Price :
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="Treatment-Price-Flex">
+                <div className="Treatment-Price">
+                  <div>
+                    <input
+                      className="left-top-input"
+                      type="text"
+                      value={LT}
+                      maxLength={2}
+                      onChange={(e) => {
+                        setLT(e.target.value);
+                      }}
+                    />
+                    <input
+                      className="right-top-input"
+                      type="text"
+                      maxLength={2}
+                      value={RT}
+                      onChange={(e) => {
+                        setRT(e.target.value);
+                      }}
+                    />
+                    <input
+                      className="left-bottom-input"
+                      type="text"
+                      maxLength={2}
+                      value={LB}
+                      onChange={(e) => {
+                        setLB(e.target.value);
+                      }}
+                    />
+                    <input
+                      className="right-bottom-input"
+                      type="text"
+                      maxLength={2}
+                      value={RB}
+                      onChange={(e) => {
+                        setRB(e.target.value);
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <textarea
+                    onChange={(e) => {
+                      setDescription(e.target.value);
+                    }}
+                    name=""
+                    id=""
+                    cols="128"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <div className="Price-input">
+                    <div className="Patient-Details-Inputs">
+                      <input
+                        type="text"
+                        name="price"
+                        onChange={(e) => {
+                          setPrice(e.target.value);
+                        }}
+                        id="price"
+                        className="input-field-1"
+                        placeholder="price"
+                        autoComplete="off"
+                      />
+                      <label for="price" className="input-label">
+                        Price :
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {arr.map((item, i) => {
+                return (
+                  <>
+                    <div className="Treatment-Price-Flex">
+                      <div className="Treatment-Price">
+                        <div>
+                          <input
+                            className="left-top-input"
+                            type="text"
+                            value={LT}
+                            maxLength={2}
+                            onChange={(e) => {
+                              setLT(e.target.value);
+                            }}
+                          />
+                          <input
+                            className="right-top-input"
+                            type="text"
+                            maxLength={2}
+                            value={RT}
+                            onChange={(e) => {
+                              setRT(e.target.value);
+                            }}
+                          />
+                          <input
+                            className="left-bottom-input"
+                            type="text"
+                            maxLength={2}
+                            value={LB}
+                            onChange={(e) => {
+                              setLB(e.target.value);
+                            }}
+                          />
+                          <input
+                            className="right-bottom-input"
+                            type="text"
+                            maxLength={2}
+                            value={RB}
+                            onChange={(e) => {
+                              setRB(e.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <textarea
+                          onChange={(e) => {
+                            setDescription(e.target.value);
+                          }}
+                          name=""
+                          id=""
+                          cols="128"
+                          rows="3"
+                        ></textarea>
+                      </div>
+
+                      <div>
+                        <div className="Price-input">
+                          <div className="Patient-Details-Inputs">
+                            <input
+                              type="text"
+                              name="price"
+                              onChange={(e) => {
+                                setPrice(e.target.value);
+                              }}
+                              id="price"
+                              className="input-field-1"
+                              placeholder="price"
+                              autoComplete="off"
+                            />
+                            <label for="price" className="input-label">
+                              Price :
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br></br>
+                  </>
+                );
+              })}
+
+              <div className="Popup-Buttons">
+                <div>
+                  <button onClick={addInput} className="Add-Btn">
+                    +
+                  </button>
+                </div>
+                <button onClick={backtodata} className="Save-Btn">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </Popup>
+          <button onClick={myupdate} className="Save-Btn">
+            Update
+          </button>
+        </div>
+        <div></div>
+      </div>
+    </>
+  );
 };
 
 export default patientdata;

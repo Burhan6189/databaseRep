@@ -776,7 +776,7 @@
 .Tooth-Description-Total .Treatment-Price-Flex{
   display: flex;
 justify-content: center;
-gap: 10px;
+gap: 20px;
 align-items: center;
 } 
 .Tooth-Description-Total .Treatment-Price-Flex textarea{
@@ -796,7 +796,88 @@ margin-top:80px ;
   margin-top: 20px;
   justify-content: center;
 }
-
+.Tooth-Description-Fixed {
+  width: 1500px;
+  height: 200px;
+  border-radius: 30px;
+  justify-content: center;
+  text-align: center;
+}
+.Tooth-Description-Fixed .Treatment-Price-Flex .Price-input{
+  margin-top: 100px;
+}
+.Tooth-Description-Fixed .Treatment-Price-Flex textarea{
+  padding: 10px;
+  border: 0;
+  border-bottom: 2px solid #D9D9D9;
+  background: none;
+  outline: none;
+  margin-top:80px ;
+  } 
+  .Tooth-Description-Fixed .Treatment-Price-Flex{
+    display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  } 
+  .Tooth-Description-Fixed .Details-Inputs {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-around;
+  }
+  .Tooth-Description-Fixed .Details-Inputs .left-side-input {
+    gap: 50px;
+    display: flex;
+  }
+  .Tooth-Description-Fixed .Treatment-Price {
+    width: 100px;
+    margin-top: 80px;
+    justify-content: center;
+    display: flex;
+  }
+  .Tooth-Description-Fixed .Treatment-Price input {
+    width: 35px;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .Tooth-Description-Fixed .Treatment-Price .left-top-input {
+    border: 0;
+    background: none;
+    outline: none;
+    border-bottom: 3px solid #D9D9D9;
+  }
+  .Tooth-Description-Fixed .Treatment-Price .right-top-input {
+    border: 0;
+    background: none;
+    outline: none;
+    border-left: 3px solid #D9D9D9;
+    border-bottom: 3px solid #D9D9D9;
+  }
+  .Tooth-Description-Fixed .Treatment-Price .left-bottom-input {
+    border: 0;
+    background: none;
+    outline: none;
+  }
+  .Tooth-Description-Fixed .Treatment-Price .right-bottom-input {
+    border: 0;
+    background: none;
+    outline: none;
+    border-left: 3px solid #D9D9D9;
+  }
+  .Tooth-Description-Fixed .Details-Inputs .side-input-price {
+    width: 200px;
+    padding: 10px;
+    background: none;
+    border: 1px solid #d9d9d9;
+    outline: none;
+  }
+  
+  .Tooth-Description-Fixed .Details-Inputs .side-input-main-flex {
+    display: flex;
+    justify-content: center;
+  }
+  
 /*===============  End Patient Details =================*/
 
 /*================== Start Treatment Plan ==================*/

@@ -2,13 +2,21 @@
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
+
+// just to get current date
+
 const today = new Date();
 const month = today.getMonth() + 1;
 const year = today.getFullYear();
 const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
+
+// main function
+
 const PatientDashboard = () => {
+
+
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Number, setNumber] = useState("");
@@ -19,7 +27,7 @@ const PatientDashboard = () => {
   const [Dateofregistration, setDateofregistration] = useState("");
   const [Clientid, setClientid] = useState("");
 
-  //two for treatment detail DB
+  // Treatment details textboxes
 
   const [Description, setDescription] = useState("");
   const [Price, setPrice] = useState("");
@@ -34,19 +42,7 @@ const PatientDashboard = () => {
 
 
 
-  // fetched data's useStates for treatment
-
-  // const [TreatmentData, setTreatmentData] = useState([]);
-
-  // const treatmentdata = async () => {
-  //   const fetchtreatment = await fetch("/api/treatmentdetails");
-  //   const jsontreatment = await fetchtreatment.json();
-  //   setTreatmentData(jsontreatment);
-  // };
-  // useEffect(() => {
-  //   treatmentdata();
-  // }, []);
-
+  // on save button all details saved on the page
 
   const myfun = async () => {
     if (
@@ -72,56 +68,53 @@ const PatientDashboard = () => {
           Memberstatus,
           Dateofregistration,
           Clientid,
-          Treatment:[
-            {Description,
-            Price,
-            Date,
-            Time,
-            Dentist,
-            TotalPrice,
-            LT,
-            RT,
-            LB,
-            RB}]
-           
-      }) })
+          Treatment: [
+            {
+              Description,
+              Price,
+              Date,
+              Time,
+              Dentist,
+              TotalPrice,
+              LT,
+              RT,
+              LB,
+              RB
+            }]
+
+        })
+      })
 
       alert("success");
-    } 
-    
+    }
+
     else {
       alert("all fields are required");
     }
   };
 
 
-// on sumbit popup
+  // on popup submit Button 
 
   const backtodata = async () => {
     if (Description != "" && Price != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
       const getdata = await fetch("/api/patientdetails", {
         method: "POST",
-        body: JSON.stringify({ Treatment:[ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price ] }),
+        body: JSON.stringify({ Treatment: [Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price] }),
       });
-      alert("success");
-    
+      if (getdata) {
+        alert("success");
+      }
+      else {
+        alert('something went wrong')
+      }
+
     } else {
       alert("can't be empty");
     }
   };
 
-  // const backtodata = async () => {
-  //   if (Description != "" && Price != "" && Clientid != "" && Date != "" && Time != "" && Dentist != "" && TotalPrice != "") {
-  //     const getdata = await fetch("/api/treatmentdetails", {
-  //       method: "POST",
-  //       body: JSON.stringify({ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price, Clientid }),
-  //     });
-  //     alert("success");
-    
-  //   } else {
-  //     alert("can't be empty");
-  //   }
-  // };
+  // unused Array
 
   const inputArr = [
     {
@@ -131,16 +124,16 @@ const PatientDashboard = () => {
     },
   ];
 
-  // this is to add popup data with client id from patient details
+  // this is to add new input in popup form
 
   const [arr, setArr] = useState([]);
 
   const addInput = async () => {
-    if (Description != "" && Price != "" && TotalPrice != "" && Dentist != ""  && Date != "" && Time != "") {
+    if (Description != "" && Price != "" && TotalPrice != "" && Dentist != "" && Date != "" && Time != "") {
       const getdata = await fetch("/api/patientdetails", {
         method: "POST",
-        body: JSON.stringify({ Treatment:[ Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price ] }),
-      });
+        body: JSON.stringify({ Treatment: [Date, Time, Dentist, TotalPrice, LT, RT, LB, RB, Description, Price] }),
+      })
 
       setArr((s) => {
         return [
@@ -171,7 +164,7 @@ const PatientDashboard = () => {
   };
 
 
-// react output body
+  // react output body
 
   return (
     <>
@@ -443,9 +436,9 @@ const PatientDashboard = () => {
                     <input
                       type="text"
                       name="total-price"
-                      
-                      
-                      onChange={(e)=>{setTotalPrice(e.target.value)}}
+
+
+                      onChange={(e) => { setTotalPrice(e.target.value) }}
                       id="total-price"
                       className="input-field-1"
                       placeholder="total-price"
@@ -458,7 +451,7 @@ const PatientDashboard = () => {
                 </div>
 
 
-                
+
               </div>
               <div className="Treatment-Price-Flex">
                 <div className="Treatment-Price">
@@ -498,33 +491,32 @@ const PatientDashboard = () => {
                       onChange={(e) => {
                         setRB(e.target.value);
                       }}
-
                     />
                   </div>
                 </div>
 
                 <div>
-                  <textarea onChange={(e) => {  setDescription(e.target.value)}} name="" id="" cols="128" rows="3"></textarea>
+                  <textarea onChange={(e) => { setDescription(e.target.value) }} name="" id="" cols="128" rows="3"></textarea>
                 </div>
 
                 <div>
                   <div className="Price-input">
-                <div className="Patient-Details-Inputs">
-                    <input
-                      type="text"
-                      name="price"
-                      onChange={(e) => {
-                        setDateofregistration(e.target.value);
-                      }}
-                      id="price"
-                      className="input-field-1"
-                      placeholder="price"
-                      autoComplete="off"
-                    />
-                    <label for="price" className="input-label">
-                    Price :
-                    </label>
-                  </div>
+                    <div className="Patient-Details-Inputs">
+                      <input
+                        type="text"
+                        name="price"
+                        onChange={(e) => {
+                          setPrice(e.target.value);
+                        }}
+                        id="price"
+                        className="input-field-1"
+                        placeholder="price"
+                        autoComplete="off"
+                      />
+                      <label for="price" className="input-label">
+                        Price :
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -532,82 +524,81 @@ const PatientDashboard = () => {
 
               {
 
-arr.map((item, i) => {
-  
-  return <>
-  
-  <div className="Treatment-Price-Flex">
-<div className="Treatment-Price">
-<div>
-  <input
-    className="left-top-input"
-    type="text"
-    value={LT}
-    maxLength={2}
-    onChange={(e) => {
-      setLT(e.target.value);
-    }}
-  />
-  <input
-    className="right-top-input"
-    type="text"
-    maxLength={2}
-    value={RT}
-    onChange={(e) => {
-      setRT(e.target.value);
-    }}
-  />
-  <input
-    className="left-bottom-input"
-    type="text"
-    maxLength={2}
-    value={LB}
-    onChange={(e) => {
-      setLB(e.target.value);
-    }}
-  />
-  <input
-    className="right-bottom-input"
-    type="text"
-    maxLength={2}
-    value={RB}
-    onChange={(e) => {
-      setRB(e.target.value);
-    }}
+                arr.map((item, i) => {
 
-  />
-</div>
-</div>
+                  return <>
 
-<div>
-<textarea onChange={(e) => {  setDescription(e.target.value)}} name="" id="" value={Description} cols="128" rows="3"></textarea>
-</div>
+                    <div className="Treatment-Price-Flex">
+                      <div className="Treatment-Price">
+                        <div>
+                          <input
+                            className="left-top-input"
+                            type="text"
+                            value={LT}
+                            maxLength={2}
+                            onChange={(e) => {
+                              setLT(e.target.value);
+                            }}
+                          />
+                          <input
+                            className="right-top-input"
+                            type="text"
+                            maxLength={2}
+                            value={RT}
+                            onChange={(e) => {
+                              setRT(e.target.value);
+                            }}
+                          />
+                          <input
+                            className="left-bottom-input"
+                            type="text"
+                            maxLength={2}
+                            value={LB}
+                            onChange={(e) => {
+                              setLB(e.target.value);
+                            }}
+                          />
+                          <input
+                            className="right-bottom-input"
+                            type="text"
+                            maxLength={2}
+                            value={RB}
+                            onChange={(e) => {
+                              setRB(e.target.value);
+                            }}
 
-<div>
-<div className="Price-input">
-  <div className="Patient-Details-Inputs">
-    <input
-      type="text"
-      name="price"
-      onChange={(e) => {
-        setPrice(e.target.value);
-      }}
-   
-      id="price"
-      className="input-field-1"
-      placeholder="price"
-      autoComplete="off"
-    />
-    <label for="price" className="input-label">
-      Price :
-    </label>
-  </div>
-</div>
-</div>
-</div><br></br>
-  
-  </>;
-})}
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <textarea onChange={(e) => { setDescription(e.target.value) }} name="" id="" value={Description} cols="128" rows="3"></textarea>
+                      </div>
+
+                      <div>
+                        <div className="Price-input">
+                          <div className="Patient-Details-Inputs">
+                            <input
+                              type="text"
+                              name="price"
+                              onChange={(e) => {
+                                setPrice(e.target.value);
+                              }}
+                              id="price"
+                              className="input-field-1"
+                              placeholder="price"
+                              autoComplete="off"
+                            />
+                            <label for="price" className="input-label">
+                              Price :
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div><br></br>
+
+                  </>;
+                })}
 
 
               <div className='Popup-Buttons'>
@@ -622,11 +613,13 @@ arr.map((item, i) => {
               </div>
             </div>
           </Popup>
+
+
           <button onClick={myfun} className="Save-Btn">
             Save
           </button>
+
         </div>
-        <div></div>
       </div>
     </>
   );

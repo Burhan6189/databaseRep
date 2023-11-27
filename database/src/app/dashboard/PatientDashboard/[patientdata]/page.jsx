@@ -1,5 +1,7 @@
 "use client";
 
+import { NEXT_URL } from "next/dist/client/components/app-router-headers";
+import { NextResponse } from "next/server";
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
@@ -38,8 +40,14 @@ const patientdata = (props) => {
     setDate(jsondata.Treatment[0].Date);
     setDescription(jsondata.Treatment[0].Description);
     setDentist(jsondata.Treatment[0].Dentist);
-    setDentist(jsondata.Treatment[0].Dentist);
     setTotalPrice(jsondata.Treatment[0].TotalPrice);
+    setPrice(jsondata.Treatment[0].Price);
+    setTime(jsondata.Treatment[0].Time);
+    setLT(jsondata.Treatment[0].LT);
+    setRT(jsondata.Treatment[0].RT);
+    setLB(jsondata.Treatment[0].LB);
+    setRB(jsondata.Treatment[0].RB);
+
 
   };
 
@@ -64,7 +72,7 @@ const patientdata = (props) => {
   //All fields on POP up for treatment detail DB
 
   const [Description, setDescription] = useState("");
-  const [Price, setPrice] = useState("");
+  let [Price, setPrice] = useState("");
   const [Date, setDate] = useState("");
   const [Time, setTime] = useState("");
   const [Dentist, setDentist] = useState("");
@@ -73,6 +81,7 @@ const patientdata = (props) => {
   const [RT, setRT] = useState("");
   const [LB, setLB] = useState("");
   const [RB, setRB] = useState("");
+  
 
  
 
@@ -433,6 +442,9 @@ const patientdata = (props) => {
               <div className="fake-input">
                 <h4>Total Price</h4>
               </div>
+              <div className="fake-input">
+                <h4>Action</h4>
+              </div>
             </div>
           </div>
           <div className="Fill-Inputs">
@@ -449,6 +461,155 @@ const patientdata = (props) => {
               </div>
               <div className="fill-input">
                 <input name="totalprice" value={TotalPrice} type="text" />
+
+              </div>
+              <div className="fill-input" style={{marginRight:20}}>
+             
+             {/* this is popup button to show popup data of tooth , in treatment table */}
+      
+             
+              <Popup
+            trigger={<button className="Plus-Btn">View</button>}
+            position="center"
+          >
+            <div className="Tooth-Description-Total">
+              <div className="Details-Inputs">
+                <div className="left-side-input">
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="date"
+                      value={Date}
+                      id="date"
+                      className="input-field-1"
+                      placeholder="date"
+                      autoComplete="off"
+                    />
+                    <label for="date" className="input-label">
+                      Date :
+                    </label>
+                  </div>
+
+                  <div>
+                    <div className="Patient-Details-Inputs">
+                      <input
+                        type="text"
+                        name="time"
+                        value={Time}
+                        id="time"
+                        className="input-field-1"
+                        placeholder="time"
+                        autoComplete="off"
+                      />
+                      <label for="time" className="input-label">
+                        Time :
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="dentist"
+                      value={Dentist}
+                      id="dentist"
+                      className="input-field-1"
+                      placeholder="dentist"
+                      autoComplete="off"
+                    />
+                    <label for="dentist" className="input-label">
+                      Dentist :
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="total-price"
+                      value={TotalPrice}
+                      id="total-price"
+                      className="input-field-1"
+                      placeholder="total-price"
+                      autoComplete="off"
+                    />
+                    <label for="total-price" className="input-label">
+                      Total Price :
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div className="Treatment-Price-Flex">
+                <div className="Treatment-Price">
+                  <div>
+                    <input
+                      className="left-top-input"
+                      type="text"
+                      value={LT}
+                      maxLength={2}
+                    />
+                    <input
+                      className="right-top-input"
+                      type="text"
+                      maxLength={2}
+                      value={RT}
+                    />
+                    <input
+                      className="left-bottom-input"
+                      type="text"
+                      maxLength={2}
+                      value={LB}
+                    />
+                    <input
+                      className="right-bottom-input"
+                      type="text"
+                      maxLength={2}
+                      value={RB}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <textarea
+                value={Description}
+                    name=""
+                    id=""
+                    cols="128"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <div className="Price-input">
+                    <div className="Patient-Details-Inputs">
+                      <input
+                        type="text"
+                        name="price"
+                        value={Price}
+                        id="price"
+                        className="input-field-1"
+                        placeholder="price"
+                        autoComplete="off"
+                      />
+                      <label for="price" className="input-label">
+                        Price :
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        
+
+              <div className="Popup-Buttons">
+               
+              <button className="Save-Btn">
+                  Close
+                </button> 
+              </div>
+            </div>
+          </Popup>
 
               </div>
             </div>
@@ -598,7 +759,7 @@ const patientdata = (props) => {
                     <input
                       type="text"
                       name="total-price"
-                      value={Price}
+                      value={(Price)}
                       onChange={(e) => {
                         setTotalPrice(e.target.value);
                       }}

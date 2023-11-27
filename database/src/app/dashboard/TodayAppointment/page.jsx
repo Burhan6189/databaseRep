@@ -28,7 +28,7 @@ const AllPatient = () => {
         <div className="All-Patient-Header">
           <div>
             <h2><span>01</span></h2>
-          <h2>Today’s appointments</h2>
+          <h2>Today’s Appointments</h2>
           </div>
           <div className="Appointment-Button">  
             <h4>New Appointments</h4>

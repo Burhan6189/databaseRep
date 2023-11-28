@@ -593,7 +593,7 @@ const patientdata = (props) => {
                         autoComplete="off"
                       />
                       <label for="price" className="input-label">
-                        Price :
+                        Price:
                       </label>
                     </div>
                   </div>

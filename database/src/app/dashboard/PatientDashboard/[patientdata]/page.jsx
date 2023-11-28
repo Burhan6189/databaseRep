@@ -442,9 +442,7 @@ const patientdata = (props) => {
               <div className="fake-input">
                 <h4>Total Price</h4>
               </div>
-              <div className="fake-input">
-                <h4>Action</h4>
-              </div>
+              
             </div>
           </div>
           <div className="Fill-Inputs">

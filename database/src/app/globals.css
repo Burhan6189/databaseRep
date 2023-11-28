@@ -622,7 +622,7 @@
   font-weight: 500;
   background: #b3e770;
   width: 200px;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .Tooth-Description-Total .Details-Inputs .side-input {
@@ -753,14 +753,14 @@
   border: 0;
   background: none;
   outline: none;
-  border-bottom: 3px solid #D9D9D9;
+  border-bottom: 3px solid #d9d9d9;
 }
 .Tooth-Description-Total .Treatment-Price .right-top-input {
   border: 0;
   background: none;
   outline: none;
-  border-left: 3px solid #D9D9D9;
-  border-bottom: 3px solid #D9D9D9;
+  border-left: 3px solid #d9d9d9;
+  border-bottom: 3px solid #d9d9d9;
 }
 .Tooth-Description-Total .Treatment-Price .left-bottom-input {
   border: 0;
@@ -771,26 +771,26 @@
   border: 0;
   background: none;
   outline: none;
-  border-left: 3px solid #D9D9D9;
+  border-left: 3px solid #d9d9d9;
 }
-.Tooth-Description-Total .Treatment-Price-Flex{
+.Tooth-Description-Total .Treatment-Price-Flex {
   display: flex;
-justify-content: center;
-gap: 20px;
-align-items: center;
-} 
-.Tooth-Description-Total .Treatment-Price-Flex textarea{
-padding: 10px;
-border: 0;
-border-bottom: 2px solid #D9D9D9;
-background: none;
-outline: none;
-margin-top:80px ;
-} 
-.Tooth-Description-Total .Treatment-Price-Flex .Price-input{
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.Tooth-Description-Total .Treatment-Price-Flex textarea {
+  padding: 10px;
+  border: 0;
+  border-bottom: 2px solid #d9d9d9;
+  background: none;
+  outline: none;
+  margin-top: 80px;
+}
+.Tooth-Description-Total .Treatment-Price-Flex .Price-input {
   margin-top: 100px;
 }
-.Tooth-Description-Total .Popup-Buttons{
+.Tooth-Description-Total .Popup-Buttons {
   display: flex;
   gap: 10px;
   margin-top: 20px;
@@ -803,113 +803,112 @@ margin-top:80px ;
   justify-content: center;
   text-align: center;
 }
-.Tooth-Description-Fixed .Treatment-Price-Flex .Price-input{
+.Tooth-Description-Fixed .Treatment-Price-Flex .Price-input {
   margin-top: 100px;
 }
-.Tooth-Description-Fixed .Treatment-Price-Flex textarea{
+.Tooth-Description-Fixed .Treatment-Price-Flex textarea {
   padding: 10px;
   border: 0;
-  border-bottom: 2px solid #D9D9D9;
+  border-bottom: 2px solid #d9d9d9;
   background: none;
   outline: none;
-  margin-top:80px ;
-  } 
-  .Tooth-Description-Fixed .Treatment-Price-Flex{
-    display: flex;
+  margin-top: 80px;
+}
+.Tooth-Description-Fixed .Treatment-Price-Flex {
+  display: flex;
   justify-content: center;
   gap: 20px;
   align-items: center;
-  } 
-  .Tooth-Description-Fixed .Details-Inputs {
-    display: flex;
-    margin-top: 40px;
-    justify-content: space-around;
-  }
-  .Tooth-Description-Fixed .Details-Inputs .left-side-input {
-    gap: 50px;
-    display: flex;
-  }
-  .Tooth-Description-Fixed .Treatment-Price {
-    width: 100px;
-    margin-top: 80px;
-    justify-content: center;
-    display: flex;
-  }
-  .Tooth-Description-Fixed .Treatment-Price input {
-    width: 35px;
-    padding: 5px;
-    text-align: center;
-    font-size: 18px;
-  }
-  .Tooth-Description-Fixed .Treatment-Price .left-top-input {
-    border: 0;
-    background: none;
-    outline: none;
-    border-bottom: 3px solid #D9D9D9;
-  }
-  .Tooth-Description-Fixed .Treatment-Price .right-top-input {
-    border: 0;
-    background: none;
-    outline: none;
-    border-left: 3px solid #D9D9D9;
-    border-bottom: 3px solid #D9D9D9;
-  }
-  .Tooth-Description-Fixed .Treatment-Price .left-bottom-input {
-    border: 0;
-    background: none;
-    outline: none;
-  }
-  .Tooth-Description-Fixed .Treatment-Price .right-bottom-input {
-    border: 0;
-    background: none;
-    outline: none;
-    border-left: 3px solid #D9D9D9;
-  }
-  .Tooth-Description-Fixed .Details-Inputs .side-input-price {
-    width: 200px;
-    padding: 10px;
-    background: none;
-    border: 1px solid #d9d9d9;
-    outline: none;
-  }
-  
-  .Tooth-Description-Fixed .Details-Inputs .side-input-main-flex {
-    display: flex;
-    justify-content: center;
-  }
+}
+.Tooth-Description-Fixed .Details-Inputs {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-around;
+}
+.Tooth-Description-Fixed .Details-Inputs .left-side-input {
+  gap: 50px;
+  display: flex;
+}
+.Tooth-Description-Fixed .Treatment-Price {
+  width: 100px;
+  margin-top: 80px;
+  justify-content: center;
+  display: flex;
+}
+.Tooth-Description-Fixed .Treatment-Price input {
+  width: 35px;
+  padding: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+.Tooth-Description-Fixed .Treatment-Price .left-top-input {
+  border: 0;
+  background: none;
+  outline: none;
+  border-bottom: 3px solid #d9d9d9;
+}
+.Tooth-Description-Fixed .Treatment-Price .right-top-input {
+  border: 0;
+  background: none;
+  outline: none;
+  border-left: 3px solid #d9d9d9;
+  border-bottom: 3px solid #d9d9d9;
+}
+.Tooth-Description-Fixed .Treatment-Price .left-bottom-input {
+  border: 0;
+  background: none;
+  outline: none;
+}
+.Tooth-Description-Fixed .Treatment-Price .right-bottom-input {
+  border: 0;
+  background: none;
+  outline: none;
+  border-left: 3px solid #d9d9d9;
+}
+.Tooth-Description-Fixed .Details-Inputs .side-input-price {
+  width: 200px;
+  padding: 10px;
+  background: none;
+  border: 1px solid #d9d9d9;
+  outline: none;
+}
 
-  .Fill-Inputs .fill-input-flex {
-    display: flex;
-    justify-content: center;
-  }
-  .Fill-Inputs .fill-input-flex .fill-input {
-    width: 250px;
-    padding: 5px;
-  }
-  .Fill-Inputs .fill-input-flex .fill-input-long {
-    width: 550px;
-    padding: 5px;
-  }
-  .Fill-Inputs .fill-input-flex h4 {
-    font-size: 20px;
-    font-weight: 400;
-  }
-  
-  .Fill-Inputs input {
-    width: 200px;
-    outline: 0;
-    border: 0;
-    border-bottom: 2px solid #d9d9d9;
-    padding: 10px 0;
-    background: transparent;
-    font-size: 20px;
-    color: #000;
-    text-align: center;
-    transition: 0.3s ease;
-  }
-  .Patient-Details-BG .Fill-Inputs {
-    margin-top: 20px;
-  }
+.Tooth-Description-Fixed .Details-Inputs .side-input-main-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.Fill-Inputs .fill-input-flex {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.Fill-Inputs .fill-input-flex .fill-input {
+  width: 250px;
+}
+.Fill-Inputs .fill-input-flex .fill-input-long input {
+  width: 500px;
+}
+.Fill-Inputs .fill-input-flex h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.Fill-Inputs input {
+  width: 200px;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #d9d9d9;
+  padding: 10px 0;
+  background: transparent;
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.Patient-Details-BG .Fill-Inputs {
+  margin-top: 20px;
+}
 /*===============  End Patient Details =================*/
 
 /*================== Start Treatment Plan ==================*/
@@ -1174,7 +1173,7 @@ margin-top:80px ;
 }
 .All-Patient-BG .All-Patient-Header h2 span {
   font-size: 40px;
-  color: #B3E770;
+  color: #b3e770;
   font-weight: 500;
 }
 .All-Patient-BG .First-Patient {

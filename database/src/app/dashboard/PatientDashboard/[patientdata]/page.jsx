@@ -469,7 +469,6 @@ const patientdata = (props) => {
               </div>
               <div className="fill-input">
                 <input name="totalprice" value={TotalPrice} type="text" />
-
               </div>
             </div>
           </div>

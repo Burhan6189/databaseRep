@@ -461,235 +461,10 @@ const patientdata = (props) => {
                 <input name="totalprice" value={TotalPrice} type="text" />
 
               </div>
-              <div className="fill-input" style={{marginRight:20}}>
-             
-             {/* this is popup button to show popup data of tooth , in treatment table */}
-      
-             
-              <Popup
-            trigger={<button className="Plus-Btn">View</button>}
-            position="center"
-          >
-            <div className="Tooth-Description-Total">
-              <div className="Details-Inputs">
-                <div className="left-side-input">
-                  <div className="Patient-Details-Inputs">
-                    <input
-                      type="text"
-                      name="date"
-                      value={Date}
-                      id="date"
-                      className="input-field-1"
-                      placeholder="date"
-                      autoComplete="off"
-                    />
-                    <label for="date" className="input-label">
-                      Date :
-                    </label>
-                  </div>
-
-                  <div>
-                    <div className="Patient-Details-Inputs">
-                      <input
-                        type="text"
-                        name="time"
-                        value={Time}
-                        id="time"
-                        className="input-field-1"
-                        placeholder="time"
-                        autoComplete="off"
-                      />
-                      <label for="time" className="input-label">
-                        Time :
-                      </label>
-                    </div>
-                  </div>
-
-                  <div className="Patient-Details-Inputs">
-                    <input
-                      type="text"
-                      name="dentist"
-                      value={Dentist}
-                      id="dentist"
-                      className="input-field-1"
-                      placeholder="dentist"
-                      autoComplete="off"
-                    />
-                    <label for="dentist" className="input-label">
-                      Dentist :
-                    </label>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="Patient-Details-Inputs">
-                    <input
-                      type="text"
-                      name="total-price"
-                      value={TotalPrice}
-                      id="total-price"
-                      className="input-field-1"
-                      placeholder="total-price"
-                      autoComplete="off"
-                    />
-                    <label for="total-price" className="input-label">
-                      Total Price :
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div className="Treatment-Price-Flex">
-                <div className="Treatment-Price">
-                  <div>
-                    <input
-                      className="left-top-input"
-                      type="text"
-                      value={LT}
-                      maxLength={2}
-                    />
-                    <input
-                      className="right-top-input"
-                      type="text"
-                      maxLength={2}
-                      value={RT}
-                    />
-                    <input
-                      className="left-bottom-input"
-                      type="text"
-                      maxLength={2}
-                      value={LB}
-                    />
-                    <input
-                      className="right-bottom-input"
-                      type="text"
-                      maxLength={2}
-                      value={RB}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <textarea
-                value={Description}
-                    name=""
-                    id=""
-                    cols="128"
-                    rows="3"
-                  ></textarea>
-                </div>
-
-                <div>
-                  <div className="Price-input">
-                    <div className="Patient-Details-Inputs">
-                      <input
-                        type="text"
-                        name="price"
-                        value={Price}
-                        id="price"
-                        className="input-field-1"
-                        placeholder="price"
-                        autoComplete="off"
-                      />
-                      <label for="price" className="input-label">
-                        Price:
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-        
-
-              <div className="Popup-Buttons">
-               
-              <button className="Save-Btn">
-                  Close
-                </button> 
-              </div>
-            </div>
-          </Popup>
-
-              </div>
             </div>
           </div>
-          {/* <div className="Tooth-Description-Fixed">
-            <div className="Treatment-Price-Flex">
-              <div className="Treatment-Price">
-                <div>
-                  <input
-                    className="left-top-input"
-                    type="text"
-                    value={LT}
-                    maxLength={2}
-                    onChange={(e) => {
-                      setLT(e.target.value);
-                    }}
-                  />
-                  <input
-                    className="right-top-input"
-                    type="text"
-                    maxLength={2}
-                    value={RT}
-                    onChange={(e) => {
-                      setRT(e.target.value);
-                    }}
-                  />
-                  <input
-                    className="left-bottom-input"
-                    type="text"
-                    maxLength={2}
-                    value={LB}
-                    onChange={(e) => {
-                      setLB(e.target.value);
-                    }}
-                  />
-                  <input
-                    className="right-bottom-input"
-                    type="text"
-                    maxLength={2}
-                    value={RB}
-                    onChange={(e) => {
-                      setRB(e.target.value);
-                    }}
-                  />
-                </div>
-              </div>
 
-              <div>
-                <textarea
-                  onChange={(e) => {
-                    setDescription(e.target.value);
-                  }}
-                  name=""
-                  id=""
-                  cols="128"
-                  rows="3"
-                ></textarea>
-              </div>
 
-              <div>
-                <div className="Price-input">
-                  <div className="Patient-Details-Inputs">
-                    <input
-                      type="text"
-                      name="price"
-                      onChange={(e) => {
-                        setPrice(e.target.value);
-                      }}
-                      id="price"
-                      className="input-field-1"
-                      placeholder="price"
-                      autoComplete="off"
-                    />
-                    <label for="price" className="input-label">
-                      Total Price :
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br></br>
-          </div> */}
 
           <Popup
             trigger={<button className="Plus-Btn"> +</button>}
@@ -702,6 +477,7 @@ const patientdata = (props) => {
                     <input
                       type="text"
                       name="date"
+                      value={Date}
                       onChange={(e) => {
                         setDate(e.target.value);
                       }}
@@ -720,6 +496,7 @@ const patientdata = (props) => {
                       <input
                         type="text"
                         name="time"
+                        value={Time}
                         onChange={(e) => {
                           setTime(e.target.value);
                         }}
@@ -738,6 +515,7 @@ const patientdata = (props) => {
                     <input
                       type="text"
                       name="dentist"
+                      value={Dentist}
                       onChange={(e) => {
                         setDentist(e.target.value);
                       }}
@@ -757,7 +535,7 @@ const patientdata = (props) => {
                     <input
                       type="text"
                       name="total-price"
-                      value={(Price)}
+                      value={(TotalPrice)}
                       onChange={(e) => {
                         setTotalPrice(e.target.value);
                       }}
@@ -816,6 +594,7 @@ const patientdata = (props) => {
 
                 <div>
                   <textarea
+                  value={Description}
                     onChange={(e) => {
                       setDescription(e.target.value);
                     }}
@@ -832,6 +611,7 @@ const patientdata = (props) => {
                       <input
                         type="text"
                         name="price"
+                        value={Price}
                         onChange={(e) => {
                           setPrice(e.target.value);
                         }}

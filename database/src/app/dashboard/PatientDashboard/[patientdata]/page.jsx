@@ -3,15 +3,21 @@
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
+
+// to get current data
 const today = new Date();
 const month = today.getMonth() + 1;
 const year = today.getFullYear();
 const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
-const patientdata = (props) => {
-  // this id is getting from url to show data
 
+
+
+const patientdata = (props) => {
+
+
+  // this id is getting from url to show data
   const id = props.params.patientdata;
 
   // fetching data based on specific id in belowed function
@@ -29,6 +35,12 @@ const patientdata = (props) => {
     setMemberstatus(jsondata.Memberstatus);
     setDateofregistration(jsondata.Dateofregistration);
     setClientid(jsondata.Clientid);
+    setDate(jsondata.Treatment[0].Date);
+    setDescription(jsondata.Treatment[0].Description);
+    setDentist(jsondata.Treatment[0].Dentist);
+    setDentist(jsondata.Treatment[0].Dentist);
+    setTotalPrice(jsondata.Treatment[0].TotalPrice);
+
   };
 
   // to print data using useEffect
@@ -37,7 +49,7 @@ const patientdata = (props) => {
     viewdata();
   }, []);
 
-  // declaration of fields
+  // declaration of patient fields
 
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -52,7 +64,7 @@ const patientdata = (props) => {
   //All fields on POP up for treatment detail DB
 
   const [Description, setDescription] = useState("");
-  let [Price, setPrice] = useState("");
+  const [Price, setPrice] = useState("");
   const [Date, setDate] = useState("");
   const [Time, setTime] = useState("");
   const [Dentist, setDentist] = useState("");
@@ -62,34 +74,7 @@ const patientdata = (props) => {
   const [LB, setLB] = useState("");
   const [RB, setRB] = useState("");
 
-  // fetched data's useStates for treatment
-
-  const [TreatmentData, setTreatmentData] = useState([]);
-
-  const treatmentdata = async () => {
-    const fetchtreatment = await fetch("/api/treatmentdetails");
-    const jsontreatment = await fetchtreatment.json();
-
-    setTreatmentData(jsontreatment);
-
-    // jsontreatment.map((items)=>{
-    //     if(items.Clientid===Clientid){
-    //         setDescription(items.Description);
-    //         setPrice(items.Price);
-    //         setDate(items.Date);
-    //         setTime(items.Time);
-    //         setDentist(items.Dentist);
-    //         setTotalPrice(items.TotalPrice);
-    //         setLT(items.LT);
-    //         setRT(items.RT);
-    //         setLB(items.LB);
-    //         setRB(items.RB);
-    //     }
-    // })
-  };
-  useEffect(() => {
-    treatmentdata();
-  }, []);
+ 
 
   // PUT function to update data on output
 
@@ -117,7 +102,20 @@ const patientdata = (props) => {
           Memberstatus,
           Dateofregistration,
           Clientid,
-        }),
+          Treatment: [
+            {
+              Description,
+              Price,
+              Date,
+              Time,
+              Dentist,
+              TotalPrice,
+              LT,
+              RT,
+              LB,
+              RB
+            }]
+        })
       });
 
       alert("Successfully Updated");
@@ -138,7 +136,7 @@ const patientdata = (props) => {
       Dentist != "" &&
       TotalPrice != ""
     ) {
-      const getdata = await fetch("/api/treatmentdetails", {
+      const getdata = await fetch("/api/patientdetails", {
         method: "POST",
         body: JSON.stringify({
           Date,
@@ -150,8 +148,7 @@ const patientdata = (props) => {
           LB,
           RB,
           Description,
-          Price,
-          Clientid,
+          Price
         }),
       });
       alert("success");
@@ -185,7 +182,7 @@ const patientdata = (props) => {
       Date != "" &&
       Time != ""
     ) {
-      const getdata = await fetch("/api/treatmentdetails", {
+      const getdata = await fetch("/api/patientdetails", {
         method: "POST",
         body: JSON.stringify({
           Date,
@@ -197,9 +194,8 @@ const patientdata = (props) => {
           LB,
           RB,
           Description,
-          Price,
-          Clientid,
-        }),
+          Price
+        })
       });
 
       setArr((s) => {
@@ -420,6 +416,9 @@ const patientdata = (props) => {
             </div>
           </div>
 
+
+{/* this treatment detail frontend */}
+
           <div className="Details-Inputs">
             <div className="fake-input-flex">
               <div className="fake-input">
@@ -439,17 +438,18 @@ const patientdata = (props) => {
           <div className="Fill-Inputs">
             <div className="fill-input-flex">
               <div className="fill-input">
-                <input type="text" />
-                <input type="text" />
+          <input type="text" />
+          <input type="text" />
               </div>
               <div className="fill-input-long">
-                <input type="text" />
+              <input type="text" />
               </div>
               <div className="fill-input">
-                <input type="text" />
+              <input type="text" />
               </div>
               <div className="fill-input">
-                <input type="text" />
+          <input type="text" />
+                
               </div>
             </div>
           </div>

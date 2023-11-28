@@ -1,7 +1,5 @@
 "use client";
 
-import { NEXT_URL } from "next/dist/client/components/app-router-headers";
-import { NextResponse } from "next/server";
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
@@ -27,7 +25,7 @@ const patientdata = (props) => {
   const viewdata = async () => {
     const data = await fetch("http://localhost:3000/api/patientdetails/" + id);
     const jsondata = await data.json();
-
+    
     setName(jsondata.Name);
     setEmail(jsondata.Email);
     setNumber(jsondata.Number);
@@ -37,16 +35,20 @@ const patientdata = (props) => {
     setMemberstatus(jsondata.Memberstatus);
     setDateofregistration(jsondata.Dateofregistration);
     setClientid(jsondata.Clientid);
-    setDate(jsondata.Treatment[0].Date);
-    setDescription(jsondata.Treatment[0].Description);
-    setDentist(jsondata.Treatment[0].Dentist);
-    setTotalPrice(jsondata.Treatment[0].TotalPrice);
-    setPrice(jsondata.Treatment[0].Price);
-    setTime(jsondata.Treatment[0].Time);
-    setLT(jsondata.Treatment[0].LT);
-    setRT(jsondata.Treatment[0].RT);
-    setLB(jsondata.Treatment[0].LB);
-    setRB(jsondata.Treatment[0].RB);
+    for(let i=0; i<Object.length; i++) {
+      setDate(jsondata.Treatment[i].Date);
+      setDescription(jsondata.Treatment[i].Description);
+      setDentist(jsondata.Treatment[i].Dentist);
+      setTotalPrice(jsondata.Treatment[i].TotalPrice);
+      setPrice(jsondata.Treatment[i].Price);
+      setTime(jsondata.Treatment[i].Time);
+      setLT(jsondata.Treatment[i].LT);
+      setRT(jsondata.Treatment[i].RT);
+      setLB(jsondata.Treatment[i].LB);
+      setRB(jsondata.Treatment[i].RB);
+      
+    }
+    
 
 
   };
@@ -145,22 +147,27 @@ const patientdata = (props) => {
       Dentist != "" &&
       TotalPrice != ""
     ) {
-      const getdata = await fetch("/api/patientdetails", {
-        method: "POST",
+      const getdata = await fetch("/api/patientdetails"+id, {
+        method: "PUT",
         body: JSON.stringify({
-          Date,
-          Time,
-          Dentist,
-          TotalPrice,
-          LT,
-          RT,
-          LB,
-          RB,
-          Description,
-          Price
+        Treatment:[
+            {
+              Description,
+              Price,
+              Date,
+              Time,
+              Dentist,
+              TotalPrice,
+              LT,
+              RT,
+              LB,
+              RB
+          
+            }]
         }),
       });
       alert("success");
+    //  window.location.href=("/dashboard/PatientDashboard/"+id);
     } else {
       alert("can't be empty");
     }
@@ -191,19 +198,22 @@ const patientdata = (props) => {
       Date != "" &&
       Time != ""
     ) {
-      const getdata = await fetch("/api/patientdetails", {
-        method: "POST",
+      const getdata = await fetch("/api/patientdetails"+id, {
+        method: "PUT",
         body: JSON.stringify({
-          Date,
-          Time,
-          Dentist,
-          TotalPrice,
-          LT,
-          RT,
-          LB,
-          RB,
-          Description,
-          Price
+          Treatment: [
+            {
+              Description,
+              Price,
+              Date,
+              Time,
+              Dentist,
+              TotalPrice,
+              LT,
+              RT,
+              LB,
+              RB
+            }]
         })
       });
 
@@ -637,7 +647,6 @@ const patientdata = (props) => {
                           <input
                             className="left-top-input"
                             type="text"
-                            value={LT}
                             maxLength={2}
                             onChange={(e) => {
                               setLT(e.target.value);
@@ -647,7 +656,6 @@ const patientdata = (props) => {
                             className="right-top-input"
                             type="text"
                             maxLength={2}
-                            value={RT}
                             onChange={(e) => {
                               setRT(e.target.value);
                             }}
@@ -656,7 +664,6 @@ const patientdata = (props) => {
                             className="left-bottom-input"
                             type="text"
                             maxLength={2}
-                            value={LB}
                             onChange={(e) => {
                               setLB(e.target.value);
                             }}
@@ -665,7 +672,6 @@ const patientdata = (props) => {
                             className="right-bottom-input"
                             type="text"
                             maxLength={2}
-                            value={RB}
                             onChange={(e) => {
                               setRB(e.target.value);
                             }}

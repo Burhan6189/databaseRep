@@ -10,7 +10,7 @@ const TodayAppointment = () => {
         <div className="Box-Flex">
           <a
             style={{ textDecoration: "none" }}
-            href="/dashboard/PatientDashboard"
+            href="/dashboard/PatientDashboard/"
           >
             <div className="Box-01">
               <div className="Icon-Circle">
@@ -43,7 +43,7 @@ const TodayAppointment = () => {
 
           <a
             style={{ textDecoration: "none" }}
-            href="/dashboard/AllPatient"
+            href="/dashboard/PatientDashboard/AllPatient"
           >
           <div className="Box-03">
             <div className="Icon-Circle">

@@ -1,8 +1,32 @@
-import React from "react";
+'use client'
+
+import React, { useEffect, useState } from "react";
 
 const AllPatient = () => {
+
+
+const plusbtn=()=>{
+ return window.location.href=("/dashboard/PatientDashboard");
+}
+
+
+const [Details, setDetails]=useState([]);
+
+const printdata = async ()=>{
+
+const data = await fetch("/api/patientdetails");
+const jsondata = await data.json();
+
+setDetails(jsondata);
+}
+
+useEffect(()=>{printdata(), []})
+
+
+
   return (
     <>
+
       <div className="All-Patient-BG">
         <div className="Header">
           <div className="Header-Flex">
@@ -15,7 +39,7 @@ const AllPatient = () => {
                 src="http://www.fhgroupoc.com/svg/fhlogog.svg"
                 alt=""
               />
-            </div>
+            </div> 
             <div className="User-Login">
               <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
               <div>
@@ -30,36 +54,52 @@ const AllPatient = () => {
           <div className="Appointment-Button">
             <input type="text" placeholder="Search" />
             <h4>New Appointments</h4>
-            <button>+</button>
+            <button onClick={plusbtn}>+</button>
           </div>
         </div>
+
+
+        {
+      Details.map((items)=>(
+        <a style={{textDecoration:"none"}} href={items._id}>
+
         <div className="Patients-List">
           <div className="First-Patient">
             <div className="patient-id">
               <img src="/img/image 2.png" alt="" />
               <div>
-                <h4>Bilal Saeed</h4>
-                <p>ID : 123456789</p>
+                <h4>{items.Name}</h4>
+                <p>Client ID : {items.Clientid}</p>
               </div>
             </div>
             <div>
               <h4>Phone Number</h4>
-              <p>+92 320 550 0325</p>
+              <p>{items.Number}</p>
             </div>
             <div>
               <h4>check up</h4>
-              <p>Root Canal</p>
+              <p>{items.Treatment[0].Description}</p>
             </div>
             <div>
               <h4>Date</h4>
-              <p>21 Nov 23</p>
+              <p>{items.Treatment[0].Date}</p>
             </div>
             <div>
               <h4>Time</h4>
-              <p>07:00 pm</p>
+              <p>{items.Treatment[0].Time}</p>
             </div>
           </div>
         </div>
+        </a>
+
+
+  
+        ))
+    }
+
+      
+
+
       </div>
     </>
   );

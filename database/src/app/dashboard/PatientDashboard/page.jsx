@@ -67,7 +67,7 @@ const PatientDashboard = () => {
         Date: "",
         Time: "",
         Dentist: "",
-        TotalPrice: "",
+        TotalPrice:"" ,
         LT: "0",
         RT: "0",
         LB: "0",
@@ -476,7 +476,8 @@ const PatientDashboard = () => {
 
                 <div>
                   <div className="Patient-Details-Inputs">
-                    <input
+                   
+                        <input
                       type="text"
                       name="total-price"
                       value={popupDetails.TotalPrice}
@@ -489,6 +490,9 @@ const PatientDashboard = () => {
                     <label for="total-price" className="input-label">
                       Total Price :
                     </label>
+                     
+                     
+                    
                   </div>
                 </div>
 
@@ -608,6 +612,7 @@ const PatientDashboard = () => {
           placeholder="price"
           autoComplete="off"
         />
+       
         <label for="price" className="input-label">
           Price :
         </label>

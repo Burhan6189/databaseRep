@@ -8,6 +8,7 @@ const year = today.getFullYear();
 const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
+
 const PatientDashboard = () => {
 
   const [patientDetails, setPatientDetails] = useState({
@@ -616,17 +617,13 @@ const PatientDashboard = () => {
 </div><br></br>
 
 </>
+
+
         </div>
       ))}
-
-
-            </div>
-
-
-
-        <div className="Popup-Buttons">
+   <div className="Popup-Buttons">
           <div>
-            <button onClick={addTreatment} className="Add-Btn">
+            <button onClick={addTreatment} className="Save-Btn">
               +
             </button>
           </div>
@@ -634,15 +631,17 @@ const PatientDashboard = () => {
             Submit
           </button>
         </div>
+      
+
+
+            </div>
+
       </Popup>
-
-
 
 
       <button onClick={savePatientDetails} className="Save-Btn">
         Save
       </button>
-
 
 
 

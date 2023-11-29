@@ -12,18 +12,7 @@ const mModel = new mongoose.Schema({
     Memberstatus: String,
     Dateofregistration: String,
     Clientid: { type: String, index: true, unique: true, required: true },
-    Treatment:[ {
-        Description: String,
-        Price: String,
-        Date: String,
-        Time: String,
-        Dentist: String,
-        TotalPrice: String,
-        LT: String,
-        RT: String,
-        LB: String,
-        RB: String
-    }]
+    Treatment:[]
 });
 
 mModel.plugin(mongooseUniqueValidator);

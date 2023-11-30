@@ -1136,7 +1136,6 @@ padding: 10px;
   background-position: center;
   background-size: cover;
   width: 100%;
-  overflow-y: scroll;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -1238,6 +1237,7 @@ font-size: 15px;
 }
 .All-Patient-BG .Patients-List {
   margin-top: 20px;
+  
 }
 .All-Patient-BG .Patients-List h4 {
   width: 200px;
@@ -1319,5 +1319,11 @@ scale: 1.05;
 }
 .Options-For-Patient .Option-Flex a{
   text-decoration: none;
+}
+.All-Patient{
+  overflow-y: scroll;
+  height: 900px;
+  width: 2000px;
+  margin: auto;
 }
 /*====================== All Patient =================*/

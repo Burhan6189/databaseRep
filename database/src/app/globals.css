@@ -1150,9 +1150,10 @@ padding: 10px;
 }
 .All-Patient-BG .All-Patient-Header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 550px;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 420px;
 }
 .All-Patient-BG .Appointment-Button {
   display: flex;
@@ -1301,4 +1302,19 @@ border-radius: 20px;
     border-radius: 50px;
     font-size: 25px;
   }
+  .Appointment-Input input {
+    border: none;
+    transition: 0.5s ease;
+    padding: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
+      0 3px 40px 0 rgba(0, 0, 0, 0.062);
+    outline: none;
+    border-radius: 30px;
+  transition: 0.5s ease;
+    width: 300px;
+  }
+
+.Appointment-Input input:hover{
+scale: 1.05;
+}
 /*====================== All Patient =================*/

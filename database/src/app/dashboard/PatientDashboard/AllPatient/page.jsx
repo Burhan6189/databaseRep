@@ -75,7 +75,7 @@ const AllPatient = () => {
               </div>
               <div>
                 <h4>check up</h4>
-                <input maxLength={1} value={items.Treatment[0].Description} />
+                <input disabled maxLength={1} value={items.Treatment[0].Description} />
               </div>
               <div>
                 <h4>Date</h4>

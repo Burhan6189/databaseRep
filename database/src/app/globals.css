@@ -1180,6 +1180,8 @@
 .All-Patient-BG .First-Patient a{
   display: flex;
   justify-content: space-around;
+  text-decoration: none;
+  color: black;
   align-items: center;
   padding: 10px;
   border-radius: 20px;
@@ -1187,6 +1189,11 @@
   width: 1700px;
   margin: auto;
   gap: 100px;
+}
+.All-Patient-BG .First-Patient a input{
+background: none;
+border: none;
+font-size: 15px;
 }
 .All-Patient-BG .First-Patient .patient-id {
   display: flex;

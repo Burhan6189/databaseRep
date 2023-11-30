@@ -50,8 +50,10 @@ const AllPatient = () => {
         </div>
         <div className="All-Patient-Header">
           <h2>All Patients</h2>
+          <div className="Appointment-Input">
+          <input type="text" placeholder="Search" />
+          </div>
           <div className="Appointment-Button">
-            <input type="text" placeholder="Search" />
             <h4>New Appointments</h4>
             <button onClick={plusbtn}>+</button>
           </div>
@@ -94,14 +96,14 @@ const AllPatient = () => {
                 >
                   <div className="Options-For-Patient">
                     <div className="Option-Flex">
-                      <div className="Delete">
-                        <MdDelete className="Delete-Icon" />
-                        <button>Delete Patient</button>
-                      </div>
-                      <div className="Edit">
-                        <HiOutlinePencilAlt className="Edit-Icon" />
-                        <h3>Edit Patient</h3>
-                      </div>
+                    <div className="Delete">
+                      <MdDelete  className="Delete-Icon" />
+                      <h3>Delete Patient</h3>
+                    </div>
+                    <div className="Edit">
+                    <HiOutlinePencilAlt className="Edit-Icon"  />
+                      <h3>Edit Patient</h3>
+                    </div>
                     </div>
                   </div>
                 </Popup>

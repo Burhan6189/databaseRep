@@ -71,10 +71,10 @@ const PatientDashboard = () => {
       }));
 
       setPopupDetails({
-        Date: "",
-        Time: "",
-        Dentist: "",
-        TotalPrice: "",
+        Date: popupDetails.Date,
+        Time: popupDetails.Time,
+        Dentist: popupDetails.Dentist,
+        TotalPrice: [...popupDetails.Price],
         LT: "0",
         RT: "0",
         LB: "0",
@@ -390,7 +390,6 @@ const PatientDashboard = () => {
                       name="time"
                       value={popupDetails.Time}
                       onChange={(e) => { handlePopupDetailsChange("Time", e.target.value); }}
-
                       id="time"
                       className="input-field-1"
                       placeholder="time"
@@ -428,7 +427,7 @@ const PatientDashboard = () => {
                   <input
                     type="text"
                     name="total-price"
-                    value={popupDetails.TotalPrice}
+                    value={popupDetails.Price}
                     onChange={(e) => { handlePopupDetailsChange("TotalPrice", e.target.value); }}
                     id="total-price"
                     className="input-field-1"

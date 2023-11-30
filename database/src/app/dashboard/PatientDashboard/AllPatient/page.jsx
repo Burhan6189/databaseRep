@@ -58,60 +58,57 @@ const AllPatient = () => {
             <button onClick={plusbtn}>+</button>
           </div>
         </div>
-        <div className="All-Patient">
-          {[...Details].reverse().map((items) => (
-            <div className="Patients-List" key={items._id}>
-              <div className="First-Patient">
-                <div className="patient-id">
-                  <img src="/img/image 2.png" alt="" />
-                  <div>
-                    <h4>{items.Name}</h4>
-                    <p>Client ID : {items.Clientid}</p>
-                  </div>
-                </div>
-                <div>
-                  <h4>Contact</h4>
-                  <p>{items.Number}</p>
-                </div>
-                <div>
-                  <h4>check up</h4>
-                  <input
-                    disabled
-                    maxLength={1}
-                    value={items.Treatment[0].Description}
-                  />
-                </div>
-                <div>
-                  <h4>Date</h4>
-                  <p>{items.Treatment[0].Date}</p>
-                </div>
-                <div>
-                  <h4>Time</h4>
-                  <p>{items.Treatment[0].Time}</p>
-                </div>
-                <div className="Options">
-                  <Popup
-                    trigger={
-                      <div className="Options">
-                        <BsThreeDots />
-                      </div>
-                    }
-                    position="left"
-                  >
-                    <div className="Options-For-Patient">
-                      <div className="Option-Flex">
-                        <div className="Delete">
-                          <MdDelete className="Delete-Icon" />
-                          <button>Delete Patient</button>
-                        </div>
 
-                        <a href={items._id}>
-                          <div className="Edit">
-                            <HiOutlinePencilAlt className="Edit-Icon" />
-                            <button>Edit Patient</button>
-                          </div>
-                        </a>
-                      </div>
+        {[...Details].reverse().map((items) => (
+          <div className="Patients-List" key={items._id}>
+            <div className="First-Patient">
+              <div className="patient-id">
+                <img src="/img/image 2.png" alt="" />
+                <div>
+                  <h4>{items.Name}</h4>
+                  <p>Client ID : {items.Clientid}</p>
+                </div>
+              </div>
+              <div>
+                <h4>Contact</h4>
+                <p>{items.Number}</p>
+              </div>
+              <div>
+                <h4>check up</h4>
+                <input disabled maxLength={1} value={items.Treatment[0].Description} />
+              </div>
+              <div>
+                <h4>Date</h4>
+                <p>{items.Treatment[0].Date}</p>
+              </div>
+              <div>
+                <h4>Time</h4>
+                <p>{items.Treatment[0].Time}</p>
+              </div>
+              <div className="Options">
+                <Popup
+                  trigger={
+                    <div className="Options">
+                      <BsThreeDots />
+                    </div>
+                  }
+                  position="left"
+                >
+                  <div className="Options-For-Patient">
+                    <div className="Option-Flex">
+
+                    <div className="Delete">
+                      <MdDelete  className="Delete-Icon" />
+                      <button>Delete Patient</button>
+                    </div>
+
+                    <a href={items._id} >
+                    <div className="Edit">
+                    <HiOutlinePencilAlt className="Edit-Icon"  />
+                  <button>Edit Patient</button>
+                    </div>
+                    </a>
+                    
                     </div>
                   </Popup>
                 </div>

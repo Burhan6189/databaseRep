@@ -96,14 +96,16 @@ const AllPatient = () => {
                 >
                   <div className="Options-For-Patient">
                     <div className="Option-Flex">
+
                     <div className="Delete">
                       <MdDelete  className="Delete-Icon" />
-                      <h3>Delete Patient</h3>
+                      <button>Delete Patient</button>
                     </div>
                     <div className="Edit">
                     <HiOutlinePencilAlt className="Edit-Icon"  />
-                      <h3>Edit Patient</h3>
+                   <button>Edit Patient</button>
                     </div>
+
                     </div>
                   </div>
                 </Popup>

@@ -1152,6 +1152,7 @@ padding: 10px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 420px;
 }
 .All-Patient-BG .Appointment-Button {
   display: flex;
@@ -1212,13 +1213,15 @@ padding: 10px;
   transition: 0.5s ease;
 }
 .All-Patient-BG .First-Patient:hover{
-scale: 1.05;
+scale: 1.03;
 }
 .All-Patient-BG .Patients-List{
 width: 100%;
 }
 .All-Patient-BG .First-Patient input{
 background: none;
+outline: none;
+cursor: pointer;
 border: none;
 font-size: 15px;
 }
@@ -1250,25 +1253,27 @@ font-size: 15px;
 }
 
 .Options-For-Patient {
-  width: 230px;
-  height: 125px;
+  width: 150px;
+  height: 90px;
   box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.021), 0 6px 2px 0 rgba(0, 0, 0, 0.041);
   transform: 0.5s;
-  background: #ececec;
-  border-radius: 30px;
+  background: #fff;  
+  border-radius: 10px;
   justify-content: center;
   text-align: center;
 }
-.Options-For-Patient .Option-Flex {
+.Options-For-Patient .Option-Flex { 
   padding: 20px;
+  align-items: center;
 }
 .Options-For-Patient .Option-Flex h3{
 font-weight: 500;
+font-size: 11px;
 }
 .Options-For-Patient .Option-Flex .Delete{
 display: flex;
-background: white;
 align-items: center;
+color: #838F9A;
 gap: 5px;
 margin-bottom: 10px;
 border-radius: 20px;
@@ -1279,18 +1284,18 @@ cursor:pointer;
   align-items: center;
   gap: 5px;
 margin-bottom: 10px;
+color: #838F9A;
 border-radius: 20px;
-  background: white;
   cursor:pointer;
   }
   .Options-For-Patient .Option-Flex .Delete .Delete-Icon{
-    padding: 8px;
+    padding: 1px;
     border-radius: 50px;
-    font-size: 40px;
+    font-size: 25px;
   }
   .Options-For-Patient .Option-Flex .Edit .Edit-Icon{
-    padding: 8px;
+    padding: 1px;
     border-radius: 50px;
-    font-size: 40px;
+    font-size: 25px;
   }
 /*====================== All Patient =================*/

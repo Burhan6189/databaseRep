@@ -63,6 +63,7 @@
 
 .Login-Signup-Page-BG .Login-Signup-Page-Button {
   max-width: 500px;
+  padding: 10px;
   margin: auto;
 }
 
@@ -95,6 +96,7 @@
 .Login-Signup-Page-Texts p {
   margin: auto;
   max-width: 750px;
+  padding: 10px;
   line-height: 1.5;
 }
 
@@ -118,6 +120,7 @@
   background-position: center;
   background-size: cover;
   text-align: center;
+  overflow-y: auto;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -140,6 +143,7 @@
   margin: auto;
   align-items: center;
   /* text-align: center; */
+  padding: 10px;
   min-height: 80px;
   justify-content: center;
   position: relative;
@@ -148,6 +152,7 @@
 
 .Login-Page-Input-2 {
   max-width: 400px;
+padding: 10px;
   margin: auto;
   align-items: center;
   min-height: 80px;
@@ -158,11 +163,13 @@
 
 .Login-Page-BG button {
   width: 100%;
+  padding: 10px;
   margin-top: 10px;
   background-color: white;
   border: #dcdcdc 1px solid;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+  outline: none;
   cursor: pointer;
   margin-bottom: 10px;
   border-radius: 50px;
@@ -233,6 +240,7 @@
 .Login-Page-Texts p {
   margin: auto;
   max-width: 750px;
+  padding: 10px;
   line-height: 1.5;
 }
 
@@ -250,6 +258,7 @@
 .Login-Page-BG .Login-Button {
   max-width: 350px;
   text-align: center;
+  padding: 10px;
   margin: auto;
 }
 
@@ -267,6 +276,7 @@
   background-position: center;
   background-size: cover;
   text-align: center;
+  overflow-y: auto;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -321,6 +331,7 @@
 .Signup-Page-BG button {
   width: 100%;
   margin-top: 10px;
+  outline: none;
   background-color: white;
   border: #dcdcdc 1px solid;
   font-family: "Poppins", sans-serif;
@@ -414,6 +425,7 @@
 .Signup-Page-BG .Signup-Button {
   max-width: 350px;
   text-align: center;
+  padding: 10px;
   margin: auto;
 }
 
@@ -954,6 +966,7 @@
   background-position: center;
   background-size: cover;
   width: 100%;
+  overflow-y: auto;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -975,9 +988,10 @@
   margin: auto;
 }
 .Things-BG .Bottom-Text p {
-  width: 794px;
+
   color: #929292;
   margin: auto;
+  /* padding: 10px; */
   margin-bottom: 50px;
 }
 .Things-BG .Bottom-Text h3 {
@@ -1027,6 +1041,9 @@
 }
 .Things-BG .Bottom-Text {
   text-align: center;
+  /* width: 794px; */
+  margin: auto;
+  padding: 10px;
 }
 
 /*=========================== Box 1 ==========================*/
@@ -1133,6 +1150,7 @@
 .All-Patient-BG .All-Patient-Header {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .All-Patient-BG .Appointment-Button {
   display: flex;
@@ -1189,6 +1207,9 @@
   width: 1700px;
   margin: auto;
   gap: 100px;
+}
+.All-Patient-BG .First-Patient{
+width: 100%;
 }
 .All-Patient-BG .First-Patient a input{
 background: none;

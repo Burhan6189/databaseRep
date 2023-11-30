@@ -46,7 +46,7 @@
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
-  height: auto;
+  height: 100vh;
 }
 
 .Login-Signup-Page-BG .Logo {
@@ -119,7 +119,7 @@
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
-  height: auto;
+  height: 100vh;
 }
 
 .Login-Page-BG .Logo {
@@ -268,7 +268,7 @@
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
-  height: auto;
+  height: 100vh;
 }
 
 .Signup-Page-BG .Logo {
@@ -432,7 +432,7 @@
   background-size: cover;
   text-align: center;
   background-repeat: no-repeat;
-  height: auto;
+  height: 100vh;
 }
 
 .Patient-Details-BG .Patient-Details-Logo {

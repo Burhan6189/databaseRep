@@ -7,9 +7,14 @@ import { HiOutlinePencilAlt } from "react-icons/hi";
 import Popup from "reactjs-popup";
 
 const AllPatient = () => {
+
+
+
   const plusbtn = () => {
     return (window.location.href = "/dashboard/PatientDashboard");
   };
+
+
 
   const [Details, setDetails] = useState([]);
 
@@ -103,7 +108,7 @@ const AllPatient = () => {
                     </div>
                     <div className="Edit">
                     <HiOutlinePencilAlt className="Edit-Icon"  />
-                   <button>Edit Patient</button>
+                  <a ><button>Edit Patient</button> </a> 
                     </div>
 
                     </div>

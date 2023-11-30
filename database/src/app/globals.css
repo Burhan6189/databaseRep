@@ -1135,6 +1135,7 @@ padding: 10px;
   background-image: url("/img/Login-Signup-BG1.jpg");
   background-position: center;
   background-size: cover;
+  overflow-y: scroll;
   width: 100%;
   background-repeat: no-repeat;
   height: 100vh;
@@ -1149,8 +1150,7 @@ padding: 10px;
 }
 .All-Patient-BG .All-Patient-Header {
   display: flex;
-  justify-content: center;
-  gap: 550px;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }

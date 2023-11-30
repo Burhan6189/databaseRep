@@ -55,7 +55,7 @@ const PatientDashboard = () => {
   };
 
 
-  
+
 
   const addTreatment = () => {
     if (
@@ -71,7 +71,7 @@ const PatientDashboard = () => {
       }));
 
       setPopupDetails({
-        Date: currentDate,
+        Date: "",
         Time: "",
         Dentist: "",
         TotalPrice: "",
@@ -327,7 +327,7 @@ const PatientDashboard = () => {
 
 
 
-        {patientDetails.Treatment.map((treatment, index) => (
+        {[...patientDetails.Treatment].reverse().map((treatment, index) => (
           <div key={index} className="Fill-Inputs">
             {/* ... (render treatment fields) */}
 
@@ -371,7 +371,7 @@ const PatientDashboard = () => {
                   <input
                     type="text"
                     name="date"
-                    value={currentDate}
+                    value={popupDetails.Date}
                     onChange={(e) => { handlePopupDetailsChange("Date", e.target.value); }}
                     id="date"
                     className="input-field-1"
@@ -509,7 +509,7 @@ const PatientDashboard = () => {
 
 
 
-            {patientDetails.Treatment.map((treatment, index) => (
+            {[...patientDetails.Treatment].reverse().map((treatment, index) => (
               <div key={index} className="Fill-Inputs">
                 <>
 

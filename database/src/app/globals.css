@@ -1208,6 +1208,10 @@ padding: 10px;
   width: 1700px;
   margin: auto;
   gap: 100px;
+  transition: 0.5s ease;
+}
+.All-Patient-BG .First-Patient a:hover{
+scale: 1.05;
 }
 .All-Patient-BG .First-Patient{
 width: 100%;
@@ -1228,7 +1232,7 @@ font-size: 15px;
   height: 70px;
 }
 .All-Patient-BG .Patients-List {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .All-Patient-BG .Patients-List h4 {
   width: 200px;

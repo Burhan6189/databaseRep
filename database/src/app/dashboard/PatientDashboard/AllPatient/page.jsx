@@ -86,8 +86,6 @@ useEffect(()=>{printdata(), []})
             <div>
               <h4>Time</h4>
               <p>{items.Treatment[0].Time}</p>
-            
-          
             </div>
             </a>
           </div>

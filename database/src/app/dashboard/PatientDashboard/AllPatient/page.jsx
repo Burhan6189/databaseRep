@@ -73,7 +73,7 @@ const AllPatient = () => {
               </div>
               <div>
                 <h4>check up</h4>
-                <input  maxLength={2} value={items.Treatment[0].Description} />
+                <input maxLength={1} value={items.Treatment[0].Description} />
               </div>
               <div>
                 <h4>Date</h4>
@@ -90,7 +90,7 @@ const AllPatient = () => {
                       <BsThreeDots />
                     </div>
                   }
-                  position="left top"
+                  position="left"
                 >
                   <div className="Options-For-Patient">
                     <div className="Option-Flex">

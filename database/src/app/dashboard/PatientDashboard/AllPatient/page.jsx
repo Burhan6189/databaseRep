@@ -1,35 +1,31 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
+import { MdDelete } from "react-icons/md";
+import { HiOutlinePencilAlt } from "react-icons/hi";
 import Popup from "reactjs-popup";
 
-
 const AllPatient = () => {
+  const plusbtn = () => {
+    return (window.location.href = "/dashboard/PatientDashboard");
+  };
 
+  const [Details, setDetails] = useState([]);
 
-const plusbtn=()=>{
- return window.location.href=("/dashboard/PatientDashboard");
-}
+  const printdata = async () => {
+    const data = await fetch("/api/patientdetails");
+    const jsondata = await data.json();
 
+    setDetails(jsondata);
+  };
 
-const [Details, setDetails]=useState([]);
-
-const printdata = async ()=>{
-
-const data = await fetch("/api/patientdetails");
-const jsondata = await data.json();
-
-setDetails(jsondata);
-}
-
-useEffect(()=>{printdata(), []})
-
-
+  useEffect(() => {
+    printdata(), [];
+  });
 
   return (
     <>
-
       <div className="All-Patient-BG">
         <div className="Header">
           <div className="Header-Flex">
@@ -42,7 +38,7 @@ useEffect(()=>{printdata(), []})
                 src="http://www.fhgroupoc.com/svg/fhlogog.svg"
                 alt=""
               />
-            </div> 
+            </div>
             <div className="User-Login">
               <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
               <div>
@@ -67,7 +63,7 @@ useEffect(()=>{printdata(), []})
      [ ...Details].reverse().map((items)=>(
         <div className="Patients-List"  key={items._id}>
           <div className="First-Patient">
-          <a style={{textDecoration:"none"}}>            
+          <a style={{textDecoration:"none"}} href={items._id}>            
             <div className="patient-id">
               <img src="/img/image 2.png" alt="" />
               <div>
@@ -98,25 +94,9 @@ useEffect(()=>{printdata(), []})
           
 
               </div>
-        </Popup>
-        
-
-            
             </div>
-            </a>
           </div>
-          
-        </div>
-       
-
-
-  
-        ))
-    }
-
-      
-
-
+        ))}
       </div>
     </>
   );

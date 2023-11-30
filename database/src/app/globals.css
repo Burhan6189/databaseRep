@@ -1196,7 +1196,8 @@ padding: 10px;
   color: #b3e770;
   font-weight: 500;
 }
-.All-Patient-BG .First-Patient a{
+
+.All-Patient-BG .First-Patient{
   display: flex;
   justify-content: space-around;
   text-decoration: none;
@@ -1210,13 +1211,13 @@ padding: 10px;
   gap: 100px;
   transition: 0.5s ease;
 }
-.All-Patient-BG .First-Patient a:hover{
+.All-Patient-BG .First-Patient:hover{
 scale: 1.05;
 }
-.All-Patient-BG .First-Patient{
+.All-Patient-BG .Patients-List{
 width: 100%;
 }
-.All-Patient-BG .First-Patient a input{
+.All-Patient-BG .First-Patient input{
 background: none;
 border: none;
 font-size: 15px;
@@ -1248,4 +1249,48 @@ font-size: 15px;
   font-size: 30px;
 }
 
+.Options-For-Patient {
+  width: 230px;
+  height: 125px;
+  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.021), 0 6px 2px 0 rgba(0, 0, 0, 0.041);
+  transform: 0.5s;
+  background: #ececec;
+  border-radius: 30px;
+  justify-content: center;
+  text-align: center;
+}
+.Options-For-Patient .Option-Flex {
+  padding: 20px;
+}
+.Options-For-Patient .Option-Flex h3{
+font-weight: 500;
+}
+.Options-For-Patient .Option-Flex .Delete{
+display: flex;
+background: white;
+align-items: center;
+gap: 5px;
+margin-bottom: 10px;
+border-radius: 20px;
+cursor:pointer;
+}
+.Options-For-Patient .Option-Flex .Edit{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+margin-bottom: 10px;
+border-radius: 20px;
+  background: white;
+  cursor:pointer;
+  }
+  .Options-For-Patient .Option-Flex .Delete .Delete-Icon{
+    padding: 8px;
+    border-radius: 50px;
+    font-size: 40px;
+  }
+  .Options-For-Patient .Option-Flex .Edit .Edit-Icon{
+    padding: 8px;
+    border-radius: 50px;
+    font-size: 40px;
+  }
 /*====================== All Patient =================*/

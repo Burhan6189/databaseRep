@@ -60,8 +60,8 @@ useEffect(()=>{printdata(), []})
 
 
         {
-      Details.map((items)=>(
-        <div className="Patients-List">
+     [ ...Details].reverse().map((items)=>(
+        <div className="Patients-List"  key={items._id}>
           <div className="First-Patient">
           <a style={{textDecoration:"none"}} href={items._id}>            
             <div className="patient-id">

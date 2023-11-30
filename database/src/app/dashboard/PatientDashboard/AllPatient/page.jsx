@@ -59,6 +59,7 @@ useEffect(()=>{printdata(), []})
         </div>
 
 
+        
         {
      [ ...Details].reverse().map((items)=>(
         <div className="Patients-List"  key={items._id}>

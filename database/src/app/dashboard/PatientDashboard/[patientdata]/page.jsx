@@ -345,7 +345,7 @@ const update=async()=>{
 
 
 
-        {patientDetails.Treatment.map((treatment, index) => (
+        {[...patientDetails.Treatment].reverse().map((treatment, index) => (
           <div key={index} className="Fill-Inputs">
             {/* ... (render treatment fields) */}
 
@@ -527,7 +527,7 @@ const update=async()=>{
 
 
 
-            {patientDetails.Treatment.map((treatment, index) => (
+            {[...patientDetails.Treatment].reverse().map((treatment, index) => (
               <div key={index} className="Fill-Inputs">
                 <>
 

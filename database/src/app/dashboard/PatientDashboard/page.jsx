@@ -9,7 +9,10 @@ const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
 
+
+
 const PatientDashboard = () => {
+
 
 
   const [patientDetails, setPatientDetails] = useState({
@@ -37,6 +40,7 @@ const PatientDashboard = () => {
     Description: "",
     Price: "",
   });
+
 
 
 
@@ -74,7 +78,7 @@ const PatientDashboard = () => {
         Date: popupDetails.Date,
         Time: popupDetails.Time,
         Dentist: popupDetails.Dentist,
-        TotalPrice: [...popupDetails.Price],
+        TotalPrice: popupDetails.Price,
         LT: "0",
         RT: "0",
         LB: "0",
@@ -106,6 +110,20 @@ const PatientDashboard = () => {
       });
 
       alert("Success");
+      setPopupDetails({
+        Date: "",
+        Time: "",
+        Dentist: "",
+        TotalPrice: "",
+        LT: "0",
+        RT: "0",
+        LB: "0",
+        RB: "0",
+        Description: "",
+        Price: "",
+});
+window.location.href="/dashboard/PatientDashboard/AllPatient";
+
     } else {
       alert("All fields are required");
     }
@@ -359,10 +377,10 @@ const PatientDashboard = () => {
 
         {/* copied */}
 
+
+
         <Popup trigger={<button className="Plus-Btn"> +</button>} position="center">
-          {/* ... (rest of your JSX code) */}
-
-
+          
           <div className="Tooth-Description-Total">
             <div className="Details-Inputs">
               <div className="left-side-input">
@@ -438,11 +456,8 @@ const PatientDashboard = () => {
                     Total Price :
                   </label>
 
-
-
                 </div>
               </div>
-
 
             </div>
             <div className="Treatment-Price-Flex">
@@ -507,8 +522,12 @@ const PatientDashboard = () => {
             </div>
 
 
+                    {/* this is popup stack of deatils showing on every + button */}
 
-            {[...patientDetails.Treatment].reverse().map((treatment, index) => (
+            {
+           
+              [...patientDetails.Treatment].reverse().map((treatment, index) => (
+            
               <div key={index} className="Fill-Inputs">
                 <>
 

@@ -67,7 +67,7 @@ useEffect(()=>{printdata(), []})
      [ ...Details].reverse().map((items)=>(
         <div className="Patients-List"  key={items._id}>
           <div className="First-Patient">
-          <a style={{textDecoration:"none"}} href={items._id}>            
+          <a style={{textDecoration:"none"}}>            
             <div className="patient-id">
               <img src="/img/image 2.png" alt="" />
               <div>

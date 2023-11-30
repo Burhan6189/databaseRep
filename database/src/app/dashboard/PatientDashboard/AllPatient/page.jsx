@@ -56,7 +56,8 @@ const AllPatient = () => {
         <div className="All-Patient-Header">
           <h2>All Patients</h2>
           <div className="Appointment-Input">
-          <input type="text" placeholder="Search" />
+     <input type="text" placeholder="Search" />
+    
           </div>
           <div className="Appointment-Button">
             <h4>New Appointments</h4>

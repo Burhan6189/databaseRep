@@ -106,11 +106,14 @@ const AllPatient = () => {
                       <MdDelete  className="Delete-Icon" />
                       <button>Delete Patient</button>
                     </div>
+
+                    <a href={items._id} >
                     <div className="Edit">
                     <HiOutlinePencilAlt className="Edit-Icon"  />
-                  <a ><button>Edit Patient</button> </a> 
+                  <button>Edit Patient</button>
                     </div>
-
+                    </a>
+                    
                     </div>
                   </div>
                 </Popup>

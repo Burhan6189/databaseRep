@@ -12,6 +12,7 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cookies-next": "^4.1.0",
+    "framer-motion": "^10.16.8",
     "mongoose": "^8.0.0",
     "mongoose-bcrypt": "^1.11.0",
     "mongoose-unique-validator": "^4.0.0",

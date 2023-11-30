@@ -442,6 +442,7 @@ padding: 10px;
   background-image: url("/img/Login-Signup-BG1.jpg");
   background-position: center;
   background-size: cover;
+  overflow-y: auto;
   text-align: center;
   background-repeat: no-repeat;
   height: 100vh;

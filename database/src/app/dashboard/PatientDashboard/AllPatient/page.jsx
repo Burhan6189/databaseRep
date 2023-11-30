@@ -61,10 +61,9 @@ useEffect(()=>{printdata(), []})
 
         {
       Details.map((items)=>(
-        <a style={{textDecoration:"none"}} href={items._id}>
-
         <div className="Patients-List">
           <div className="First-Patient">
+          <a style={{textDecoration:"none"}} href={items._id}>            
             <div className="patient-id">
               <img src="/img/image 2.png" alt="" />
               <div>
@@ -73,24 +72,28 @@ useEffect(()=>{printdata(), []})
               </div>
             </div>
             <div>
-              <h4>Phone Number</h4>
+              <h4>Contact</h4>
               <p>{items.Number}</p>
             </div>
             <div>
               <h4>check up</h4>
-              <p>{items.Treatment[0].Description}</p>
+              <input maxLength={1} value={items.Treatment[0].Description} />
             </div>
-            <div>
+                        <div>
               <h4>Date</h4>
               <p>{items.Treatment[0].Date}</p>
             </div>
             <div>
               <h4>Time</h4>
               <p>{items.Treatment[0].Time}</p>
+            
+          
             </div>
+            </a>
           </div>
+          
         </div>
-        </a>
+       
 
 
   

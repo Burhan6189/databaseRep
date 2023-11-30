@@ -1,6 +1,9 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
+import { BsThreeDots } from "react-icons/bs";
+import Popup from "reactjs-popup";
+
 
 const AllPatient = () => {
 
@@ -87,6 +90,18 @@ useEffect(()=>{printdata(), []})
             <div>
               <h4>Time</h4>
               <p>{items.Treatment[0].Time}</p>
+            </div>
+            <div className="Options">
+            <Popup trigger={<div className="Options"><BsThreeDots /></div>} position="center">
+
+          <div className="Tooth-Description-Total">
+          
+
+              </div>
+        </Popup>
+        
+
+            
             </div>
             </a>
           </div>

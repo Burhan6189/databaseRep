@@ -1205,7 +1205,7 @@ padding: 10px;
   padding: 10px;
   border-radius: 20px;
   background-color: white;
-  width: 1700px;
+  width: 1900px;
   margin: auto;
   gap: 100px;
   transition: 0.5s ease;
@@ -1243,6 +1243,9 @@ font-size: 15px;
   font-size: 16px;
   font-weight: 500;
   color: #929292;
+}
+.All-Patient-BG .Patients-List .Options{
+  font-size: 30px;
 }
 
 /*====================== All Patient =================*/

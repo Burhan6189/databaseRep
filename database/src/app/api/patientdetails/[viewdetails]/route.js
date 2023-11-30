@@ -27,3 +27,15 @@ export async function GET(request, content) {
 
     return NextResponse.json(mydata)
 }
+
+export async function DELETE(request, content) {
+
+    await mongoose.connect(DBcon);
+    const clientid = content.params.viewdetails;
+    const filter = {_id:clientid};
+    const payload = await request.json();
+    const data = await PatientModel.findOneAndDelete(filter, payload);
+
+
+    return NextResponse.json(data)
+}

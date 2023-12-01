@@ -7,6 +7,8 @@ import { HiOutlinePencilAlt } from "react-icons/hi";
 import Popup from "reactjs-popup";
 
 const AllPatient = () => {
+
+
   const plusbtn = () => {
     return (window.location.href = "/dashboard/PatientDashboard");
   };
@@ -100,10 +102,13 @@ const AllPatient = () => {
                   >
                     <div className="Options-For-Patient">
                       <div className="Option-Flex">
+
+                      <a href={"/dashboard/PatientDashboard/AllPatient/"+items._id}>
                         <div className="Delete">
                           <MdDelete className="Delete-Icon" />
                           <button>Delete Patient</button>
                         </div>
+                        </a>
 
                         <a href={items._id}>
                           <div className="Edit">

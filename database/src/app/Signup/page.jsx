@@ -96,6 +96,12 @@ const Signup = () => {
             Password
           </label>
         </div>
+        <select name="" id="">
+        <option></option>
+          <option>Super Admin</option>
+          <option>User</option>
+          <option>Checker</option>
+        </select>
         <div className="Signup-Button">
           <button onClick={myfun}>Login</button>
         </div>

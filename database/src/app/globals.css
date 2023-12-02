@@ -21,12 +21,13 @@
   justify-content: space-around;
 }
 .Header .User-Login-Pic {
-  width: 100px;
+  width: 60px;
   border-radius: 50px;
-  height: 100px;
+  height: 60px;
 }
 .Header .User-Login h3 {
   font-weight: 500;
+  font-size: 15px;
 }
 .Header .Logo {
   padding: 60px 15px 70px 15px;
@@ -34,6 +35,9 @@
   height: auto;
   text-align: center;
   margin: auto;
+}
+.Header .User-Login p{
+  font-size: 13px;
 }
 
 /*====================== End Header ==========================*/
@@ -1018,18 +1022,19 @@ padding: 10px;
 .Things-BG .Box-Flex .Box-01 {
   text-align: center;
   width: 300px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
-    0 3px 40px 0 rgba(0, 0, 0, 0.062);
+
   padding: 20px;
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #ffd978;
-  border: 4px solid #e9c058;
+  background: #FFFAEE;
+  border: 4px solid #FFE097;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-01:hover {
   scale: 1.1;
+  box-shadow: 0 5px 10px 0 #E5D9B9,
+  0 50px 100px 0 #E5D9B9;
 }
 
 .Things-BG .Box-Flex .Box-01 .Box-Text h3 {
@@ -1063,18 +1068,19 @@ padding: 10px;
 .Things-BG .Box-Flex .Box-02 {
   text-align: center;
   width: 300px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
-    0 3px 40px 0 rgba(0, 0, 0, 0.062);
+
   padding: 20px;
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #bad6ff;
-  border: 4px solid #8da4c7;
+  background: #EAF2FF;
+  border: 4px solid #C4DAFF;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-02:hover {
   scale: 1.1;
+  box-shadow: 0 5px 10px 0 #C9DFFF,
+  0 50px 100px 0 #C9DFFF;
 }
 
 .Things-BG .Box-Flex .Box-02 .Box-Text h3 {
@@ -1102,18 +1108,19 @@ padding: 10px;
 .Things-BG .Box-Flex .Box-03 {
   text-align: center;
   width: 300px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
-    0 3px 40px 0 rgba(0, 0, 0, 0.062);
+
   padding: 20px;
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #c6ffdd;
-  border: 4px solid #81ae93;
+  background: #E7FFF0;
+  border: 4px solid #B4FFD0;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-03:hover {
   scale: 1.1;
+  box-shadow: 0 5px 10px 0 #D2FFE4,
+  0 50px 100px 0 #D2FFE4;
 }
 
 .Things-BG .Box-Flex .Box-03 .Box-Text h3 {
@@ -1213,7 +1220,7 @@ padding: 10px;
   text-decoration: none;
   color: black;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   border-radius: 20px;
   background-color: white;
   width: 1900px;
@@ -1241,11 +1248,11 @@ font-size: 15px;
 }
 .All-Patient-BG .First-Patient .patient-id img {
   border-radius: 50px;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 }
 .All-Patient-BG .Patients-List {
-  margin-top: 20px;
+  margin-top: 2px;
   
 }
 .All-Patient-BG .Patients-List h4 {
@@ -1282,6 +1289,8 @@ display: flex;
 align-items: center;
 color: #838F9A;
 gap: 5px;
+text-decoration: none;
+border: none;
 margin-bottom: 10px;
 border-radius: 20px;
 cursor:pointer;

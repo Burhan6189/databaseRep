@@ -68,7 +68,7 @@ const AllPatient = () => {
                   <img src="/img/image 2.png" alt="" />
                   <div>
                     <h4>{items.Name}</h4>
-                    <p>Client ID : {items.Clientid}</p>
+                    <p>ID : {items.Clientid}</p>
                   </div>
                 </div>
                 <div>

@@ -13,7 +13,12 @@ const AllPatient = () => {
     return (window.location.href = "/dashboard/PatientDashboard");
   };
 
+
   const [Details, setDetails] = useState([]);
+
+
+  const [Record, setRecord]= useState(Details);
+
 
   const printdata = async () => {
     const data = await fetch("/api/patientdetails");
@@ -22,12 +27,32 @@ const AllPatient = () => {
     setDetails(jsondata);
   };
 
-  useEffect(() => {
-    printdata(), [];
-  });
 
-  return (
+
+  useEffect(() => {
+    printdata();
+  }, []);
+
+
+
+  const Filter = (event) => {
+    
+    setRecord(
+      Details.filter((f) => f.Name.toLowerCase().includes(event.target.value)||
+      f.Clientid.toLowerCase().includes(event.target.value) ||
+      f.Number.toLowerCase().includes(event.target.value))
+    );
+  };
+  
+
+  useEffect(() => {
+    setRecord([...Details]);
+  }, [Details]);
+  
+
+  return ( 
     <>
+  
       <div className="All-Patient-BG">
         <div className="Header">
           <div className="Header-Flex">
@@ -53,7 +78,10 @@ const AllPatient = () => {
         <div className="All-Patient-Header">
           <h2>All Patients</h2>
           <div className="Appointment-Input">
-            <input type="text" placeholder="Search" />
+           
+            <input type="text" placeholder="Search"   onChange={Filter}/>
+
+
           </div>
           <div className="Appointment-Button">
             <h4>New Appointments</h4>
@@ -61,7 +89,9 @@ const AllPatient = () => {
           </div>
         </div>
         <div className="All-Patient">
-          {[...Details].reverse().map((items) => (
+       
+          {
+          [...Record].reverse().map((items) =>(
             <div className="Patients-List" key={items._id}>
               <div className="First-Patient">
                 <div className="patient-id">

@@ -501,7 +501,7 @@ const update=async()=>{
               </div>
 
               <div>
-                <textarea value={popupDetails.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="3"></textarea>
+                <textarea value={popupDetails.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="1"></textarea>
               </div>
 
               <div>
@@ -563,7 +563,7 @@ const update=async()=>{
                     </div>
 
                     <div>
-                      <textarea name="" id="" value={treatment.Description} cols="128" rows="3"></textarea>
+                      <textarea name="" id="" value={treatment.Description} cols="128" rows="1"></textarea>
                     </div>
 
                     <div>

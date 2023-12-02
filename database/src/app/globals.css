@@ -1330,7 +1330,7 @@ scale: 1.05;
   text-decoration: none;
 }
 .All-Patient{
-overflow-y: scroll;
+overflow-y: auto;
   height: 900px;
   width: 2000px;
   margin: auto;

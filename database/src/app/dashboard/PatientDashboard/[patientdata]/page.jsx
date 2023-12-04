@@ -446,7 +446,7 @@ const update=async()=>{
                   <input
                     type="text"
                     name="total-price"
-                    value={popupDetails.TotalPrice}
+                    value={popupDetails.TotalPrice= popupDetails.Price}
                     onChange={(e) => { handlePopupDetailsChange("TotalPrice", e.target.value); }}
                     id="total-price"
                     className="input-field-1"
@@ -525,9 +525,7 @@ const update=async()=>{
               </div>
             </div>
 
-
-
-            {[...patientDetails.Treatment].reverse().map((treatment, index) => (
+            {/* {[...patientDetails.Treatment.Date].reverse().map((treatment, index) => (
               <div key={index} className="Fill-Inputs">
                 <>
 
@@ -562,7 +560,7 @@ const update=async()=>{
                       </div>
                     </div>
 
-                    <div>
+                    <div >
                       <textarea name="" id="" value={treatment.Description} cols="128" rows="1"></textarea>
                     </div>
 
@@ -591,7 +589,11 @@ const update=async()=>{
 
 
               </div>
-            ))}
+            ))} */}
+
+
+
+      
             <div className="Popup-Buttons">
               <div>
                 <button onClick={addTreatment} className="Add-Btn">
@@ -619,3 +621,242 @@ const update=async()=>{
 };
 
 export default PatientDashboard;
+
+
+
+
+
+
+
+                                           //  popup copy
+
+
+
+// <Popup trigger={<button className="Plus-Btn"> +</button>} position="center">
+//           {/* ... (rest of your JSX code) */}
+
+
+//           <div className="Tooth-Description-Total">
+//             <div className="Details-Inputs">
+//               <div className="left-side-input">
+
+//                 <div className="Patient-Details-Inputs">
+//                   <input
+//                     type="text"
+//                     name="date"
+//                     value={popupDetails.Date}
+//                     onChange={(e) => { handlePopupDetailsChange("Date", e.target.value); }}
+//                     id="date"
+//                     className="input-field-1"
+//                     placeholder="date"
+//                     autoComplete="off"
+//                   />
+//                   <label for="date" className="input-label">
+//                     Date :
+//                   </label>
+//                 </div>
+
+//                 <div>
+//                   <div className="Patient-Details-Inputs">
+//                     <input
+//                       type="text"
+//                       name="time"
+//                       value={popupDetails.Time}
+//                       onChange={(e) => { handlePopupDetailsChange("Time", e.target.value); }}
+
+//                       id="time"
+//                       className="input-field-1"
+//                       placeholder="time"
+//                       autoComplete="off"
+//                     />
+//                     <label for="time" className="input-label">
+//                       Time :
+//                     </label>
+//                   </div>
+//                 </div>
+
+
+//                 <div className="Patient-Details-Inputs">
+//                   <input
+//                     type="text"
+//                     name="dentist"
+//                     value={popupDetails.Dentist}
+//                     onChange={(e) => { handlePopupDetailsChange("Dentist", e.target.value); }}
+
+//                     id="dentist"
+//                     className="input-field-1"
+//                     placeholder="dentist"
+//                     autoComplete="off"
+//                   />
+//                   <label for="dentist" className="input-label">
+//                     Dentist :
+//                   </label>
+//                 </div>
+
+//               </div>
+
+//               <div>
+//                 <div className="Patient-Details-Inputs">
+
+//                   <input
+//                     type="text"
+//                     name="total-price"
+//                     value={popupDetails.TotalPrice}
+//                     onChange={(e) => { handlePopupDetailsChange("TotalPrice", e.target.value); }}
+//                     id="total-price"
+//                     className="input-field-1"
+//                     placeholder="total-price"
+//                     autoComplete="off"
+//                   />
+//                   <label for="total-price" className="input-label">
+//                     Total Price :
+//                   </label>
+
+
+
+//                 </div>
+//               </div>
+
+
+//             </div>
+//             <div className="Treatment-Price-Flex">
+//               <div className="Treatment-Price">
+//                 <div>
+//                   <input
+//                     className="left-top-input"
+//                     type="text"
+//                     value={popupDetails.LT}
+//                     onChange={(e) => { handlePopupDetailsChange("LT", e.target.value); }}
+//                     maxLength={2}
+
+//                   />
+//                   <input
+//                     className="right-top-input"
+//                     type="text"
+//                     maxLength={2}
+//                     value={popupDetails.RT}
+//                     onChange={(e) => { handlePopupDetailsChange("RT", e.target.value); }}
+
+//                   />
+//                   <input
+//                     className="left-bottom-input"
+//                     type="text"
+//                     maxLength={2}
+//                     value={popupDetails.LB}
+//                     onChange={(e) => { handlePopupDetailsChange("LB", e.target.value); }}
+//                   />
+//                   <input
+//                     className="right-bottom-input"
+//                     type="text"
+//                     maxLength={2}
+//                     value={popupDetails.RB}
+//                     onChange={(e) => { handlePopupDetailsChange("RB", e.target.value); }}
+//                   />
+//                 </div>
+//               </div>
+
+//               <div>
+//                 <textarea value={popupDetails.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="1"></textarea>
+//               </div>
+
+//               <div>
+//                 <div className="Price-input">
+//                   <div className="Patient-Details-Inputs">
+//                     <input
+//                       type="text"
+//                       name="price"
+//                       value={popupDetails.Price}
+//                       onChange={(e) => { handlePopupDetailsChange("Price", e.target.value); }}
+//                       id="price"
+//                       className="input-field-1"
+//                       placeholder="price"
+//                       autoComplete="off"
+//                     />
+//                     <label for="price" className="input-label">
+//                       Price :
+//                     </label>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+
+
+
+//             {[...patientDetails.Treatment].reverse().map((treatment, index) => (
+//               <div key={index} className="Fill-Inputs">
+//                 <>
+
+//                   <div className="Treatment-Price-Flex">
+//                     <div className="Treatment-Price">
+//                       <div>
+//                         <input
+//                           className="left-top-input"
+//                           type="text"
+//                           value={treatment.LT}
+//                           maxLength={2}
+//                         />
+//                         <input
+//                           className="right-top-input"
+//                           type="text"
+//                           maxLength={2}
+//                           value={treatment.RT}
+//                         />
+//                         <input
+//                           className="left-bottom-input"
+//                           type="text"
+//                           maxLength={2}
+//                           value={treatment.LB}
+//                         />
+//                         <input
+//                           className="right-bottom-input"
+//                           type="text"
+//                           maxLength={2}
+//                           value={treatment.RB}
+
+//                         />
+//                       </div>
+//                     </div>
+
+//                     <div>
+//                       <textarea name="" id="" value={treatment.Description} cols="128" rows="1"></textarea>
+//                     </div>
+
+//                     <div>
+//                       <div className="Price-input">
+//                         <div className="Patient-Details-Inputs">
+//                           <input
+//                             type="text"
+//                             name="price"
+//                             value={treatment.Price}
+//                             id="price"
+//                             className="input-field-1"
+//                             placeholder="price"
+//                             autoComplete="off"
+//                           />
+
+//                           <label for="price" className="input-label">
+//                             Price :
+//                           </label>
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div><br></br>
+
+//                 </>
+
+
+//               </div>
+//             ))}
+//             <div className="Popup-Buttons">
+//               <div>
+//                 <button onClick={addTreatment} className="Add-Btn">
+//                   +
+//                 </button>
+//               </div>
+//               <button onClick={update} className="Save-Btn">
+//                 Submit
+//               </button>
+//             </div>
+//           </div>
+
+//         </Popup>

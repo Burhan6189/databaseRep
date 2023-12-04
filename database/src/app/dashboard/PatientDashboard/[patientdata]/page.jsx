@@ -165,6 +165,7 @@ const update=async()=>{
                 onChange={(e) => {
                   handlePatientDetailsChange("Clientid", e.target.value);
                 }}
+                disabled
                 id="clientid"
                 className="input-field-1"
                 placeholder="clientid"

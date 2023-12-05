@@ -129,6 +129,15 @@ const update=async()=>{
     }
   };
 
+
+                          // this is to unique dates inside
+
+
+  const onlydates =  [...patientDetails.Treatment].reverse().map(date=> date.Date);
+  const uniquedate = [...new Set(onlydates)];
+
+
+
   return (
 
     <div className="Patient-Details-BG">
@@ -340,28 +349,192 @@ const update=async()=>{
 
 
 
-
-        {/* copied */}
-
+                    {/* below table showing dates */}
 
 
 
-        {[...patientDetails.Treatment].reverse().map((treatment, index) => (
-          <div key={index} className="Fill-Inputs">
+
+    {/* THIS IS ONCLICK ADDING NEW FIELDS IN MAIN PAGE BUT THIS WILL ADD BASED ON + BUTTON IN POPUP */}
+
+
+{/* here unique data is coming from javascript to unique the data and also apply filter on dates1 11111111 */}
+
+
+
+
+{
+  uniquedate.map((date, index) => (
+    <div key={index} className="Fill-Inputs">
+     
+
+      {patientDetails.Treatment
+        .filter(treatment => treatment.Date === date)
+        .map((treatment, treatmentIndex) => (
+          <div key={treatmentIndex} className="Fill-Inputs">
             {/* ... (render treatment fields) */}
 
+            <Popup trigger={<div className="date-header">{date}</div>} position="center">    
+      
+      {/* this is for date header  as a trigger to popup to show details*/}
+        
 
-            {/* THIS IS ONCLICK ADDING NEW FIELDS IN MAIN PAGE BUT THIS WILL ADD BASED ON + BUTTON IN POPUP */}
+      <div className="Tooth-Description-Total">
+            <div className="Details-Inputs">
+              <div className="left-side-input">
 
+                <div className="Patient-Details-Inputs">
+                  <input
+                    type="text"
+                    name="date"
+                    value={date}
+                    onChange={(e) => { handlePopupDetailsChange("Date", e.target.value); }}
+                    id="date"
+                    className="input-field-1"
+                    placeholder="date"
+                    autoComplete="off"
+                  />
+                  <label for="date" className="input-label">
+                    Date :
+                  </label>
+                </div>
+
+                <div>
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="time"
+                      value={treatment.Time}
+                      onChange={(e) => { handlePopupDetailsChange("Time", e.target.value); }}
+
+                      id="time"
+                      className="input-field-1"
+                      placeholder="time"
+                      autoComplete="off"
+                    />
+                    <label for="time" className="input-label">
+                      Time :
+                    </label>
+                  </div>
+                </div>
+
+
+                <div className="Patient-Details-Inputs">
+                  <input
+                    type="text"
+                    name="dentist"
+                    value={treatment.Dentist}
+                    onChange={(e) => { handlePopupDetailsChange("Dentist", e.target.value); }}
+
+                    id="dentist"
+                    className="input-field-1"
+                    placeholder="dentist"
+                    autoComplete="off"
+                  />
+                  <label for="dentist" className="input-label">
+                    Dentist :
+                  </label>
+                </div>
+
+              </div>
+
+              <div>
+                <div className="Patient-Details-Inputs">
+
+                  <input
+                    type="text"
+                    name="total-price"
+                    value={treatment.TotalPrice}
+                    onChange={(e) => { handlePopupDetailsChange("TotalPrice", e.target.value); }}
+                    id="total-price"
+                    className="input-field-1"
+                    placeholder="total-price"
+                    autoComplete="off"
+                  />
+                  <label for="total-price" className="input-label">
+                    Total Price :
+                  </label>
+
+
+
+                </div>
+              </div>
+
+
+            </div>
+            <div className="Treatment-Price-Flex">
+              <div className="Treatment-Price">
+                <div>
+                  <input
+                    className="left-top-input"
+                    type="text"
+                    value={treatment.LT}
+                    onChange={(e) => { handlePopupDetailsChange("LT", e.target.value); }}
+                    maxLength={2}
+
+                  />
+                  <input
+                    className="right-top-input"
+                    type="text"
+                    maxLength={2}
+                    value={treatment.RT}
+                    onChange={(e) => { handlePopupDetailsChange("RT", e.target.value); }}
+
+                  />
+                  <input
+                    className="left-bottom-input"
+                    type="text"
+                    maxLength={2}
+                    value={treatment.LB}
+                    onChange={(e) => { handlePopupDetailsChange("LB", e.target.value); }}
+                  />
+                  <input
+                    className="right-bottom-input"
+                    type="text"
+                    maxLength={2}
+                    value={treatment.RB}
+                    onChange={(e) => { handlePopupDetailsChange("RB", e.target.value); }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <textarea value={treatment.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="1"></textarea>
+              </div>
+
+              <div>
+                <div className="Price-input">
+                  <div className="Patient-Details-Inputs">
+                    <input
+                      type="text"
+                      name="price"
+                      value={treatment.Price}
+                      onChange={(e) => { handlePopupDetailsChange("Price", e.target.value); }}
+                      id="price"
+                      className="input-field-1"
+                      placeholder="price"
+                      autoComplete="off"
+                    />
+                    <label for="price" className="input-label">
+                      Price :
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>        
+        
+        
+        </Popup>  
+      {/* ... (render treatment fields) */}            
+
+            {/* THIS IS ONCLICK ADDING NEW FIELDS IN THE MAIN PAGE, BUT THIS WILL ADD BASED ON + BUTTON IN THE POPUP */}
             <div className="Fill-Inputs">
               <div className="fill-input-flex">
                 <div className="fill-input">
-                  <input name="date" value={treatment.Date}
-                    type="text" />
+                  <input name="date" value={treatment.Date} type="text" />
                 </div>
                 <div className="fill-input-long">
-                  <input name="treatment" value={treatment.Description}
-                    type="text" />
+                  <input name="treatment" value={treatment.Description} type="text" />
                 </div>
                 <div className="fill-input">
                   <input name="dentist" value={treatment.Dentist} type="text" />
@@ -371,12 +544,20 @@ const update=async()=>{
                 </div>
               </div>
             </div>
-
           </div>
         ))}
+    </div>
+  ))
+}
 
 
-        {/* copied */}
+
+
+
+
+
+      {/* THIS IS REAL POPUP TO UPDATE DATA ON CLICK ON + BUTTON */}
+
 
         <Popup trigger={<button className="Plus-Btn"> +</button>} position="center">
           {/* ... (rest of your JSX code) */}

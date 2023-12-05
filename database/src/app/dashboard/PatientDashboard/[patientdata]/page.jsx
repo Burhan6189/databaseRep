@@ -359,8 +359,7 @@ const update=async()=>{
 
 {/* here unique data is coming from javascript to unique the data and also apply filter on dates1 11111111 */}
 
-
-
+                  {/* for output popup */}
 
 {
   uniquedate.map((date, index) => (
@@ -498,7 +497,7 @@ const update=async()=>{
               </div>
 
               <div>
-                <textarea value={treatment.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="1"></textarea>
+                <textarea value={treatment.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="2"></textarea>
               </div>
 
               <div>
@@ -706,72 +705,6 @@ const update=async()=>{
                 </div>
               </div>
             </div>
-
-            {/* {[...patientDetails.Treatment.Date].reverse().map((treatment, index) => (
-              <div key={index} className="Fill-Inputs">
-                <>
-
-                  <div className="Treatment-Price-Flex">
-                    <div className="Treatment-Price">
-                      <div>
-                        <input
-                          className="left-top-input"
-                          type="text"
-                          value={treatment.LT}
-                          maxLength={2}
-                        />
-                        <input
-                          className="right-top-input"
-                          type="text"
-                          maxLength={2}
-                          value={treatment.RT}
-                        />
-                        <input
-                          className="left-bottom-input"
-                          type="text"
-                          maxLength={2}
-                          value={treatment.LB}
-                        />
-                        <input
-                          className="right-bottom-input"
-                          type="text"
-                          maxLength={2}
-                          value={treatment.RB}
-
-                        />
-                      </div>
-                    </div>
-
-                    <div >
-                      <textarea name="" id="" value={treatment.Description} cols="128" rows="1"></textarea>
-                    </div>
-
-                    <div>
-                      <div className="Price-input">
-                        <div className="Patient-Details-Inputs">
-                          <input
-                            type="text"
-                            name="price"
-                            value={treatment.Price}
-                            id="price"
-                            className="input-field-1"
-                            placeholder="price"
-                            autoComplete="off"
-                          />
-
-                          <label for="price" className="input-label">
-                            Price :
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div><br></br>
-
-                </>
-
-
-              </div>
-            ))} */}
 
 
 

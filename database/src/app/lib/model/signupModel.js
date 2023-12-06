@@ -3,9 +3,10 @@ import mongooseUniqueValidator from "mongoose-unique-validator";
 
 const myModel = new mongoose.Schema({
 
-    Username: String,
-    Email:  {type: String, index: true, unique: true, required: true },
-    Password: String
+    Username: {type: String, index: true, unique: true, required: true },
+    Email: String,
+    Password: String,
+    Role: String
 });
 
 myModel.plugin(mongooseUniqueValidator);

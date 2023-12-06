@@ -7,17 +7,19 @@ const Signup = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [Status, setStatus] = useState("");
+  const [Role, setRole] = useState("");
+
 
   const myfun = async () => {
-    if (Username == "" || Email == "" || Password == "") {
+    if (Username == "" || Email == "" || Password == "" || Role == "") {
       alert("all field are required");
-    } else if (Username != "" && Email != "" && Password != "") {
+    } else if (Username != "" && Email != "" && Password != "" && Role != "") {
       const fetchdata = await fetch("/api/projects");
       const jsondata = await fetchdata.json();
 
       jsondata.map((items) => {
-        if (Email === items.Email) {
-          alert("User with this Email Already Exist");
+        if (Username === items.Username || Email === items.Email) {
+          alert("User with this Username/Email is Already Exist");
           setStatus(false);
         } else {
           setStatus(true);
@@ -29,7 +31,7 @@ const Signup = () => {
 
         const data = await fetch("/api/projects", {
           method: "POST",
-          body: JSON.stringify({ Username, Email, Password: hashedPassword }),
+          body: JSON.stringify({ Username, Email, Password: hashedPassword, Role }),
         });
 
         alert("Successfully registered");
@@ -96,12 +98,15 @@ const Signup = () => {
             Password
           </label>
         </div>
-        <select name="" id="">
-        <option>Select Your Roll</option>
+
+        <select name="" id="" onChange={(e)=>{setRole(e.target.value)}}>
+        
+        <option >Select Your Role</option>
           <option>Super Admin</option>
           <option>User</option>
           <option>Checker</option>
         </select>
+
         <div className="Signup-Button">
           <button onClick={myfun}>Login</button>
         </div>

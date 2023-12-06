@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import { HiOutlinePencilAlt } from "react-icons/hi";
+import { IoMdArrowBack } from "react-icons/io";
 import Popup from "reactjs-popup";
 
 const AllPatient = () => {
@@ -56,8 +57,8 @@ const AllPatient = () => {
       <div className="All-Patient-BG">
         <div className="Header">
           <div className="Header-Flex">
-            <div>
-              <img src="/img/image.png" alt="" />
+            <div className="back-button">
+         <IoMdArrowBack />
             </div>
             <div>
               <img

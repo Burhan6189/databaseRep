@@ -5,40 +5,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
-/*============= Pre Loader ===============*/
-
-/* Loader.module.css */
-.loaderContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Adjust based on your layout */
-}
-
-.loader {
-  border: 8px solid #f3f3f3; /* Light gray border */
-  border-top: 8px solid #3498db; /* Blue border for animation */
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite; /* Spin animation */
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-
-
-/*============= Pre Loader ===============*/
-
-
 /*====================== Start Header ==========================*/
 
 .Header .Header-Flex {
   display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 .Header .User-Login {
@@ -46,11 +17,9 @@
   align-items: center;
   text-align: left;
   gap: 10px;
-  margin-right: -250px;
-  justify-content: space-around;
 }
 .Header .User-Login-Pic {
-  width: 60px;
+  max-width: 60px;
   border-radius: 50px;
   height: 60px;
 }
@@ -59,14 +28,27 @@
   font-size: 15px;
 }
 .Header .Logo {
-  padding: 60px 15px 70px 15px;
-  width: 120px;
-  height: auto;
-  text-align: center;
-  margin: auto;
+  padding: 80px 0 70px 0;
+    width: 80px;
+    text-align: center;
+    
 }
 .Header .User-Login p{
   font-size: 13px;
+}
+.Header .Header-Flex .back-button{
+  text-align: center;
+  font-size: 35px;
+  border: 2px solid #939393;
+  color: white;
+  background: #AFAFAF;
+  border-radius: 100%;
+  transition: 0.5s ease;
+  width: 50px;
+  height: 50px;
+}
+.Header .Header-Flex .back-button:hover{
+scale: 1.1;
 }
 
 /*====================== End Header ==========================*/
@@ -1022,14 +1004,14 @@ padding: 10px;
   gap: 30px;
   padding-bottom: 150px;
 }
-.Things-BG .Logo {
+/* .Things-BG .Logo {
   padding: 80px 15px 70px 15px;
   padding-bottom: 70px;
   max-width: 120px;
   height: auto;
   text-align: center;
   margin: auto;
-}
+} */
 .Things-BG .Bottom-Text p {
 
   color: #929292;
@@ -1195,6 +1177,7 @@ padding: 10px;
 }
 .All-Patient-BG .All-Patient-Header {
   display: flex;
+  margin-bottom: 20px;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;

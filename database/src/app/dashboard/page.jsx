@@ -1,12 +1,12 @@
 import React from "react";
 
+import Navbar from "../components/Navbar/page";
+
 const TodayAppointment = () => {
   return (
     <>
       <div className="Things-BG">
-        <div className="Logo">
-          <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
-        </div>
+<Navbar/>
         <div className="Box-Flex">
           <a
             style={{ textDecoration: "none" }}
@@ -26,40 +26,39 @@ const TodayAppointment = () => {
               </div>
             </div>
           </a>
-
-          <div className="Box-02">
-            <div className="Icon-Circle">
-              <img src="/img/icon02.png" alt="" />
+          <a href="/dashboard/Appoinments">
+            <div className="Box-02">
+              <div className="Icon-Circle">
+                <img src="/img/icon02.png" alt="" />
+              </div>
+              <div className="Box-Text">
+                <h3>Appointment</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
+              </div>
             </div>
-            <div className="Box-Text">
-              <h3>Appointment</h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,
-              </p>
-            </div>
-          </div>
-
+          </a>
           <a
             style={{ textDecoration: "none" }}
             href="/dashboard/PatientDashboard/AllPatient"
           >
-          <div className="Box-03">
-            <div className="Icon-Circle">
-              <img src="/img/icon01.png" alt="" />
+            <div className="Box-03">
+              <div className="Icon-Circle">
+                <img src="/img/icon01.png" alt="" />
+              </div>
+              <div className="Box-Text">
+                <h3>Old Patient</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
+                </p>
+              </div>
             </div>
-            <div className="Box-Text">
-              <h3>Old Patient</h3>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s,
-              </p>
-            </div>
-          </div>
-</a>
-
+          </a>
         </div>
         <div className="Bottom-Text">
           <p>

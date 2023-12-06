@@ -99,9 +99,9 @@ const Signup = () => {
           </label>
         </div>
 
-        <select name="" id="" onChange={(e)=>{setRole(e.target.value)}}>
-        
-        <option >Select Your Role</option>
+        <select name="" id="" onChange={(e) => { setRole(e.target.value) }}>
+
+          <option >Select Your Role</option>
           <option>Super Admin</option>
           <option>User</option>
           <option>Checker</option>

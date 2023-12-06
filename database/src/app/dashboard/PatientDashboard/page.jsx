@@ -15,6 +15,8 @@ const PatientDashboard = () => {
 
 
 
+
+
   const [patientDetails, setPatientDetails] = useState({
     Name: "",
     Email: "",
@@ -78,7 +80,7 @@ const PatientDashboard = () => {
         Date: popupDetails.Date,
         Time: popupDetails.Time,
         Dentist: popupDetails.Dentist,
-        TotalPrice: popupDetails.Price,
+        TotalPrice: popupDetails.TotalPrice,
         LT: "0",
         RT: "0",
         LB: "0",
@@ -445,12 +447,14 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                   <input
                     type="text"
                     name="total-price"
-                    value={popupDetails.Price}
+                    onAbort
+                    value={popupDetails.TotalPrice=popupDetails.Price}  
                     onChange={(e) => { handlePopupDetailsChange("TotalPrice", e.target.value); }}
                     id="total-price"
                     className="input-field-1"
                     placeholder="total-price"
-                    autoComplete="off"
+                    
+                    
                   />
                   <label for="total-price" className="input-label">
                     Total Price :

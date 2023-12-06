@@ -97,7 +97,7 @@ const Signup = () => {
           </label>
         </div>
         <select name="" id="">
-        <option></option>
+        <option>Select Your Roll</option>
           <option>Super Admin</option>
           <option>User</option>
           <option>Checker</option>

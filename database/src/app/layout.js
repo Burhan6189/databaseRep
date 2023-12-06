@@ -1,6 +1,6 @@
 'use client'
 import { Inter } from 'next/font/google'
-import Loader from '@/components/loader/loader';
+
 import './globals.css'
 import React, { useState, useEffect } from 'react';
 
@@ -26,17 +26,13 @@ export default function RootLayout({ children }) {
 
   return(
       <div>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        // Your content when loading is complete
+  
         <div>
             <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
         </div>
-      )}
-    </div>
+        </div>
  
    )
 

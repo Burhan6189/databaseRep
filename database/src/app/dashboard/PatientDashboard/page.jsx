@@ -15,8 +15,6 @@ const PatientDashboard = () => {
 
 
 
-
-
   const [patientDetails, setPatientDetails] = useState({
     Name: "",
     Email: "",

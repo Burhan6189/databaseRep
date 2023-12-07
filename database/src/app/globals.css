@@ -1368,11 +1368,15 @@ overflow-y: auto;
   background-color: rgb(255, 255, 255);
   height: 75vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 100px;
   overflow: auto;
 }
 .Appoinments-BG .calendar .dd-mm-yy{
   padding: 50px;
   width: 450px;
+  height: 505px;
 }
 .Appoinments-BG .calendar .Events{
   padding: 50px;
@@ -1408,7 +1412,37 @@ overflow-y: auto;
   align-items: center;
   margin-top: 20px;
 }
+.Appoinments-BG .calendar .Appopinment-Details h4{
+font-size: 20px;
+width: 100px;
+color: #868686;
+font-weight: 400;
+}
 
+.Appoinments-BG .calendar .Appopinment-Details .time-details{
+  display: flex;
+  padding: 30px;
+  width: 1800px;
+  border:  1px solid #EBEBEB;
+}
+.Appoinments-BG .calendar .Appopinment-Details .time-details input{
+  width: 1650px;
+  border: 0;
+  border-bottom: 1px solid #b6b6b6;
+  outline: none;
+  padding: 8px;
+}
+.Appoinments-BG .calendar .Appopinment-Details .Create-Event button{
+  padding: 10px;
+  width: 200px;
+background: #07C7E0;
+border: none;
+border-radius: 10px;
+color: white;
+cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
 /*====================== Appopinments ====================*/
 

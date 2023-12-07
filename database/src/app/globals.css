@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   text-align: left;
+  width: 60px;
   gap: 10px;
 }
 .Header .User-Login-Pic {
@@ -26,6 +27,7 @@
 .Header .User-Login h3 {
   font-weight: 500;
   font-size: 15px;
+  width: 150px;
 }
 .Header .Logo {
   padding: 80px 0 70px 0;
@@ -1051,7 +1053,7 @@ padding: 10px;
 
 .Things-BG .Box-Flex .Box-01 .Box-Text h3 {
   margin-bottom: 50px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 0.5;
   font-size: 40px;
 }
@@ -1494,5 +1496,39 @@ font-weight: 500;
 }
 
 /*============== Team ====================*/
+
+/*============== Add Member ================*/
+
+.add-member-bg{
+  background-image: url("/img/Login-Signup-BG1.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.add-member-bg h2{
+  font-size: 32px;
+  font-weight: 400;
+}
+.add-member-bg h3{
+  font-size: 36px;
+  font-weight: 400;
+}
+.add-member-bg .Profile-img img{
+  width: 350px;
+  cursor: pointer;
+  height: 350px;
+  border: 2px solid white;
+ transition: 0.5s ease;
+  margin-top: 50px;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 0.40rem rgb(19, 19, 19));
+}
+
+/*============== Add Member ================*/
+
 
 

@@ -44,6 +44,7 @@
   background: #AFAFAF;
   border-radius: 100%;
   transition: 0.5s ease;
+  cursor: pointer;
   width: 50px;
   height: 50px;
 }
@@ -1167,14 +1168,7 @@ padding: 10px;
   background-repeat: no-repeat;
   height: 100vh;
 }
-.All-Patient-BG .Logo {
-  padding: 80px 15px 70px 15px;
-  padding-bottom: 70px;
-  max-width: 120px;
-  height: auto;
-  text-align: center;
-  margin: auto;
-}
+
 .All-Patient-BG .All-Patient-Header {
   display: flex;
   margin-bottom: 20px;
@@ -1357,3 +1351,64 @@ overflow-y: auto;
   margin: auto;
 }
 /*====================== All Patient =================*/
+
+/*====================== Appopinments ====================*/
+
+
+.Appoinments-BG {
+  background-image: url("/img/Login-Signup-BG1.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.Appoinments-BG .calendar{
+  background-color: rgb(255, 255, 255);
+  height: 75vh;
+  width: 100%;
+  overflow: auto;
+}
+.Appoinments-BG .calendar .dd-mm-yy{
+  padding: 50px;
+  width: 450px;
+}
+.Appoinments-BG .calendar .Events{
+  padding: 50px;
+  width: 450px;
+}
+.Appoinments-BG .calendar .Events h3{
+  font-size: 30px;
+  font-weight: 600;
+}
+.Appoinments-BG .calendar .Events h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.Appoinments-BG .calendar .Events h4 span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 3;
+  color: #35D1E6;
+}
+.Appoinments-BG .calendar .Events h4 .clock-icon{
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .Events h5{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.Appoinments-BG .calendar .Events .today-events{
+  border: 1px solid #b6b6b6;
+  border-radius: 10px;
+  padding: 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+/*====================== Appopinments ====================*/
+

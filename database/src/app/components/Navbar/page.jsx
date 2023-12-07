@@ -2,13 +2,14 @@ import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
 const Navbar = () => {
+  
   return (
     <>
       <div className="Header">
         <div className="Header-Flex">
-          <div className="back-button">
+        <a href={"./"}>  <div className="back-button">
             <IoMdArrowBack />
-          </div>
+          </div> </a>
           <div>
             <img
               className="Logo"

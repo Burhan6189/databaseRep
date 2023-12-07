@@ -7,9 +7,11 @@ const Navbar = () => {
     <>
       <div className="Header">
         <div className="Header-Flex">
+          <a href="./">
           <div className="back-button">
             <IoMdArrowBack />
           </div>
+          </a>
           <div>
             <img
               className="Logo"
@@ -21,7 +23,7 @@ const Navbar = () => {
             <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
             <div>
               <h3>Muzzamil Rafique</h3>
-              <p>Desigination</p>
+              <p>Super Admin</p>
             </div>
           </div>
         </div>

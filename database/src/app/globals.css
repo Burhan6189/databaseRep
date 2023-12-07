@@ -1446,3 +1446,53 @@ cursor: pointer;
 
 /*====================== Appopinments ====================*/
 
+
+/*============== Team ====================*/
+
+.Team-BG{
+  background-image: url("/img/Login-Signup-BG1.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.Team-BG .All-Team-Member{
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+text-align: center;
+margin: auto;
+width: 1300px;
+}
+.Team-BG .All-Team-Member img{
+  width: 350px;
+  cursor: pointer;
+  height: 350px;
+  border: 2px solid white;
+ transition: 0.5s ease;
+  margin-top: 50px;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 0.40rem rgb(19, 19, 19));
+}
+.Team-BG .All-Team-Member img:hover{
+  scale: 1.06;
+}
+.Team-BG .All-Team-Member h3{
+font-size: 36px;
+font-weight: 500;
+color: #4C4C4C;  
+}
+.Team-BG .bottom-text{
+text-align: center;
+margin-top: 50px;
+}
+.Team-BG .bottom-text h4{
+  font-size: 20px;
+font-weight: 500;
+}
+
+/*============== Team ====================*/
+
+

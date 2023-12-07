@@ -1,4 +1,5 @@
 "use client";
+import Navbar from "@/app/components/Navbar/page";
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 
@@ -141,27 +142,7 @@ const update=async()=>{
   return (
 
     <div className="Patient-Details-BG">
-      <div className="Header">
-        <div className="Header-Flex">
-          <div>
-            <img src="/img/image.png" alt="" />
-          </div>
-          <div>
-            <img
-              className="Logo"
-              src="http://www.fhgroupoc.com/svg/fhlogog.svg"
-              alt=""
-            />
-          </div>
-          <div className="User-Login">
-            <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
-            <div>
-              <h3>Muzzamil Rafique</h3>
-              <p>Super Admin</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<Navbar/>
       <div className="Main-Div">
         <h3>PATIENT DATA UPGRADTION</h3>
         <div className="Input-Flex">

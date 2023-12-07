@@ -4,21 +4,18 @@ import React, { useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import { HiOutlinePencilAlt } from "react-icons/hi";
+import { IoMdArrowBack } from "react-icons/io";
 import Popup from "reactjs-popup";
+import Navbar from "@/app/components/Navbar/page";
 
 const AllPatient = () => {
-
-
   const plusbtn = () => {
     return (window.location.href = "/dashboard/PatientDashboard");
   };
 
-
   const [Details, setDetails] = useState([]);
 
-
-  const [Record, setRecord]= useState(Details);
-
+  const [Record, setRecord] = useState(Details);
 
   const printdata = async () => {
     const data = await fetch("/api/patientdetails");
@@ -27,61 +24,33 @@ const AllPatient = () => {
     setDetails(jsondata);
   };
 
-
-
   useEffect(() => {
     printdata();
   }, []);
 
-
-
   const Filter = (event) => {
-    
     setRecord(
-      Details.filter((f) => f.Name.toLowerCase().includes(event.target.value)||
-      f.Clientid.toLowerCase().includes(event.target.value) ||
-      f.Number.toLowerCase().includes(event.target.value))
+      Details.filter(
+        (f) =>
+          f.Name.toLowerCase().includes(event.target.value) ||
+          f.Clientid.toLowerCase().includes(event.target.value) ||
+          f.Number.toLowerCase().includes(event.target.value)
+      )
     );
   };
-  
 
   useEffect(() => {
     setRecord([...Details]);
   }, [Details]);
-  
 
-  return ( 
+  return (
     <>
-  
       <div className="All-Patient-BG">
-        <div className="Header">
-          <div className="Header-Flex">
-            <div>
-              <img src="/img/image.png" alt="" />
-            </div>
-            <div>
-              <img
-                className="Logo"
-                src="http://www.fhgroupoc.com/svg/fhlogog.svg"
-                alt=""
-              />
-            </div>
-            <div className="User-Login">
-              <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
-              <div>
-                <h3>Muzzamil Rafique</h3>
-                <p>Desigination</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Navbar />
         <div className="All-Patient-Header">
           <h2>All Patients</h2>
           <div className="Appointment-Input">
-           
-            <input type="text" placeholder="Search"   onChange={Filter}/>
-
-
+            <input type="text" placeholder="Search" onChange={Filter} />
           </div>
           <div className="Appointment-Button">
             <h4>New Appointments</h4>
@@ -89,9 +58,7 @@ const AllPatient = () => {
           </div>
         </div>
         <div className="All-Patient">
-       
-          {
-          [...Record].reverse().map((items) =>(
+          {[...Record].reverse().map((items) => (
             <div className="Patients-List" key={items._id}>
               <div className="First-Patient">
                 <div className="patient-id">
@@ -132,12 +99,16 @@ const AllPatient = () => {
                   >
                     <div className="Options-For-Patient">
                       <div className="Option-Flex">
-
-                      <a href={"/dashboard/PatientDashboard/AllPatient/"+items._id}>
-                        <div className="Delete">
-                          <MdDelete className="Delete-Icon" />
-                          <button>Delete Patient</button>
-                        </div>
+                        <a
+                          href={
+                            "/dashboard/PatientDashboard/AllPatient/" +
+                            items._id
+                          }
+                        >
+                          <div className="Delete">
+                            <MdDelete className="Delete-Icon" />
+                            <button>Delete Patient</button>
+                          </div>
                         </a>
 
                         <a href={items._id}>
@@ -151,7 +122,6 @@ const AllPatient = () => {
                   </Popup>
                 </div>
               </div>
-
             </div>
           ))}
         </div>

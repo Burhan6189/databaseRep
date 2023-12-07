@@ -1,4 +1,5 @@
 "use client";
+import Navbar from "@/app/components/Navbar/page";
 import React, { useState } from "react";
 import Popup from "reactjs-popup";
 
@@ -8,13 +9,7 @@ const year = today.getFullYear();
 const date = today.getDate();
 const currentDate = date + "/" + month + "/" + year;
 
-
-
-
 const PatientDashboard = () => {
-
-
-
   const [patientDetails, setPatientDetails] = useState({
     Name: "",
     Email: "",
@@ -25,7 +20,7 @@ const PatientDashboard = () => {
     Memberstatus: "",
     Dateofregistration: "",
     Clientid: "",
-    Treatment: []
+    Treatment: [],
   });
 
   const [popupDetails, setPopupDetails] = useState({
@@ -41,9 +36,6 @@ const PatientDashboard = () => {
     Price: "",
   });
 
-
-
-
   const handlePatientDetailsChange = (field, value) => {
     setPatientDetails((prevDetails) => ({
       ...prevDetails,
@@ -58,9 +50,6 @@ const PatientDashboard = () => {
     }));
   };
 
-
-
-
   const addTreatment = () => {
     if (
       popupDetails.Date &&
@@ -68,7 +57,6 @@ const PatientDashboard = () => {
       popupDetails.Dentist &&
       popupDetails.TotalPrice
     ) {
-
       setPatientDetails((prevDetails) => ({
         ...prevDetails,
         Treatment: [...prevDetails.Treatment, { ...popupDetails }],
@@ -121,38 +109,16 @@ const PatientDashboard = () => {
         RB: "0",
         Description: "",
         Price: "",
-});
-window.location.href="/dashboard/PatientDashboard/AllPatient";
-
+      });
+      window.location.href = "/dashboard/PatientDashboard/AllPatient";
     } else {
       alert("All fields are required");
     }
   };
 
   return (
-
     <div className="Patient-Details-BG">
-      <div className="Header">
-        <div className="Header-Flex">
-          <div>
-            <img src="/img/image.png" alt="" />
-          </div>
-          <div>
-            <img
-              className="Logo"
-              src="http://www.fhgroupoc.com/svg/fhlogog.svg"
-              alt=""
-            />
-          </div>
-          <div className="User-Login">
-            <img className="User-Login-Pic" src="/img/image 2.png" alt="" />
-            <div>
-              <h3>Muzzamil Rafique</h3>
-              <p>Desigination</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Navbar />
       <div className="Main-Div">
         <h3>PATIENT PROFILE SECTION</h3>
         <div className="Input-Flex">
@@ -301,7 +267,10 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                 name="dateofregistration"
                 value={patientDetails.Dateofregistration}
                 onChange={(e) => {
-                  handlePatientDetailsChange("Dateofregistration", e.target.value);
+                  handlePatientDetailsChange(
+                    "Dateofregistration",
+                    e.target.value
+                  );
                 }}
                 id="dateofregistration"
                 className="input-field-1"
@@ -314,10 +283,6 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
             </div>
           </div>
         </div>
-
-
-
-
 
         <div className="Details-Inputs">
           <div className="fake-input-flex">
@@ -336,61 +301,58 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
           </div>
         </div>
 
-
-
-
-
         {/* copied */}
-
-
-
 
         {[...patientDetails.Treatment].reverse().map((treatment, index) => (
           <div key={index} className="Fill-Inputs">
             {/* ... (render treatment fields) */}
-
 
             {/* THIS IS ONCLICK ADDING NEW FIELDS IN MAIN PAGE BUT THIS WILL ADD BASED ON + BUTTON IN POPUP */}
 
             <div className="Fill-Inputs">
               <div className="fill-input-flex">
                 <div className="fill-input">
-                  <input name="date" value={treatment.Date}
-                    type="text" />
+                  <input name="date" value={treatment.Date} type="text" />
                 </div>
                 <div className="fill-input-long">
-                  <input name="treatment" value={treatment.Description}
-                    type="text" />
+                  <input
+                    name="treatment"
+                    value={treatment.Description}
+                    type="text"
+                  />
                 </div>
                 <div className="fill-input">
                   <input name="dentist" value={treatment.Dentist} type="text" />
                 </div>
                 <div className="fill-input">
-                  <input name="totalprice" value={treatment.TotalPrice} type="text" />
+                  <input
+                    name="totalprice"
+                    value={treatment.TotalPrice}
+                    type="text"
+                  />
                 </div>
               </div>
             </div>
-
           </div>
         ))}
 
-
         {/* copied */}
 
-
-
-        <Popup trigger={<button className="Plus-Btn"> +</button>} position="center">
-          
+        <Popup
+          trigger={<button className="Plus-Btn"> +</button>}
+          position="center"
+        >
           <div className="Tooth-Description-Total">
             <div className="Details-Inputs">
               <div className="left-side-input">
-
                 <div className="Patient-Details-Inputs">
                   <input
                     type="text"
                     name="date"
                     value={popupDetails.Date}
-                    onChange={(e) => { handlePopupDetailsChange("Date", e.target.value); }}
+                    onChange={(e) => {
+                      handlePopupDetailsChange("Date", e.target.value);
+                    }}
                     id="date"
                     className="input-field-1"
                     placeholder="date"
@@ -407,7 +369,9 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                       type="text"
                       name="time"
                       value={popupDetails.Time}
-                      onChange={(e) => { handlePopupDetailsChange("Time", e.target.value); }}
+                      onChange={(e) => {
+                        handlePopupDetailsChange("Time", e.target.value);
+                      }}
                       id="time"
                       className="input-field-1"
                       placeholder="time"
@@ -419,14 +383,14 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                   </div>
                 </div>
 
-
                 <div className="Patient-Details-Inputs">
                   <input
                     type="text"
                     name="dentist"
                     value={popupDetails.Dentist}
-                    onChange={(e) => { handlePopupDetailsChange("Dentist", e.target.value); }}
-
+                    onChange={(e) => {
+                      handlePopupDetailsChange("Dentist", e.target.value);
+                    }}
                     id="dentist"
                     className="input-field-1"
                     placeholder="dentist"
@@ -436,31 +400,27 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                     Dentist :
                   </label>
                 </div>
-
               </div>
 
               <div>
                 <div className="Patient-Details-Inputs">
-
                   <input
                     type="text"
                     name="total-price"
                     onAbort
-                    value={popupDetails.TotalPrice=popupDetails.Price}  
-                    onChange={(e) => { handlePopupDetailsChange("TotalPrice", e.target.value); }}
+                    value={(popupDetails.TotalPrice = popupDetails.Price)}
+                    onChange={(e) => {
+                      handlePopupDetailsChange("TotalPrice", e.target.value);
+                    }}
                     id="total-price"
                     className="input-field-1"
                     placeholder="total-price"
-                    
-                    
                   />
                   <label for="total-price" className="input-label">
                     Total Price :
                   </label>
-
                 </div>
               </div>
-
             </div>
             <div className="Treatment-Price-Flex">
               <div className="Treatment-Price">
@@ -469,37 +429,52 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                     className="left-top-input"
                     type="text"
                     value={popupDetails.LT}
-                    onChange={(e) => { handlePopupDetailsChange("LT", e.target.value); }}
+                    onChange={(e) => {
+                      handlePopupDetailsChange("LT", e.target.value);
+                    }}
                     maxLength={2}
-
                   />
                   <input
                     className="right-top-input"
                     type="text"
                     maxLength={2}
                     value={popupDetails.RT}
-                    onChange={(e) => { handlePopupDetailsChange("RT", e.target.value); }}
-
+                    onChange={(e) => {
+                      handlePopupDetailsChange("RT", e.target.value);
+                    }}
                   />
                   <input
                     className="left-bottom-input"
                     type="text"
                     maxLength={2}
                     value={popupDetails.LB}
-                    onChange={(e) => { handlePopupDetailsChange("LB", e.target.value); }}
+                    onChange={(e) => {
+                      handlePopupDetailsChange("LB", e.target.value);
+                    }}
                   />
                   <input
                     className="right-bottom-input"
                     type="text"
                     maxLength={2}
                     value={popupDetails.RB}
-                    onChange={(e) => { handlePopupDetailsChange("RB", e.target.value); }}
+                    onChange={(e) => {
+                      handlePopupDetailsChange("RB", e.target.value);
+                    }}
                   />
                 </div>
               </div>
 
               <div>
-                <textarea value={popupDetails.Description} onChange={(e) => { handlePopupDetailsChange("Description", e.target.value); }} name="" id="" cols="128" rows="3"></textarea>
+                <textarea
+                  value={popupDetails.Description}
+                  onChange={(e) => {
+                    handlePopupDetailsChange("Description", e.target.value);
+                  }}
+                  name=""
+                  id=""
+                  cols="128"
+                  rows="3"
+                ></textarea>
               </div>
 
               <div>
@@ -509,7 +484,9 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                       type="text"
                       name="price"
                       value={popupDetails.Price}
-                      onChange={(e) => { handlePopupDetailsChange("Price", e.target.value); }}
+                      onChange={(e) => {
+                        handlePopupDetailsChange("Price", e.target.value);
+                      }}
                       id="price"
                       className="input-field-1"
                       placeholder="price"
@@ -523,16 +500,11 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
               </div>
             </div>
 
+            {/* this is popup stack of deatils showing on every + button */}
 
-                    {/* this is popup stack of deatils showing on every + button */}
-
-            {
-           
-              [...patientDetails.Treatment].reverse().map((treatment, index) => (
-            
+            {[...patientDetails.Treatment].reverse().map((treatment, index) => (
               <div key={index} className="Fill-Inputs">
                 <>
-
                   <div className="Treatment-Price-Flex">
                     <div className="Treatment-Price">
                       <div>
@@ -559,13 +531,18 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                           type="text"
                           maxLength={2}
                           value={treatment.RB}
-
                         />
                       </div>
                     </div>
 
                     <div>
-                      <textarea name="" id="" value={treatment.Description} cols="128" rows="3"></textarea>
+                      <textarea
+                        name=""
+                        id=""
+                        value={treatment.Description}
+                        cols="128"
+                        rows="3"
+                      ></textarea>
                     </div>
 
                     <div>
@@ -587,11 +564,9 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
                         </div>
                       </div>
                     </div>
-                  </div><br></br>
-
+                  </div>
+                  <br></br>
                 </>
-
-
               </div>
             ))}
             <div className="Popup-Buttons">
@@ -605,18 +580,13 @@ window.location.href="/dashboard/PatientDashboard/AllPatient";
               </button>
             </div>
           </div>
-
         </Popup>
-        
 
         <button onClick={savePatientDetails} className="Save-Btn">
           Save
         </button>
-
       </div>
     </div>
-
-
   );
 };
 

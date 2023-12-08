@@ -1,4 +1,4 @@
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -31,27 +31,26 @@
 }
 .Header .Logo {
   padding: 80px 0 70px 0;
-    width: 80px;
-    text-align: center;
-    
+  width: 80px;
+  text-align: center;
 }
-.Header .User-Login p{
+.Header .User-Login p {
   font-size: 13px;
 }
-.Header .Header-Flex .back-button{
+.Header .Header-Flex .back-button {
   text-align: center;
   font-size: 35px;
   border: 2px solid #939393;
   color: white;
-  background: #AFAFAF;
+  background: #afafaf;
   border-radius: 100%;
   transition: 0.5s ease;
   cursor: pointer;
   width: 50px;
   height: 50px;
 }
-.Header .Header-Flex .back-button:hover{
-scale: 1.1;
+.Header .Header-Flex .back-button:hover {
+  scale: 1.1;
 }
 
 /*====================== End Header ==========================*/
@@ -170,7 +169,7 @@ scale: 1.1;
 
 .Login-Page-Input-2 {
   max-width: 400px;
-padding: 10px;
+  padding: 10px;
   margin: auto;
   align-items: center;
   min-height: 80px;
@@ -361,7 +360,7 @@ padding: 10px;
   padding: 7px;
   font-weight: 500;
 }
-.Signup-Page-BG select{
+.Signup-Page-BG select {
   width: 370px;
   outline: none;
   background: transparent;
@@ -1016,7 +1015,6 @@ padding: 10px;
   margin: auto;
 } */
 .Things-BG .Bottom-Text p {
-
   color: #929292;
   margin: auto;
   /* padding: 10px; */
@@ -1041,14 +1039,13 @@ padding: 10px;
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #FFFAEE;
-  border: 4px solid #FFE097;
+  background: #fffaee;
+  border: 4px solid #ffe097;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-01:hover {
   scale: 1.1;
-  box-shadow: 0 5px 10px 0 #E5D9B9,
-  0 50px 100px 0 #E5D9B9;
+  box-shadow: 0 5px 10px 0 #e5d9b9, 0 50px 100px 0 #e5d9b9;
 }
 
 .Things-BG .Box-Flex .Box-01 .Box-Text h3 {
@@ -1087,14 +1084,13 @@ padding: 10px;
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #EAF2FF;
-  border: 4px solid #C4DAFF;
+  background: #eaf2ff;
+  border: 4px solid #c4daff;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-02:hover {
   scale: 1.1;
-  box-shadow: 0 5px 10px 0 #C9DFFF,
-  0 50px 100px 0 #C9DFFF;
+  box-shadow: 0 5px 10px 0 #c9dfff, 0 50px 100px 0 #c9dfff;
 }
 
 .Things-BG .Box-Flex .Box-02 .Box-Text h3 {
@@ -1127,14 +1123,13 @@ padding: 10px;
   height: 500px;
   cursor: pointer;
   border-radius: 40px;
-  background: #E7FFF0;
-  border: 4px solid #B4FFD0;
+  background: #e7fff0;
+  border: 4px solid #b4ffd0;
   transition: 0.5s ease;
 }
 .Things-BG .Box-Flex .Box-03:hover {
   scale: 1.1;
-  box-shadow: 0 5px 10px 0 #D2FFE4,
-  0 50px 100px 0 #D2FFE4;
+  box-shadow: 0 5px 10px 0 #d2ffe4, 0 50px 100px 0 #d2ffe4;
 }
 
 .Things-BG .Box-Flex .Box-03 .Box-Text h3 {
@@ -1222,7 +1217,7 @@ padding: 10px;
   font-weight: 500;
 }
 
-.All-Patient-BG .First-Patient{
+.All-Patient-BG .First-Patient {
   display: flex;
   justify-content: space-around;
   text-decoration: none;
@@ -1236,18 +1231,18 @@ padding: 10px;
   gap: 100px;
   transition: 0.5s ease;
 }
-.All-Patient-BG .First-Patient:hover{
-scale: 1.03;
+.All-Patient-BG .First-Patient:hover {
+  scale: 1.03;
 }
-.All-Patient-BG .Patients-List{
-width: 100%;
+.All-Patient-BG .Patients-List {
+  width: 100%;
 }
-.All-Patient-BG .First-Patient input{
-background: none;
-outline: none;
-cursor: pointer;
-border: none;
-font-size: 15px;
+.All-Patient-BG .First-Patient input {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
 }
 .All-Patient-BG .First-Patient .patient-id {
   display: flex;
@@ -1261,7 +1256,6 @@ font-size: 15px;
 }
 .All-Patient-BG .Patients-List {
   margin-top: 2px;
-  
 }
 .All-Patient-BG .Patients-List h4 {
   width: 200px;
@@ -1273,7 +1267,7 @@ font-size: 15px;
   font-weight: 500;
   color: #929292;
 }
-.All-Patient-BG .Patients-List .Options{
+.All-Patient-BG .Patients-List .Options {
   font-size: 30px;
 }
 
@@ -1282,72 +1276,72 @@ font-size: 15px;
   height: 90px;
   box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.021), 0 6px 2px 0 rgba(0, 0, 0, 0.041);
   transform: 0.5s;
-  background: #fff;  
+  background: #fff;
   border-radius: 10px;
   justify-content: center;
   text-align: center;
 }
-.Options-For-Patient .Option-Flex { 
+.Options-For-Patient .Option-Flex {
   padding: 20px;
   align-items: center;
 }
 
-.Options-For-Patient .Option-Flex .Delete{
-display: flex;
-align-items: center;
-color: #838F9A;
-gap: 5px;
-text-decoration: none;
-border: none;
-margin-bottom: 10px;
-border-radius: 20px;
-cursor:pointer;
+.Options-For-Patient .Option-Flex .Delete {
+  display: flex;
+  align-items: center;
+  color: #838f9a;
+  gap: 5px;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  cursor: pointer;
 }
-.Options-For-Patient .Option-Flex button{  
+.Options-For-Patient .Option-Flex button {
   background: transparent;
   border: none;
   outline: none;
   cursor: pointer;
 }
-.Options-For-Patient .Option-Flex .Edit{
+.Options-For-Patient .Option-Flex .Edit {
   display: flex;
   align-items: center;
   gap: 5px;
-margin-bottom: 10px;
-color: #838F9A;
-border-radius: 20px;
-  cursor:pointer;
-  }
-  .Options-For-Patient .Option-Flex .Delete .Delete-Icon{
-    padding: 1px;
-    border-radius: 50px;
-    font-size: 25px;
-  }
-  .Options-For-Patient .Option-Flex .Edit .Edit-Icon{
-    padding: 1px;
-    border-radius: 50px;
-    font-size: 25px;
-  }
-  .Appointment-Input input {
-    border: none;
-    transition: 0.5s ease;
-    padding: 10px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
-      0 3px 40px 0 rgba(0, 0, 0, 0.062);
-    outline: none;
-    border-radius: 30px;
-  transition: 0.5s ease;
-    width: 300px;
-  }
-
-.Appointment-Input input:hover{
-scale: 1.05;
+  margin-bottom: 10px;
+  color: #838f9a;
+  border-radius: 20px;
+  cursor: pointer;
 }
-.Options-For-Patient .Option-Flex a{
+.Options-For-Patient .Option-Flex .Delete .Delete-Icon {
+  padding: 1px;
+  border-radius: 50px;
+  font-size: 25px;
+}
+.Options-For-Patient .Option-Flex .Edit .Edit-Icon {
+  padding: 1px;
+  border-radius: 50px;
+  font-size: 25px;
+}
+.Appointment-Input input {
+  border: none;
+  transition: 0.5s ease;
+  padding: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.075),
+    0 3px 40px 0 rgba(0, 0, 0, 0.062);
+  outline: none;
+  border-radius: 30px;
+  transition: 0.5s ease;
+  width: 300px;
+}
+
+.Appointment-Input input:hover {
+  scale: 1.05;
+}
+.Options-For-Patient .Option-Flex a {
   text-decoration: none;
 }
-.All-Patient{
-overflow-y: auto;
+.All-Patient {
+  overflow-y: auto;
   height: 900px;
   width: 2000px;
   margin: auto;
@@ -1356,35 +1350,201 @@ overflow-y: auto;
 
 /*====================== Appopinments ====================*/
 
+/*================== Calendar ============================*/
 
-.Appoinments-BG {
-  background-image: url("/img/Login-Signup-BG1.jpg");
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  background-repeat: no-repeat;
-  height: 100vh;
+.react-calendar {
+  width: 350px;
+  border-radius: 10px;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #d4d4d4;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2em;
 }
 
-.Appoinments-BG .calendar{
+.react-calendar--doubleView {
+  width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 1em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 16px;
+padding: 1px;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font: inherit;
+  font-size: 1em;
+  color: #a5a5a5;
+  font-weight: 500;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+  font-weight: 400;
+  
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #000 !important;
+  
+  
+}
+
+.react-calendar__month-view__days__day--weekend:hover {
+
+  color: #000 !important;
+  
+}
+.react-calendar__month-view__days__day--weekend:focus{
+  color: white !important;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  font: inherit;
+  font-size: 0.833em;
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__tile--now {
+  color: #07C7E0 !important;
+  background: none !important;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: none;
+  color: #07C7E0 !important;
+}
+
+.react-calendar__tile--hasActive {
+  background: #76baff;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #a9d4ff;
+}
+
+.react-calendar__tile--active {
+  background: #006edc;
+  color: #07C7E0;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1087ff;
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+}
+
+
+
+/*================== Calendar ============================*/
+
+
+.Appoinments-BG .calendar {
   background-color: rgb(255, 255, 255);
-  height: 75vh;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 100px;
-  overflow: auto;
 }
-.Appoinments-BG .calendar .dd-mm-yy{
+.Appoinments-BG .calendar .dd-mm-yy {
   padding: 50px;
   width: 450px;
-  height: 505px;
+  height: 450px;
+  margin-bottom: 50px;
 }
-.Appoinments-BG .calendar .Events{
+.Appoinments-BG .calendar .Events {
   padding: 50px;
-  width: 450px;
 }
-.Appoinments-BG .calendar .Events h3{
+/* .Appoinments-BG .calendar .Events .Events-Scroll{
+  width: 450px;
+  padding: 10px;
+  height: 450px;
+  overflow-y:auto;
+} */
+.Appoinments-BG .calendar .Events h3 {
   font-size: 30px;
   font-weight: 600;
 }
@@ -1393,65 +1553,155 @@ overflow-y: auto;
   font-weight: 600;
   color: #000;
 }
-.Appoinments-BG .calendar .Events h4 span{
+.Appoinments-BG .calendar .Events h4 span {
   font-size: 20px;
   font-weight: 500;
   line-height: 3;
-  color: #35D1E6;
+  color: #35d1e6;
 }
-.Appoinments-BG .calendar .Events h4 .clock-icon{
+.Appoinments-BG .calendar .Events h4 .clock-icon {
   font-size: 20px;
 }
-.Appoinments-BG .calendar .Events h5{
+.Appoinments-BG .calendar .Events h5 {
   font-size: 18px;
   font-weight: 400;
 }
 
-.Appoinments-BG .calendar .Events .today-events{
+.Appoinments-BG .calendar .Events .today-events {
   border: 1px solid #b6b6b6;
   border-radius: 10px;
   padding: 15px;
   align-items: center;
   margin-top: 20px;
 }
-.Appoinments-BG .calendar .Appopinment-Details h4{
-font-size: 20px;
-width: 100px;
-color: #868686;
-font-weight: 400;
+.Appoinments-BG .calendar .Appopinment-Details h4 {
+  font-size: 20px;
+  width: 100px;
+  color: #868686;
+  font-weight: 400;
 }
 
-.Appoinments-BG .calendar .Appopinment-Details .time-details{
+.Appoinments-BG .calendar .Appopinment-Details .time-details {
   display: flex;
-  padding: 30px;
+  padding: 10px;
   width: 1800px;
-  border:  1px solid #EBEBEB;
+  align-items: center;
+  border: 1px solid #ebebeb;
 }
-.Appoinments-BG .calendar .Appopinment-Details .time-details input{
-  width: 1650px;
+.Appoinments-BG .calendar .Appopinment-Details .time-details input {
+  width: 1587px;
   border: 0;
-  border-bottom: 1px solid #b6b6b6;
+  border-bottom: 1px solid #ebebeb;
   outline: none;
   padding: 8px;
 }
-.Appoinments-BG .calendar .Appopinment-Details .Create-Event button{
+.Appoinments-BG .calendar .Appopinment-Details .Create-Event {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 10px;
+}
+.Appoinments-BG .calendar .Appopinment-Details .Create-Event .Date-Day h4 {
+  width: 260px;
+}
+.Appoinments-BG
+  .calendar
+  .Appopinment-Details
+  .Create-Event
+  .create-btn-search {
+  gap: 10px;
+}
+.Appoinments-BG .calendar .Appopinment-Details .Create-Event button {
   padding: 10px;
   width: 200px;
-background: #07C7E0;
-border: none;
-border-radius: 10px;
-color: white;
-cursor: pointer;
+  background: #07c7e0;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-/*====================== Appopinments ====================*/
+.Appoinments-BG .calendar .Appopinment-Details .time-details .time {
+  border-right: 1px solid #ebebeb;
+  height: 80px;
+  margin-left: 100px;
+}
 
+.Appoinments-BG .Appopinment-Details .Create-Event input {
+  background-color: #fafafa;
+  border: 0;
+  height: 50px;
+  outline: none;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+}
+.Time-Message{
+  width: 1550px;
+  border-radius: 20px;
+  color: white;
+  padding: 20px;
+  height: 300px;
+  background-color: #EC407A;
+}
+.Time-Message textarea{
+  color: white;
+  padding: 10px;
+  background: none;
+  overflow: hidden;
+  font-size: 20px;
+  border: 0;
+  outline: none;
+  /* border-bottom: 1px solid #EEEEEE; */
+}
+
+
+
+
+/*================== scrollbar ====================*/
+
+.scrollbar {
+  float: left;
+  height: 300px;
+  width: 462px;
+  padding-right: 10px;
+  overflow-y: scroll;
+}
+
+.force-overflow {
+  min-height: 450px;
+}
+
+#wrapper {
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+#style-4::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+  background-color: #fafafa;
+}
+
+#style-4::-webkit-scrollbar {
+  width: 8px;
+  background-color: #07c7e0;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+  background-color: #07c7e0;
+  border: 2px solid white;
+}
+
+/*================== scrollbar ====================*/
+
+/*====================== Appopinments ====================*/
 
 /*============== Team ====================*/
 
-.Team-BG{
+.Team-BG {
   background-image: url("/img/Login-Signup-BG1.jpg");
   background-position: center;
   background-size: cover;
@@ -1460,46 +1710,46 @@ cursor: pointer;
   background-repeat: no-repeat;
   height: 100vh;
 }
-.Team-BG .All-Team-Member{
-display: flex;
-justify-content: space-evenly;
-flex-wrap: wrap;
-text-align: center;
-margin: auto;
-width: 1300px;
+.Team-BG .All-Team-Member {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+  width: 1300px;
 }
-.Team-BG .All-Team-Member img{
+.Team-BG .All-Team-Member img {
   width: 350px;
   cursor: pointer;
   height: 350px;
   border: 2px solid white;
- transition: 0.5s ease;
+  transition: 0.5s ease;
   margin-top: 50px;
   border-radius: 100%;
-  filter: drop-shadow(0 0 0.40rem rgb(19, 19, 19));
+  filter: drop-shadow(0 0 0.4rem rgb(19, 19, 19));
 }
-.Team-BG .All-Team-Member img:hover{
+.Team-BG .All-Team-Member img:hover {
   scale: 1.06;
 }
-.Team-BG .All-Team-Member h3{
-font-size: 36px;
-font-weight: 500;
-color: #4C4C4C;  
+.Team-BG .All-Team-Member h3 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #4c4c4c;
 }
-.Team-BG .bottom-text{
-text-align: center;
-margin-top: 50px;
+.Team-BG .bottom-text {
+  text-align: center;
+  margin-top: 50px;
 }
-.Team-BG .bottom-text h4{
+.Team-BG .bottom-text h4 {
   font-size: 20px;
-font-weight: 500;
+  font-weight: 500;
 }
 
 /*============== Team ====================*/
 
 /*============== Add Member ================*/
 
-.add-member-bg{
+.add-member-bg {
   background-image: url("/img/Login-Signup-BG1.jpg");
   background-position: center;
   background-size: cover;
@@ -1509,26 +1759,23 @@ font-weight: 500;
   background-repeat: no-repeat;
   height: 100vh;
 }
-.add-member-bg h2{
+.add-member-bg h2 {
   font-size: 32px;
   font-weight: 400;
 }
-.add-member-bg h3{
+.add-member-bg h3 {
   font-size: 36px;
   font-weight: 400;
 }
-.add-member-bg .Profile-img img{
+.add-member-bg .Profile-img img {
   width: 350px;
   cursor: pointer;
   height: 350px;
   border: 2px solid white;
- transition: 0.5s ease;
+  transition: 0.5s ease;
   margin-top: 50px;
   border-radius: 100%;
-  filter: drop-shadow(0 0 0.40rem rgb(19, 19, 19));
+  filter: drop-shadow(0 0 0.4rem rgb(19, 19, 19));
 }
 
 /*============== Add Member ================*/
-
-
-

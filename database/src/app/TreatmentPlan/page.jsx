@@ -1,6 +1,14 @@
+import { getServerSession } from "next-auth";
 import React from "react";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-const TreatmentPlan = () => {
+
+const TreatmentPlan = async () => {
+  const session = await getServerSession(authOptions)
+  if (!session) {
+    redirect('/signin?callbackUrl=/TreatmentPlan')
+  }
   return (
     <>
       <div className="Treatment-Plan-BG">

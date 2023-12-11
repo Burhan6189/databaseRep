@@ -12,7 +12,7 @@ const GoogleSignInButton = () => {
   return (
     <Button
       className='w-full'
-      onClick={() => signIn('github', { callbackUrl })}
+      onClick={() => signIn('github', {callbackUrl})}
     >
       <svg
         aria-hidden='true'

@@ -1,8 +1,16 @@
 import React from "react";
 
 import Navbar from "../components/Navbar/page";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-const TodayAppointment = () => {
+
+const TodayAppointment = async() => {
+  const session = await getServerSession(authOptions)
+  if (!session) {
+    redirect('/signin?callbackUrl=/dashboard')
+  }
   return (
     <>
       <div className="Things-BG">

@@ -12,10 +12,10 @@ export const authOptions = {
   
     // ...add more providers here
   ],
-  pages: {
-    signIn: '/signin'
-  }
 
+  pages: {
+    signIn: '/signin',
+  },
   
 }
 

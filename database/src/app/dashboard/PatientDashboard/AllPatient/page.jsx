@@ -181,39 +181,6 @@ else if (session?.user.name==="UmerAfzal")
                 <h4>Time</h4>
                 <p>{items.Treatment[0].Time}</p>
               </div>
-              <div className="Options">
-                 <Popup
-                  trigger={
-                    <div className="Options">
-                      <BsThreeDots />
-                    </div>
-                  }
-                  position="left"
-                >
-                  <div className="Options-For-Patient">
-                    <div className="Option-Flex">
-                      <a
-                        href={
-                          "/dashboard/PatientDashboard/AllPatient/" +
-                          items._id
-                        }
-                      >
-                        <div className="Delete">
-                          <MdDelete className="Delete-Icon" />
-                          <button>Delete Patient</button>
-                        </div>
-                      </a>
-
-                      <a href={items._id}>
-                        <div className="Edit">
-                          <HiOutlinePencilAlt className="Edit-Icon" />
-                          <button>Edit Patient</button>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </Popup> 
-              </div>
             </div>
           </div>
         ))}

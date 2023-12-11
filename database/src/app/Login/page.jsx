@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import bcrypt from "bcryptjs";
 import { setCookie } from "cookies-next";
+import SignInPage from "../signin/page";
 
 const Login = () => {
 
@@ -89,6 +90,7 @@ const myfun= async ()=>{
           </p>
           <h3>www.confidentdp.com</h3>
         </div>
+        <SignInPage/>
       </div>
     </div>
   );

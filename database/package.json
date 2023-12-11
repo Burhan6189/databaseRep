@@ -19,7 +19,7 @@
     "mongoose": "^8.0.0",
     "mongoose-bcrypt": "^1.11.0",
     "mongoose-unique-validator": "^4.0.0",
-    "next": "14.0.2",
+    "next": "^14.0.4",
     "next-auth": "^4.24.5",
     "pace": "^0.0.4",
     "popup": "^0.0.3",

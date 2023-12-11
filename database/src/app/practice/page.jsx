@@ -1,12 +1,11 @@
-
+"use client"
 import React from 'react'
-import { authOptions } from '../api/auth/[...nextauth]/route';
-import { getServerSession } from 'next-auth';
+import {useSession } from 'next-auth/react';
 
 
-const page= async()=> {
+const page= ()=> {
 
-    const session = await getServerSession(authOptions)
+    const { data: session } = useSession()
      if (session)
      return(
    
@@ -16,14 +15,15 @@ const page= async()=> {
 
     
     
-    
+    <div>{JSON.stringify(session)}</div>
     </div>
     
     );
     return(
-
+<>
+       
         <div>not logged in</div>
-
+        </>
     )
   
 }

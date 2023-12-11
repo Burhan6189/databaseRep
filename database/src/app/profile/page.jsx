@@ -9,6 +9,7 @@ import MySignUp from '../components/MySignUp'
 const Page = async () => {
 
    
+// using server session
 
   const session = await getServerSession(authOptions)
 

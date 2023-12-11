@@ -128,6 +128,8 @@ const AllPatient = () => {
               </div>
             </div>
           ))}
+
+          
         </div>
       </div>
     </>

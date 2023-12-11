@@ -1,11 +1,11 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth";
+'use client'
 import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
+import {useSession } from 'next-auth/react';
 
-const Navbar = async() => {
-  const session = await getServerSession(authOptions)
-  if (session) 
+const Navbar = () => {
+  const { data: session } = useSession()
+  if (session)
   return (
     <>
       <div className="Header">

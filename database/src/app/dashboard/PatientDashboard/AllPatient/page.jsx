@@ -133,7 +133,7 @@ const AllPatient = () => {
     </>
   )
                         
-else if (session?.user.name==="")
+else if (session?.user.name==="UmerAfzal")
 
   return(
 

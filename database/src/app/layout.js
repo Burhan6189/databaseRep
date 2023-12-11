@@ -20,8 +20,6 @@ export default function RootLayout({ children }) {
       {children}
      </SessionProvider>
       </body>
-
     </html>
-  )
-
+  );
 }

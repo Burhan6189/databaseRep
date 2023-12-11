@@ -1,4 +1,6 @@
 "use client";
+
+
 import Navbar from "@/app/components/Navbar/page";
 import React, { useState } from "react";
 import Popup from "reactjs-popup";

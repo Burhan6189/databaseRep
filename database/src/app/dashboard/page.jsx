@@ -1,5 +1,6 @@
-import React from "react";
 
+
+import React from "react";
 import Navbar from "../components/Navbar/page";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";

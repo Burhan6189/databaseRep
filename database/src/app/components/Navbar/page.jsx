@@ -23,9 +23,9 @@ const Navbar = () => {
             />
           </div>
           <div className="User-Login">
-            <img className="User-Login-Pic" src={session.user.image} alt="" />
+            <img className="User-Login-Pic" src={session.user.image} alt="user image" />
             <div>
-              <h3>{session.user.name}</h3>
+              <h3>{session.user.name || session.user.Username}</h3>
               <p>Super Admin</p>
             </div>
           </div>

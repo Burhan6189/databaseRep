@@ -1,77 +1,72 @@
 
 'use client'
-import React, { useState } from "react";
-import bcrypt from "bcryptjs";
+import React, { useEffect, useState } from "react";
 import { setCookie } from "cookies-next";
+import GoogleSignInButton from "../components/GoogleSignInButton";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 
 const Login = () => {
 
-  const [Username, setUsername]=useState("");
-  const [Password, setPassword]=useState("");
-  var [Status, setStatus]= useState("");
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
 
 
-const myfun= async ()=>{
+  const router = useRouter();
+  const {data: session} = useSession();
 
-
-  const fetchdata = await fetch("/api/projects");
-  const jsondata = await fetchdata.json();
-  
-  if(Username=="" || Password==""){
-
-    alert("Both Fields are Required");
+useEffect(()=>{
+  if(session?.status ==="authenticated"){
+    router.replace("/dashboard");
   }
-
-  else if(Username!="" && Password!=""){
-
-
-    jsondata.map((items=>{
-
-      if(Username == items.Username ){
+},[session, router])
 
 
-        bcrypt.compare(Password, items.Password).then((res) => {
-       if(res){
-        setCookie('Patient');
-          setStatus("true");
-          alert("success");
-              window.location.href=("/dashboard");  
-            }
-            else{
-              alert("Incorrect Password");
-            }
-      });
-       
-      }
 
-      else if(Username != items.Username || Password != items.Password){
-        
-        setStatus("false");
-      }
-    }));
+  const myfun = async () => {
 
-     if(Status=="false"){
-      alert("Incorrect Credentials");
-      window.location.href=("/Login");
-     }
-    
+
+    if (Username == "" || Password == "") {
+
+      alert("Both Fields are Required");
     }
+
+    else if (Username != "" && Password != "") {
+
+      const res = await signIn('credentials', {
+        redirect: false,
+        Username,
+        Password
+      });
+
+      if (res?.error) {
+
+        alert("wrong credentials")
+      }
+      if (res?.url) {
+      router.replace("/dashboard") }
+      
+    }
+
   }
 
 
   return (
     <div>
+      <div><GoogleSignInButton /></div>
       <div className='Login-Page-BG'>
+
         <div className='Logo' >
 
-        <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
+          <img src="http://www.fhgroupoc.com/svg/fhlogog.svg" alt="" />
         </div>
         <div className='Login-Page-Input-1'>
-          <input type="text" value={Username} onChange={(e)=>{setUsername(e.target.value)}} name='name' id='name' className='input-field' placeholder='Username' autoComplete='off' />
+          <input type="text" value={Username} onChange={(e) => { setUsername(e.target.value) }} name='name' id='name' className='input-field' placeholder='Username' autoComplete='off' />
           <label for='name' className='input-label'>Username</label>
         </div>
         <div className='Login-Page-Input-2'>
-          <input type="password" value={Password} onChange={(e)=>{setPassword(e.target.value)}} name='password' id='password' className='input-field' placeholder='Paswword' autoComplete='off' />
+          <input type="password" value={Password} onChange={(e) => { setPassword(e.target.value) }} name='password' id='password' className='input-field' placeholder='Paswword' autoComplete='off' />
           <label for='password' className='input-label'>Password</label>
         </div>
 
@@ -89,8 +84,9 @@ const myfun= async ()=>{
           </p>
           <h3>www.confidentdp.com</h3>
         </div>
-       
+
       </div>
+
     </div>
   );
 };

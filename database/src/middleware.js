@@ -1,23 +1,26 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request) {
-  const url = request.nextUrl.clone();
+// export function middleware(request) {
+//   const url = request.nextUrl.clone();
 
-  let patientcookie = request.cookies.get("Patient");
+//   let patientcookie = request.cookies.get("Patient");
 
-  if (!patientcookie) {
-    if (request.nextUrl.pathname.startsWith("/dashboard") ) {
-      return NextResponse.rewrite(new URL("/Login", request.url));
-    }
+//   if (!patientcookie) {
+//     if (request.nextUrl.pathname.startsWith("/dashboard") ) {
+//       return NextResponse.rewrite(new URL("/Login", request.url));
+//     }
     
-  } else {
-    if (url.pathname === "/login") {
-      if (patientcookie) {
-        url.pathname = "dashboard";
+//   } else {
+//     if (url.pathname === "/login") {
+//       if (patientcookie) {
+//         url.pathname = "dashboard";
 
-        return NextResponse.redirect(url);
-      }
-    }
-  }
-}
+//         return NextResponse.redirect(url);
+//       }
+//     }
+//   }
+// }
 export { default } from "next-auth/middleware"
+export const config = { matcher: ["/dashboard", "/dashboard/PatientDashboard","/dashboard/PatientDashboard/AllPatient", "/dashboard/Appoinments" ] }
+
+

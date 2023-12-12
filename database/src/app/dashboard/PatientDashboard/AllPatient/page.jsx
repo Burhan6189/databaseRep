@@ -129,7 +129,7 @@ const AllPatient = () => {
             </div>
           ))}
 
-          
+
         </div>
       </div>
     </>

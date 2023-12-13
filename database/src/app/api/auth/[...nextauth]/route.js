@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials"
 import mongoose from "mongoose";
 import { DBcon } from "@/app/lib/dbconnection";
@@ -14,6 +15,10 @@ export const authOptions = {
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
     }),
 
     CredentialsProvider({
@@ -77,9 +82,9 @@ export const authOptions = {
     // ...add more providers here
   ],
 
-  pages: {
-    signIn: '/Login',
-  },
+  // pages: {
+  //   signIn: '/Login',
+  // },
   
 }
 

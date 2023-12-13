@@ -1,11 +1,12 @@
 "use client"
+import { useSession } from 'next-auth/react'
 import React from 'react'
-import {useSession } from 'next-auth/react';
+
 
 
 const page= ()=> {
 
-    const { data: session } = useSession()
+    const { data: session } = useSession();
      if (session)
      return(
    
@@ -13,9 +14,8 @@ const page= ()=> {
     {session.user.email}
     <img src={session.user.image}/>
 
-    
-    
-    <div>{JSON.stringify(session)}</div>
+   <div>{JSON.stringify(session)}</div>
+    {console.log(session.user)}
     </div>
     
     );

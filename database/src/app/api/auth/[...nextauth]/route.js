@@ -49,7 +49,7 @@ export const authOptions = {
         try {
 
           const user = await snupModel.findOne({Username: credentials.Username});
-
+            
           
   
           if(user){

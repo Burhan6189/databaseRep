@@ -5,6 +5,7 @@ import { setCookie } from "cookies-next";
 import GoogleSignInButton from "../components/GoogleSignInButton";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import GithubSignInButton from "../components/GithubSignInButton";
 
 
 const Login = () => {
@@ -17,9 +18,8 @@ const Login = () => {
   const {data: session} = useSession();
 
 useEffect(()=>{
-  if(session?.status ==="authenticated"){
+  if(session)
     router.replace("/dashboard");
-  }
 },[session, router])
 
 
@@ -50,11 +50,13 @@ useEffect(()=>{
     }
 
   }
+  
 
-
+  if(!session)
   return (
     <div>
       <div><GoogleSignInButton /></div>
+      <div><GithubSignInButton/></div>
       <div className='Login-Page-BG'>
 
         <div className='Logo' >

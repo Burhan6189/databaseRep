@@ -14,7 +14,7 @@ const Page = async () => {
   const session = await getServerSession(authOptions)
 
   if (!session) {
-    redirect('/signin?callbackUrl=/profile')
+    redirect('/Login?callbackUrl=/profile')
   }
   return (
     

@@ -82,9 +82,9 @@ export const authOptions = {
     // ...add more providers here
   ],
 
-  // pages: {
-  //   signIn: '/Login',
-  // },
+  pages: {
+    signIn: '/Login',
+  },
   
 }
 

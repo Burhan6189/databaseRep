@@ -7,12 +7,18 @@ import Button from './Button'
 
 const GoogleSignInButton = () => {
   const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get('callbackUrl')
+  let callbackUrl = searchParams.get('callbackUrl')
   const {data: session} =  useSession();
 
   if(session?.status ==="authenticated"){
     router.replace("/dashboard");
   }
+
+  else if(!session){
+    callbackUrl="/dashboard";
+  }
+
+
   return (
     <Button
       className='w-full'

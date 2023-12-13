@@ -1,22 +1,28 @@
 'use client'
 
-import { useSearchParams } from 'next/navigation'
+import { redirect, useSearchParams } from 'next/navigation'
 import { signIn, useSession } from 'next-auth/react'
 
 import Button from './Button'
 
 const GithubSignInButton = () => {
   const searchParams = useSearchParams()
-  const callbackUrl = searchParams.get('callbackUrl')
+  let callbackUrl = searchParams.get('callbackUrl')
   const {data: session} =  useSession();
+
 
   if(session?.status ==="authenticated"){
     router.replace("/dashboard");
   }
+
+  else if(!session){
+    callbackUrl="/dashboard";
+  }
+  
   return (
     <Button
       className='w-full'
-      onClick={() => signIn('github', {callbackUrl})}
+      onClick={() => signIn('github', {callbackUrl}) }
     >
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">

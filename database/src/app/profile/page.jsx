@@ -22,14 +22,13 @@ const Page = async () => {
       <div className='container'>
         <h1 className='text-2xl font-bold'>Profile</h1>
       </div>
-     
+      
       <h5>{session.user.name}</h5><br></br>
       <h5>{session.user.email}</h5><br></br>
       <img src={session.user.image}/>
       <MySignUp/>
-  
-    
-    </section>
+
+</section>
     
   )
 }

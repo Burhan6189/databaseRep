@@ -2,12 +2,14 @@
 import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
 import {useSession } from 'next-auth/react';
+import MySignUp from "../MySignUp";
 
 const Navbar = () => {
   const { data: session } = useSession()
   if (session)
   return (
     <>
+  
       <div className="Header">
         <div className="Header-Flex">
           <a href="./">
@@ -22,6 +24,7 @@ const Navbar = () => {
               alt=""
             />
           </div>
+          
           <div className="User-Login">
             <img className="User-Login-Pic" src={session.user.image} alt="user image" />
             <div>
@@ -29,6 +32,7 @@ const Navbar = () => {
               <p>Super Admin</p>
             </div>
           </div>
+          <div> <MySignUp/></div>
         </div>
       </div>
     </>

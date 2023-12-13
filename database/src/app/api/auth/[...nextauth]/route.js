@@ -50,9 +50,11 @@ export const authOptions = {
 
           const user = await snupModel.findOne({Username: credentials.Username});
 
-          const bypassword = await bcrypt.compare(credentials.Password, user.Password);
+          
   
           if(user){
+            
+            const bypassword = await bcrypt.compare(credentials.Password, user.Password);
             if(bypassword){
   
               console.log(user);
@@ -85,7 +87,7 @@ export const authOptions = {
   pages: {
     signIn: '/Login',
   },
-  
+
 }
 
 const handler = NextAuth(authOptions)

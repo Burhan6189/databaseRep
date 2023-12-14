@@ -16,7 +16,7 @@
     "custom-function": "^1.0.6",
     "custom-functions-metadata": "^1.5.3",
     "framer-motion": "^10.16.8",
-    "mongoose": "^8.0.0",
+    "mongoose": "^7.0.0",
     "mongoose-bcrypt": "^1.11.0",
     "mongoose-unique-validator": "^4.0.0",
     "next": "^14.0.4",

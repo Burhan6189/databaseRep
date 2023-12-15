@@ -46,7 +46,7 @@ const AllPatient = () => {
 
 
   const { data: session } = useSession()
-  if (session?.user.name==="Burhan Shabbir") 
+  if (session?.user.Role==="Super Admin") 
   return (
     <>
       <div className="All-Patient-BG">
@@ -135,7 +135,7 @@ const AllPatient = () => {
     </>
   )
                         
-else if (session?.user.name==="UmerAfzal")
+else if (session?.user.Role==="User")
 
   return(
 

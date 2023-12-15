@@ -105,8 +105,8 @@ export const authOptions = {
       // Send properties to the client, like an access_token and user id from a provider.
       if(token){
 
-        session.user.Username = token.Username;
-        session.user.Email = token.Email;
+        session.user.name = token.Username;
+        session.user.email = token.Email;
         session.user.Role = token.Role;
 
       }

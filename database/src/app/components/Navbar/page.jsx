@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="User-Login">
             <img className="User-Login-Pic" src={session.user.image} alt="user image" />
             <div>
-              <h3>{session.user.name || session.user.Username}</h3>
+              <h3>{session.user.name}</h3>
               <p>{session.user.Role}</p>
             </div>
           </div>

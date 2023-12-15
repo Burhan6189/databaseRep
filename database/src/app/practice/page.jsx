@@ -7,6 +7,7 @@ import React from 'react'
 const page= ()=> {
 
     const { data: session } = useSession();
+    
      if (session)
      return(
    
@@ -15,7 +16,7 @@ const page= ()=> {
     <img src={session.user.image}/>
 
    <div>{JSON.stringify(session)}</div>
-    {console.log(session.user)}
+    {console.log(session)}
     </div>
     
     );

@@ -88,6 +88,36 @@ export const authOptions = {
     signIn: '/Login',
   },
 
+
+  callbacks: {
+    async jwt({ token, user }) {
+      // Persist the OAuth access_token and or the user id to the token right after signin
+      if (user) {
+        token.Username = user.Username;
+        token.Email = user.Email;
+        token.Role = user.Role;
+      }
+      console.log("this is token", token);
+      return token;
+    },
+
+    async session({ session, token}) {
+      // Send properties to the client, like an access_token and user id from a provider.
+      if(token){
+
+        session.user.Username = token.Username;
+        session.user.Email = token.Email;
+        session.user.Role = token.Role;
+
+      }
+  console.log("this is session details", session);
+      return session;
+    }
+  
+
+
+  }
+  
 }
 
 const handler = NextAuth(authOptions)

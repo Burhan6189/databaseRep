@@ -45,8 +45,9 @@ const AllPatient = () => {
   }, [Details]);
 
 
-  const { data: session } = useSession()
-  if (session?.user.Role==="Super Admin") 
+  const { data: session } = useSession();
+
+  if (session){
   return (
     <>
       <div className="All-Patient-BG">
@@ -92,7 +93,16 @@ const AllPatient = () => {
                   <h4>Time</h4>
                   <p>{items.Treatment[0].Time}</p>
                 </div>
-                <div className="Options">
+
+
+                {/* three dots div below */}
+
+              {
+                (session?.user.Role === "Super Admin") && (
+
+                  <>
+                  
+                  <div className="Options">
                   <Popup
                     trigger={
                       <div className="Options">
@@ -124,7 +134,14 @@ const AllPatient = () => {
                       </div>
                     </div>
                   </Popup>
+
                 </div>
+
+                  </>
+                )
+              }
+                
+
               </div>
             </div>
           ))}
@@ -133,71 +150,8 @@ const AllPatient = () => {
         </div>
       </div>
     </>
-  )
+  )}
                         
-else if (session?.user.Role==="User")
-
-  return(
-
-    <>
-    <div className="All-Patient-BG">
-      <Navbar />
-      <div className="All-Patient-Header">
-        <h2>All Patients</h2>
-        <div className="Appointment-Input">
-          <input type="text" placeholder="Search" onChange={Filter} />
-        </div>
-        <div className="Appointment-Button">
-          <h4>New Appointments</h4>
-          <button onClick={plusbtn}>+</button>
-        </div>
-      </div>
-      <div className="All-Patient">
-        {[...Record].reverse().map((items) => (
-          <div className="Patients-List" key={items._id}>
-            <div className="First-Patient">
-              <div className="patient-id">
-                <img src="/img/image 2.png" alt="" />
-                <div>
-                  <h4>{items.Name}</h4>
-                  <p>ID : {items.Clientid}</p>
-                </div>
-              </div>
-              <div>
-                <h4>Contact</h4>
-                <p>{items.Number}</p>
-              </div>
-              <div>
-                <h4>check up</h4>
-                <input
-                  disabled
-                  maxLength={1}
-                  value={items.Treatment[0].Description}
-                />
-              </div>
-              <div>
-                <h4>Date</h4>
-                <p>{items.Treatment[0].Date}</p>
-              </div>
-              <div>
-                <h4>Time</h4>
-                <p>{items.Treatment[0].Time}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </>
-  )
-
-  return(
-    <>
-    <div> nothing is available</div>
-    </>
-  )
-
-
 
 };
 

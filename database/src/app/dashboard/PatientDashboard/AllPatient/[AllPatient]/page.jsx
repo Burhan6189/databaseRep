@@ -6,11 +6,11 @@ import { useSession } from "next-auth/react";
 const AllPatient = (props) => {
   // id declaration
   const id = props.params.AllPatient;
-  const {data: session}= useSession();
+  const { data: session } = useSession();
 
 
-  if(session?.user.Role === "Super Admin"){
-    const deletefun = async()=>{
+  if (session?.user.Role === "Super Admin") {
+    const deletefun = async () => {
 
       const data = await fetch("/api/patientdetails/" + id, {
         method: "DELETE",
@@ -19,7 +19,7 @@ const AllPatient = (props) => {
     }
 
     deletefun();
-  
+
     if (deletefun) {
       window.location.href = "/dashboard/PatientDashboard/AllPatient";
     } else if (!data) {
@@ -31,7 +31,7 @@ const AllPatient = (props) => {
   }
 
   else {
-    
+
     window.location.href = "/dashboard/PatientDashboard/AllPatient";
 
   }

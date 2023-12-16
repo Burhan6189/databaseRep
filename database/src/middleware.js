@@ -9,7 +9,7 @@ import { NextResponse } from "next/server";
 //     if (request.nextUrl.pathname.startsWith("/dashboard") ) {
 //       return NextResponse.rewrite(new URL("/Login", request.url));
 //     }
-    
+
 //   } else {
 //     if (url.pathname === "/login") {
 //       if (patientcookie) {
@@ -21,6 +21,6 @@ import { NextResponse } from "next/server";
 //   }
 // }
 export { default } from "next-auth/middleware"
-export const config = { matcher: ["/dashboard", "/dashboard/PatientDashboard","/dashboard/PatientDashboard/AllPatient", "/dashboard/Appoinments" ] }
+export const config = { matcher: ["/dashboard", "/dashboard/PatientDashboard", "/dashboard/PatientDashboard/AllPatient", "/dashboard/Appoinments"] }
 
 

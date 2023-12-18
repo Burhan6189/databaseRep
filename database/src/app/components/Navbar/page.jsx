@@ -1,6 +1,8 @@
 'use client'
 import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
+import Popup from "reactjs-popup";
+
 import {useSession } from 'next-auth/react';
 import MySignUp from "../MySignUp";
 
@@ -26,13 +28,25 @@ const Navbar = () => {
           </div>
           
           <div className="User-Login">
-            <img className="User-Login-Pic" src={session.user.image || "https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png" } alt="user image" />
+          <Popup
+                trigger={
+                  <div>
+                      <img className="User-Login-Pic" src={session.user.image || "https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png" } alt="user image" />
+                  </div>
+                }
+                position="bottom"
+              >
+                <div className="User-Options">
+                <div> <MySignUp/></div>
+                </div>
+              </Popup>
+         
             <div>
               <h3>{session.user.name || session.user.Username}  </h3>
               <p>{session.user.Role || "Checker"}</p>
             </div>
           </div>
-          <div> <MySignUp/></div>
+    
         </div>
       </div>
     </>

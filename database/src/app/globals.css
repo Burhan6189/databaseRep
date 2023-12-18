@@ -22,7 +22,7 @@
 .Header .User-Login-Pic {
   max-width: 60px;
   border-radius: 50px;
-cursor: pointer;
+  cursor: pointer;
   height: 60px;
 }
 .Header .User-Login h3 {
@@ -52,6 +52,30 @@ cursor: pointer;
 }
 .Header .Header-Flex .back-button:hover {
   scale: 1.1;
+}
+.User-Options {
+  width: 120px;
+  border-radius: 20px;
+  color: white;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.log-out-btn {
+  background: none;
+  outline: none;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  border: none;
+}
+.log-out-btn .Log-Out-Icon {
+  font-size: 18px;
 }
 
 /*====================== End Header ==========================*/
@@ -1388,7 +1412,7 @@ cursor: pointer;
   box-sizing: border-box;
   text-decoration: none;
   font-size: 16px;
-padding: 1px;
+  padding: 1px;
 }
 
 .react-calendar button {
@@ -1433,7 +1457,6 @@ padding: 1px;
 .react-calendar__month-view__weekdays__weekday {
   padding: 0.5em;
   font-weight: 400;
-  
 }
 
 .react-calendar__month-view__weekNumbers .react-calendar__tile {
@@ -1447,16 +1470,12 @@ padding: 1px;
 
 .react-calendar__month-view__days__day--weekend {
   color: #000 !important;
-  
-  
 }
 
 .react-calendar__month-view__days__day--weekend:hover {
-
   color: #000 !important;
-  
 }
-.react-calendar__month-view__days__day--weekend:focus{
+.react-calendar__month-view__days__day--weekend:focus {
   color: white !important;
 }
 
@@ -1490,14 +1509,14 @@ padding: 1px;
 }
 
 .react-calendar__tile--now {
-  color: #07C7E0 !important;
+  color: #07c7e0 !important;
   background: none !important;
 }
 
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
   background: none;
-  color: #07C7E0 !important;
+  color: #07c7e0 !important;
 }
 
 .react-calendar__tile--hasActive {
@@ -1511,7 +1530,7 @@ padding: 1px;
 
 .react-calendar__tile--active {
   background: #006edc;
-  color: #07C7E0;
+  color: #07c7e0;
 }
 
 .react-calendar__tile--active:enabled:hover,
@@ -1523,10 +1542,7 @@ padding: 1px;
   background-color: #e6e6e6;
 }
 
-
-
 /*================== Calendar ============================*/
-
 
 .Appoinments-BG .calendar {
   background-color: rgb(255, 255, 255);
@@ -1643,15 +1659,15 @@ padding: 1px;
   border-radius: 10px;
   width: 300px;
 }
-.Time-Message{
+.Time-Message {
   width: 1550px;
   border-radius: 20px;
   color: white;
   padding: 20px;
   height: 300px;
-  background-color: #EC407A;
+  background-color: #ec407a;
 }
-.Time-Message textarea{
+.Time-Message textarea {
   color: white;
   padding: 10px;
   background: none;
@@ -1661,9 +1677,6 @@ padding: 1px;
   outline: none;
   /* border-bottom: 1px solid #EEEEEE; */
 }
-
-
-
 
 /*================== scrollbar ====================*/
 

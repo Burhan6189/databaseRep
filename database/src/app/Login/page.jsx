@@ -70,9 +70,11 @@ useEffect(()=>{
           <input type="password" value={Password} onChange={(e) => { setPassword(e.target.value) }} name='password' id='password' className='input-field' placeholder='Paswword' autoComplete='off' />
           <label for='password' className='input-label'>Password</label>
         </div>
+        <h3>or Login with </h3>
         <div className="Login-Buttons">
-        <div className="Login-Buttons"><GoogleSignInButton /></div>
-      <div className="Login-Buttons"><GithubSignInButton /></div>
+    
+        <div className="Login-Buttons-Google"><GoogleSignInButton /></div>
+      <div className="Login-Buttons-Github"><GithubSignInButton /></div>
       </div>
         <div className="Login-Button">
 

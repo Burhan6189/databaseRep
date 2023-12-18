@@ -168,7 +168,10 @@
   background-repeat: no-repeat;
   height: 100vh;
 }
-
+.Login-Page-BG h3{
+  font-weight: 400;
+  font-size: 18px;
+}
 .Login-Page-BG .Logo {
   padding: 250px 15px 70px 15px;
   padding-bottom: 70px;
@@ -310,23 +313,41 @@
   text-decoration: none;
   color: #000;
 }
-.Login-Page-BG .Login-Buttons button{
-    width: 255px;
-    display: flex;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: white;
-    border: #dcdcdc 1px solid;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    outline: none;
-    align-items: center;
-    gap: 11px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    border-radius: 50px;
-    padding: 5px;
-    font-weight: 500;
+.Login-Page-BG .Login-Buttons-Google button{
+  display: flex;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  border: #dcdcdc 1px solid;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  padding: 5px;
+  font-weight: 500;
+}
+.Login-Page-BG .Login-Buttons-Github button{
+  display: flex;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  border: #dcdcdc 1px solid;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  justify-content: center;
+  outline: none;
+  align-items: center;
+  gap: 11px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  padding: 5px;
+  font-weight: 500;
 }
 .login-buttons img{
 width: 50px;
@@ -335,6 +356,7 @@ border-radius: 50px;
 .Login-Buttons{
   display: flex;
   justify-content: center;
+  gap: 15px;
   align-items: center;
 }
 

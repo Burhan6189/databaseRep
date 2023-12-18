@@ -25,7 +25,6 @@ const GithubSignInButton = () => {
         src="https://github.githubassets.com/assets/apple-touch-icon-144x144-b882e354c005.png"
         alt=""
       />
-      Continue with Github
     </Button>
   );
 };

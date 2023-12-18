@@ -2,6 +2,8 @@
 
 
 import Navbar from "@/app/components/Navbar/page";
+import { color } from "framer-motion";
+import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 import Popup from "reactjs-popup";
 
@@ -118,7 +120,12 @@ const PatientDashboard = () => {
     }
   };
 
-  return (
+ const {data: session} = useSession();
+
+
+if(session?.user.Role === "Super Admin" || session?.user.Role === "User") 
+{
+ return (
     <div className="Patient-Details-BG">
       <Navbar />
       <div className="Main-Div">
@@ -589,7 +596,25 @@ const PatientDashboard = () => {
         </button>
       </div>
     </div>
-  );
+  );}
+
+      
+  else{
+    return(
+
+      <>
+      <div>
+
+      <h1>You are not Authorized to Access this page</h1><br></br>
+
+<h1 >Only Super Admin and User can Access this Page</h1>
+      </div>
+      
+      </>
+    )
+  }
+
+
 };
 
 export default PatientDashboard;

@@ -8,8 +8,8 @@ import MySignUp from '../components/MySignUp'
 
 const Page = async () => {
 
-   
-// using server session
+
+  // using server session
 
   const session = await getServerSession(authOptions)
 
@@ -17,7 +17,7 @@ const Page = async () => {
     redirect('/Login?callbackUrl=/profile')
   }
   return (
-    
+
     <section className='py-24'>
       <div className='container'>
         <h1 className='text-2xl font-bold'>Profile</h1>
@@ -25,13 +25,13 @@ const Page = async () => {
 
       <h5>{session.user.name}</h5><br></br>
       <h5>{session.user.email}</h5><br></br>
-      <img src={session.user.image}/>
-      <MySignUp/>
-      
+      <img src={session.user.image} />
+      <MySignUp />
+
       {console.log(session.user)}
 
-</section>
-    
+    </section>
+
   )
 }
 

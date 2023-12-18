@@ -22,7 +22,7 @@
 .Header .User-Login-Pic {
   max-width: 60px;
   border-radius: 50px;
-  cursor: pointer;
+cursor: pointer;
   height: 60px;
 }
 .Header .User-Login h3 {

@@ -55,8 +55,7 @@ useEffect(()=>{
   if(!session)
   return (
     <div>
-      <div><GoogleSignInButton /></div>
-      <div><GithubSignInButton/></div>
+
       <div className='Login-Page-BG'>
 
         <div className='Logo' >
@@ -71,7 +70,10 @@ useEffect(()=>{
           <input type="password" value={Password} onChange={(e) => { setPassword(e.target.value) }} name='password' id='password' className='input-field' placeholder='Paswword' autoComplete='off' />
           <label for='password' className='input-label'>Password</label>
         </div>
-
+        <div className="Login-Buttons">
+        <div className="Login-Buttons"><GoogleSignInButton /></div>
+      <div className="Login-Buttons"><GithubSignInButton /></div>
+      </div>
         <div className="Login-Button">
 
           <button onClick={myfun}>

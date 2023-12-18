@@ -315,7 +315,7 @@
 }
 .Login-Page-BG .Login-Buttons-Google button{
   display: flex;
-  padding: 10px;
+  padding: 8px;
   margin-top: 10px;
   background-color: white;
   border: #dcdcdc 1px solid;
@@ -328,12 +328,11 @@
   cursor: pointer;
   margin-bottom: 10px;
   border-radius: 50px;
-  padding: 5px;
   font-weight: 500;
 }
 .Login-Page-BG .Login-Buttons-Github button{
   display: flex;
-  padding: 10px;
+  padding: 8px;
   margin-top: 10px;
   background-color: white;
   border: #dcdcdc 1px solid;
@@ -346,7 +345,6 @@
   cursor: pointer;
   margin-bottom: 10px;
   border-radius: 50px;
-  padding: 5px;
   font-weight: 500;
 }
 .login-buttons img{

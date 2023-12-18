@@ -72,7 +72,31 @@ const page = () => {
               <h4>Friday - January 4 - 2022</h4>
             </div>
             <div className="create-btn-">
-              <button>Create Event</button>
+            <Popup
+                trigger={
+               <button>Create Event</button>
+                }
+                position="bottom"
+              >
+                <div className="Create-Events-Btn">
+                <div>
+                  <input type="text"  placeholder="Title"/>
+                  <input type="text" placeholder="Description" />
+                  <input type='date' />
+                  <input type='time' />
+                  <input type='time' />
+                  <select name="" id="">
+                  <option value="">Select a Type</option>
+                    <option value="">Private</option>
+                    <option value="">Meeting</option>
+                    <option value="">Lunch</option>
+                    <option value="">Work</option>
+                  </select>
+                  <button>Create</button>
+                </div>
+                </div>
+              </Popup>
+            
               <input type="text" placeholder="Search task, event, calendar" />
             </div>
           </div>

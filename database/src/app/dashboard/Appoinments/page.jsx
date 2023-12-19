@@ -12,15 +12,35 @@ import "react-calendar/dist/Calendar.css";
 const page = () => {
 
 
-  const [value, onChange] = useState(new Date());
+
+  const [DateValue, SetDateValue] = useState(new Date());
+
+  var dayOfWeekNumber = DateValue.getDay();
+  var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var dayName = dayNames[dayOfWeekNumber];   // for day name
+
+  var monthNumber = DateValue.getMonth();
+  var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var monthName = monthNames[monthNumber];  // for month name
+
+  var datenumber = DateValue.getDate();  // for date number
+
+  var yearnumber = DateValue.getFullYear(); // to get year 
+
   return (
     <div className="Appoinments-BG">
       <Navbar />
+
+      {/* this is calender */}
       <div className="calendar">
         <div className="Events-Details">
           <div className="dd-mm-yy">
-            <Calendar onChange={onChange} value={value} />
+            <Calendar onChange={SetDateValue} value={DateValue} dateFormat="dd/mm/yy" />
           </div>
+
+
+
+         {/* these are events below calender */}
 
           <div className="Events">
             <h3>Events</h3>
@@ -64,42 +84,61 @@ const page = () => {
               </div>
             </div>
           </div>
+
+
+                                       {/* events ends here */}
+
+
         </div>
         <div className="Appopinment-Details">
           <div className="Create-Event">
+
+            {/* header showing date  */}
+
             <div className="Date-Day">
-              <h3>January</h3>
-              <h4>Friday - January 4 - 2022</h4>
+              <h3>{monthName}</h3>
+              <h4>{dayName + "     -    " + monthName + "    " + datenumber + " - " + yearnumber}</h4>
             </div>
+
+
+
             <div className="create-btn-">
-            <Popup
+              <Popup
                 trigger={
-               <button>Create Event</button>
+                  <button>Create Event</button>
                 }
                 position="bottom"
               >
                 <div className="Create-Events-Btn">
-                <div>
-                  <input type="text"  placeholder="Title"/>
-                  <input type="text" placeholder="Description" />
-                  <input type='date' />
-                  <input type='time' />
-                  <input type='time' />
-                  <select name="" id="">
-                  <option value="">Select a Type</option>
-                    <option value="">Private</option>
-                    <option value="">Meeting</option>
-                    <option value="">Lunch</option>
-                    <option value="">Work</option>
-                  </select>
-                  <button>Create</button>
-                </div>
+                  <div>
+                    <input type="text" placeholder="Title" />
+                    <input type="text" placeholder="Description" />
+                    <input type='date' />
+                    <input type='time' />
+                    <input type='time' />
+                    <select name="" id="">
+                      <option value="">Select a Type</option>
+                      <option value="">Private</option>
+                      <option value="">Meeting</option>
+                      <option value="">Lunch</option>
+                      <option value="">Work</option>
+                    </select>
+                    <button>Create</button>
+                  </div>
                 </div>
               </Popup>
-            
+
+
+                  {/* these is search bar */}
+
               <input type="text" placeholder="Search task, event, calendar" />
             </div>
           </div>
+
+
+
+                {/* these are timings rows */}
+
           <div className="time-details">
             <div className="time">
               <h4>8:00 AM</h4>
@@ -119,6 +158,9 @@ const page = () => {
               </Popup>
             </div>
           </div>
+
+
+
           <div className="time-details">
             <div className="time">
               <h4>9:00 AM</h4>
@@ -132,7 +174,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'green'}}  className="Time-Message">
+                <div style={{ background: 'green' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -151,7 +193,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'#F4ECD6'}} className="Time-Message">
+                <div style={{ background: '#F4ECD6' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -170,7 +212,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'#A7CAB1'}} className="Time-Message">
+                <div style={{ background: '#A7CAB1' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -189,7 +231,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'#a3b18a'}} className="Time-Message">
+                <div style={{ background: '#a3b18a' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -208,7 +250,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'#81b29a'}} className="Time-Message">
+                <div style={{ background: '#81b29a' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -227,7 +269,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'5fa8d3'}} className="Time-Message">
+                <div style={{ background: '5fa8d3' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -246,7 +288,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'#ffb700'}} className="Time-Message">
+                <div style={{ background: '#ffb700' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>
@@ -265,7 +307,7 @@ const page = () => {
                 }
                 position="center"
               >
-                <div style={{background:'#A7CAB1'}} className="Time-Message">
+                <div style={{ background: '#A7CAB1' }} className="Time-Message">
                   <textarea name="" id="" cols="147" rows="8"></textarea>
                 </div>
               </Popup>

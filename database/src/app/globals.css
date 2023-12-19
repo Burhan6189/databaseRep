@@ -1601,6 +1601,7 @@ border-radius: 50px;
   background-color: rgb(255, 255, 255);
   width: 100%;
   display: flex;
+  flex-wrap: wrap-reverse;
   align-items: center;
 }
 .Appoinments-BG .calendar .dd-mm-yy {
@@ -1647,6 +1648,9 @@ border-radius: 50px;
   padding: 15px;
   align-items: center;
   margin-top: 20px;
+}
+.Appoinments-BG .calendar .Appopinment-Details{
+  padding: 10px;
 }
 .Appoinments-BG .calendar .Appopinment-Details h4 {
   font-size: 20px;
@@ -1891,3 +1895,11 @@ border-radius: 50px;
 }
 
 /*============== Add Member ================*/
+
+@media screen and (max-width:2350px){
+  .Appoinments-BG .calendar .Events-Details{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+}

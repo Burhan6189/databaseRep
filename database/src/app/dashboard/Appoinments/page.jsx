@@ -17,7 +17,7 @@ const page = () => {
     <div className="Appoinments-BG">
       <Navbar />
       <div className="calendar">
-        <div>
+        <div className="Events-Details">
           <div className="dd-mm-yy">
             <Calendar onChange={onChange} value={value} />
           </div>

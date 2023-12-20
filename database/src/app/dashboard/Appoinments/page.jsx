@@ -223,7 +223,6 @@ useEffect(()=>{
 
           {/* these are timings rows */}
 
-
           <div className="time-details">
             <div className="time">
               <h4>8:00 AM</h4>
@@ -398,7 +397,6 @@ useEffect(()=>{
               <h4>4:00 PM</h4>
             </div>
             <div>
-
               <div>
                 {
 
@@ -408,7 +406,6 @@ useEffect(()=>{
                   ))
                 }
               </div>
-
             </div>
           </div>
 

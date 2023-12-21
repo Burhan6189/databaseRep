@@ -351,7 +351,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("08:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-01"  type="text"  value={items.Title} />
                   ))
                 }
 
@@ -373,7 +373,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("09:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-02" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -393,7 +393,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("10:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-03" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -413,7 +413,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("11:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-04" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -434,7 +434,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("12:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-05" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -455,7 +455,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("13:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-06" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -476,7 +476,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("14:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-07" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -498,7 +498,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("15:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-08" type="text" value={items.Title} />
                   ))
                 }
               </div>
@@ -519,7 +519,7 @@ const page = () => {
 
                   arraydata.map((items) => (
                     (items.StartTime.includes("16:")) &&
-                    <input type="text" value={items.Title} />
+                    <input className="input-color-09" type="text" value={items.Title} />
                   ))
                 }
               </div>

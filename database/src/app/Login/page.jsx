@@ -6,6 +6,7 @@ import GoogleSignInButton from "../components/GoogleSignInButton";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import GithubSignInButton from "../components/GithubSignInButton";
+import FacebookSignInButton from "../components/FacebookSignInButton";
 
 
 const Login = () => {
@@ -81,6 +82,8 @@ useEffect(()=>{
     
         <div className="Login-Buttons-Google"><GoogleSignInButton /></div>
       <div className="Login-Buttons-Github"><GithubSignInButton /></div>
+      <div className="Login-Buttons-Github"><FacebookSignInButton /></div>
+
       </div>
 
         <div className="Login-Page-Texts">

@@ -1500,7 +1500,7 @@ border-radius: 50px;
   background-color: #e6e6e6;
 }
 
-.react-calendar__month-view__weekdays {
+.react-calendar_month-view_weekdays {
   text-align: center;
   text-transform: uppercase;
   font: inherit;
@@ -1509,12 +1509,12 @@ border-radius: 50px;
   font-weight: 500;
 }
 
-.react-calendar__month-view__weekdays__weekday {
+.react-calendar_month-viewweekdays_weekday {
   padding: 0.5em;
   font-weight: 400;
 }
 
-.react-calendar__month-view__weekNumbers .react-calendar__tile {
+.react-calendar_month-viewweekNumbers .react-calendar_tile {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1523,24 +1523,24 @@ border-radius: 50px;
   font-weight: bold;
 }
 
-.react-calendar__month-view__days__day--weekend {
+.react-calendar_month-viewdays_day--weekend {
   color: #000 !important;
 }
 
-.react-calendar__month-view__days__day--weekend:hover {
+.react-calendar_month-viewdays_day--weekend:hover {
   color: #000 !important;
 }
-.react-calendar__month-view__days__day--weekend:focus {
+.react-calendar_month-viewdays_day--weekend:focus {
   color: white !important;
 }
 
-.react-calendar__month-view__days__day--neighboringMonth {
+.react-calendar_month-viewdays_day--neighboringMonth {
   color: #757575;
 }
 
-.react-calendar__year-view .react-calendar__tile,
-.react-calendar__decade-view .react-calendar__tile,
-.react-calendar__century-view .react-calendar__tile {
+.react-calendar_year-view .react-calendar_tile,
+.react-calendar_decade-view .react-calendar_tile,
+.react-calendar_century-view .react-calendar_tile {
   padding: 2em 0.5em;
 }
 
@@ -1943,4 +1943,3 @@ border-radius: 50px;
   flex-grow: 1;
 }
 /*=============== AI BOT ================*/
-

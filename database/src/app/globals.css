@@ -1778,6 +1778,53 @@ border-radius: 50px;
   margin-top: 30px;
 }
 
+.Appoinments-BG .calendar .input-color-01{
+  background-color: #6dbac7;
+  color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-02{
+  background-color: #6e6464;
+   color: white;
+  font-size: 20px;
+
+}
+.Appoinments-BG .calendar .input-color-03{
+  background-color: #6fa66d;
+   color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-04{
+  background-color: #b29139;
+   color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-05{
+  background-color: #622828;
+   color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-06{
+  background-color: #d67a94;
+   color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-07{
+  background-color: #8d4aaf;
+   color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-08{
+  background-color: #c8ca51;
+   color: white;
+  font-size: 20px;
+}
+.Appoinments-BG .calendar .input-color-09{
+  background-color: #5cd7c2;
+   color: white;
+  font-size: 20px;
+}
+
 /*================== scrollbar ====================*/
 
 .scrollbar {

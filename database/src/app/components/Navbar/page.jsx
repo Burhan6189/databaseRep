@@ -14,11 +14,23 @@ const Navbar = () => {
   
       <div className="Header">
         <div className="Header-Flex">
-          <a href="./">
-          <div className="back-button">
-            <IoMdArrowBack />
-          </div>
-          </a>
+          {(window.location.href==="http://localhost:3000/dashboard/PatientDashboard/AllPatient")&&
+           <a href="../">
+
+           <div className="back-button">
+             <IoMdArrowBack />
+           </div>
+           </a>
+           ||
+             <a href="./">
+
+             <div className="back-button">
+               <IoMdArrowBack />
+             </div>
+             </a>
+          }
+
+        
           <div>
             <img
               className="Logo"

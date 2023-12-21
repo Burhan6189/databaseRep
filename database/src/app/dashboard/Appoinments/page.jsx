@@ -23,6 +23,36 @@ const page = () => {
   const [fdata, setfdata] = useState([]);
 
 
+
+  //   const [AppointmentDetails, setAppointmentDetails] = useState({
+  //     Title: "",
+  //     Description: "",
+  //     Mydate: "",
+  //     StartTime: "",
+  //     EndTime: "",
+  //     Type: ""
+  //   });
+
+
+
+  //   const handleAppointmentDetailsChange=(field, value)=>{
+  // setAppointmentDetails((prevDetails)=>({
+  //   ...prevDetails,
+  //   [field]:value
+  // }));
+
+  //   };
+
+
+
+
+
+
+
+
+
+
+
   const savefun = async () => {
 
     if (Title != "" || Description != "" || Mydate != "" || StartTime != "" || EndTime != "" || Type != "") {
@@ -34,6 +64,7 @@ const page = () => {
       });
       if (savedata) {
         alert("data is added")
+        window.location.href = ("/dashboard/Appoinments");
       }
       else {
         alert("data is not added")
@@ -45,6 +76,45 @@ const page = () => {
     }
 
   }
+
+
+  // to update data is not using for now
+
+  async function updatepopupdata(id) {
+
+    const update = await fetch("/api/appointment/" + id, {
+      method: "PUT",
+      body: JSON.stringify({ Title, Description, Mydate, StartTime, EndTime, Type })
+    });
+    if (update) {
+      alert("data is updated successfully")
+    }
+    else {
+      alert("could not update")
+    }
+
+  }
+
+
+
+  // to delete popup data function 
+
+
+  async function deletefun(id) {
+
+    const deleted = await fetch("/api/appointment/" + id, {
+      method: "DELETE"
+    });
+    if (deleted) {
+      alert("data is deleted successfully")
+      window.location.href = ("/dashboard/Appoinments");
+    }
+    else {
+      alert("could not delete")
+    }
+
+  }
+
 
 
 
@@ -99,10 +169,10 @@ const page = () => {
   var yearnumber = DateValue.getFullYear(); // to get year 
   var monthNo = monthNumber + 1;
 
-  if(datenumber<=9){
-    var filterdate = yearnumber + "-" + monthNo + "-" + 0+datenumber;
+  if (datenumber <= 9) {
+    var filterdate = yearnumber + "-" + monthNo + "-" + 0 + datenumber;
   }
-  else{
+  else {
     var filterdate = yearnumber + "-" + monthNo + "-" + datenumber;
   }
 
@@ -112,9 +182,9 @@ const page = () => {
 
   const arraydata = (wholedata.filter((f) => f.Mydate.includes(filterdate)))
 
-useEffect(()=>{
-  arraydata;
-},[wholedata]);
+  useEffect(() => {
+    arraydata;
+  }, [wholedata]);
 
   return (
     <div className="Appoinments-BG">
@@ -133,6 +203,8 @@ useEffect(()=>{
 
 
 
+          {/* I pasted the events code into trigger of  POPUP SO I can get its details value on popup */}
+
 
           <div className="Events">
             <h3>Events</h3>
@@ -143,17 +215,60 @@ useEffect(()=>{
                   {
                     [...fdata].reverse().map((items) => (
 
-                      <div className="today-events">
-                        <div>
-                          <h4>{items.Title}</h4>
-                          <h5>{items.Mydate}</h5>
-                          <h4>
-                            <span>
-                              <FaRegClock className="clock-icon" />{items.StartTime} - {items.EndTime}
-                            </span>
-                          </h4>
-                        </div>
+
+                      <div className="create-btn-">
+
+                        <Popup
+
+                          trigger={
+
+
+                            <div className="today-events">
+                              <div key={items._id}>
+                                <h4>{items.Title}</h4>
+                                <h5>{items.Mydate}</h5>
+                                <h4>
+                                  <span>
+                                    <FaRegClock className="clock-icon" />{items.StartTime} - {items.EndTime}
+                                  </span>
+
+                                </h4>
+                              </div>
+                            </div>
+
+                          }
+
+                          position="right"
+                        >
+
+
+
+
+                          <div className="Create-Events-Btn">
+                            <div>
+                              <input type="text" placeholder="Title" value={items.Title} onChange={(e) => setTitle(e.target.value)} disabled />
+                              <input type="text" placeholder="Description" value={items.Description} onChange={(e) => { setDescription(e.target.value) }} disabled />
+                              <input type='date' dateFormat="dd/mm/yy" value={items.Mydate} onChange={(e) => { setMydate(e.target.value) }} disabled />
+                              <input type='time' name="fromtime" value={items.StartTime} onChange={(e) => { setStartTime(e.target.value) }} disabled />
+                              <input type='time' name="totime" value={items.EndTime} onChange={(e) => { setEndTime(e.target.value) }} disabled />
+                              <select name="type" id="" value={items.Type} onChange={(e) => { setType(e.target.value) }} disabled>
+                                <option >Select a Type</option>
+                                <option >Private</option>
+                                <option >Meeting</option>
+                                <option >Lunch</option>
+                                <option >Work</option>
+                              </select>
+
+                              <button onClick={() => deletefun(items._id)} >Delete Event</button>
+                              {/* <button onClick={()=>updatepopupdata(items._id)} >Update</button> */}
+
+                            </div>
+                          </div>
+
+
+                        </Popup>
                       </div>
+
                     ))
                   }
 
@@ -176,6 +291,8 @@ useEffect(()=>{
               <h3>{monthName}</h3>
               <h4>{dayName + "     -    " + monthName + "    " + datenumber + " - " + yearnumber}</h4>
             </div>
+
+
 
 
 

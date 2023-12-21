@@ -3,6 +3,7 @@
 import { Inter } from 'next/font/google'
 
 import './globals.css'
+import '../../public/css/style.css'
 import { SessionProvider, useSession } from 'next-auth/react'
 
 

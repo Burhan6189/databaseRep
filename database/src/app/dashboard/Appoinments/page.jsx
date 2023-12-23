@@ -127,6 +127,10 @@ const page = () => {
 
   }
 
+  useEffect(() => {
+    getdata()
+  }, []);
+
 
   const filtered = (e) => {
 
@@ -138,13 +142,6 @@ const page = () => {
     )
 
   }
-
-
-
-
-  useEffect(() => {
-    getdata()
-  }, []);
 
   useEffect(() => {
     setfdata([...wholedata])
@@ -185,6 +182,44 @@ const page = () => {
   useEffect(() => {
     arraydata;
   }, [wholedata]);
+
+
+
+    // Popup function to use multiple times on calender dates
+
+
+    const popdata=(items)=>{
+
+        return(
+      <div className="Create-Events-Btn">
+      <div>
+        <input type="text" placeholder="Title" value={items.Title} onChange={(e) => setTitle(e.target.value)} disabled />
+        <input type="text" placeholder="Description" value={items.Description} onChange={(e) => { setDescription(e.target.value) }} disabled />
+        <input type='date' dateFormat="dd/mm/yy" value={items.Mydate} onChange={(e) => { setMydate(e.target.value) }} disabled />
+        <input type='time' name="fromtime" value={items.StartTime} onChange={(e) => { setStartTime(e.target.value) }} disabled />
+        <input type='time' name="totime" value={items.EndTime} onChange={(e) => { setEndTime(e.target.value) }} disabled />
+        <select name="type" id="" value={items.Type} onChange={(e) => { setType(e.target.value) }} disabled>
+          <option >Select a Type</option>
+          <option >Private</option>
+          <option >Meeting</option>
+          <option >Lunch</option>
+          <option >Work</option>
+        </select>
+
+        <button onClick={() => deletefun(items._id)} >Delete Event</button>
+        {/* <button onClick={()=>updatepopupdata(items._id)} >Update</button> */}
+
+      </div>
+    </div>
+    )
+
+    }
+
+
+
+
+
+    // output is starting from here
 
   return (
     <div className="Appoinments-BG">
@@ -349,10 +384,22 @@ const page = () => {
               <div>
                 {
 
-                  arraydata.map((items) => (
-                    (items.StartTime.includes("08:")) &&
-                    <input className="input-color-01"  type="text"  value={items.Title} />
-                  ))
+                  arraydata.map((items) => 
+                   (items.StartTime.includes("08:")) && <Popup
+
+                trigger={
+
+                  <input className="input-color-01"  type="text"  value={items.Title} />
+                  
+                }
+                position="center"
+              >
+               {popdata(items)}         {/* this is function that is returrning pop up data */}
+        
+
+              </Popup>
+        
+                  )
                 }
 
               </div>
@@ -372,8 +419,18 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("09:")) &&
-                    <input className="input-color-02" type="text" value={items.Title} />
+                    (items.StartTime.includes("09:")) && <Popup
+
+                    trigger={
+                      <input className="input-color-02" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
+                    
                   ))
                 }
               </div>
@@ -392,8 +449,18 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("10:")) &&
-                    <input className="input-color-03" type="text" value={items.Title} />
+                    (items.StartTime.includes("10:")) &&  <Popup
+
+                    trigger={
+                      <input className="input-color-03" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
+                   
                   ))
                 }
               </div>
@@ -412,8 +479,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("11:")) &&
-                    <input className="input-color-04" type="text" value={items.Title} />
+                    (items.StartTime.includes("11:")) &&  <Popup
+
+                    trigger={
+                      <input className="input-color-04" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
                   ))
                 }
               </div>
@@ -433,8 +509,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("12:")) &&
-                    <input className="input-color-05" type="text" value={items.Title} />
+                    (items.StartTime.includes("12:")) &&<Popup
+
+                    trigger={
+                      <input className="input-color-05" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
                   ))
                 }
               </div>
@@ -454,8 +539,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("13:")) &&
-                    <input className="input-color-06" type="text" value={items.Title} />
+                    (items.StartTime.includes("13:")) &&<Popup
+
+                    trigger={
+                      <input className="input-color-06" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
                   ))
                 }
               </div>
@@ -475,8 +569,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("14:")) &&
-                    <input className="input-color-07" type="text" value={items.Title} />
+                    (items.StartTime.includes("14:")) &&<Popup
+
+                    trigger={
+                      <input className="input-color-07" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
                   ))
                 }
               </div>
@@ -497,8 +600,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("15:")) &&
-                    <input className="input-color-08" type="text" value={items.Title} />
+                    (items.StartTime.includes("15:")) &&<Popup
+
+                    trigger={
+                      <input className="input-color-08" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
                   ))
                 }
               </div>
@@ -518,8 +630,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("16:")) &&
-                    <input className="input-color-09" type="text" value={items.Title} />
+                    (items.StartTime.includes("16:")) &&<Popup
+
+                    trigger={
+                      <input className="input-color-09" type="text" value={items.Title} />
+                    }
+                    position="center"
+                  >
+                   {popdata(items)}         {/* this is function that is returrning pop up data */}
+            
+    
+                  </Popup>
                   ))
                 }
               </div>

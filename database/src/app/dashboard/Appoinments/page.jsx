@@ -166,11 +166,22 @@ const page = () => {
   var yearnumber = DateValue.getFullYear(); // to get year 
   var monthNo = monthNumber + 1;
 
-  if (datenumber <= 9) {
-    var filterdate = yearnumber + "-" + monthNo + "-" + 0 + datenumber;
+  if (monthNo <= 9) {
+
+    if (datenumber <= 9) {
+      var filterdate = yearnumber + "-" + 0 + monthNo + "-" + 0 + datenumber;
+    }
+    else {
+      var filterdate = yearnumber + "-" + 0 + monthNo + "-" + datenumber;
+    }
   }
   else {
-    var filterdate = yearnumber + "-" + monthNo + "-" + datenumber;
+    if (datenumber <= 9) {
+      var filterdate = yearnumber + "-" + monthNo + "-" + 0 + datenumber;
+    }
+    else {
+      var filterdate = yearnumber + "-" + monthNo + "-" + datenumber;
+    }
   }
 
 
@@ -185,41 +196,41 @@ const page = () => {
 
 
 
-    // Popup function to use multiple times on calender dates
+  // Popup function to use multiple times on calender dates
 
 
-    const popdata=(items)=>{
+  const popdata = (items) => {
 
-        return(
+    return (
       <div className="Create-Events-Btn">
-      <div>
-        <input type="text" placeholder="Title" value={items.Title} onChange={(e) => setTitle(e.target.value)} disabled />
-        <input type="text" placeholder="Description" value={items.Description} onChange={(e) => { setDescription(e.target.value) }} disabled />
-        <input type='date' dateFormat="dd/mm/yy" value={items.Mydate} onChange={(e) => { setMydate(e.target.value) }} disabled />
-        <input type='time' name="fromtime" value={items.StartTime} onChange={(e) => { setStartTime(e.target.value) }} disabled />
-        <input type='time' name="totime" value={items.EndTime} onChange={(e) => { setEndTime(e.target.value) }} disabled />
-        <select name="type" id="" value={items.Type} onChange={(e) => { setType(e.target.value) }} disabled>
-          <option >Select a Type</option>
-          <option >Private</option>
-          <option >Meeting</option>
-          <option >Lunch</option>
-          <option >Work</option>
-        </select>
+        <div>
+          <input type="text" placeholder="Title" value={items.Title} onChange={(e) => setTitle(e.target.value)} disabled />
+          <input type="text" placeholder="Description" value={items.Description} onChange={(e) => { setDescription(e.target.value) }} disabled />
+          <input type='date' dateFormat="dd/mm/yy" value={items.Mydate} onChange={(e) => { setMydate(e.target.value) }} disabled />
+          <input type='time' name="fromtime" value={items.StartTime} onChange={(e) => { setStartTime(e.target.value) }} disabled />
+          <input type='time' name="totime" value={items.EndTime} onChange={(e) => { setEndTime(e.target.value) }} disabled />
+          <select name="type" id="" value={items.Type} onChange={(e) => { setType(e.target.value) }} disabled>
+            <option >Select a Type</option>
+            <option >Private</option>
+            <option >Meeting</option>
+            <option >Lunch</option>
+            <option >Work</option>
+          </select>
 
-        <button onClick={() => deletefun(items._id)} >Delete Event</button>
-        {/* <button onClick={()=>updatepopupdata(items._id)} >Update</button> */}
+          <button onClick={() => deletefun(items._id)} >Delete Event</button>
+          {/* <button onClick={()=>updatepopupdata(items._id)} >Update</button> */}
 
+        </div>
       </div>
-    </div>
     )
 
-    }
+  }
 
 
 
 
 
-    // output is starting from here
+  // output is starting from here
 
   return (
     <div className="Appoinments-BG">
@@ -384,21 +395,21 @@ const page = () => {
               <div>
                 {
 
-                  arraydata.map((items) => 
-                   (items.StartTime.includes("08:")) && <Popup
+                  arraydata.map((items) =>
+                    (items.StartTime.includes("08:")) && <Popup
 
-                trigger={
+                      trigger={
 
-                  <input className="input-color-01"  type="text"  value={items.Title} />
-                  
-                }
-                position="center"
-              >
-               {popdata(items)}         {/* this is function that is returrning pop up data */}
-        
+                        <input className="input-color-01" type="text" value={items.Title} />
 
-              </Popup>
-        
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
+
                   )
                 }
 
@@ -421,16 +432,16 @@ const page = () => {
                   arraydata.map((items) => (
                     (items.StartTime.includes("09:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-02" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
-                    
+                      trigger={
+                        <input className="input-color-02" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
+
                   ))
                 }
               </div>
@@ -449,18 +460,18 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("10:")) &&  <Popup
+                    (items.StartTime.includes("10:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-03" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
-                   
+                      trigger={
+                        <input className="input-color-03" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
+
                   ))
                 }
               </div>
@@ -479,17 +490,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("11:")) &&  <Popup
+                    (items.StartTime.includes("11:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-04" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
+                      trigger={
+                        <input className="input-color-04" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
                   ))
                 }
               </div>
@@ -509,17 +520,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("12:")) &&<Popup
+                    (items.StartTime.includes("12:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-05" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
+                      trigger={
+                        <input className="input-color-05" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
                   ))
                 }
               </div>
@@ -539,17 +550,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("13:")) &&<Popup
+                    (items.StartTime.includes("13:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-06" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
+                      trigger={
+                        <input className="input-color-06" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
                   ))
                 }
               </div>
@@ -569,17 +580,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("14:")) &&<Popup
+                    (items.StartTime.includes("14:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-07" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
+                      trigger={
+                        <input className="input-color-07" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
                   ))
                 }
               </div>
@@ -600,17 +611,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("15:")) &&<Popup
+                    (items.StartTime.includes("15:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-08" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
+                      trigger={
+                        <input className="input-color-08" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
                   ))
                 }
               </div>
@@ -630,17 +641,17 @@ const page = () => {
                 {
 
                   arraydata.map((items) => (
-                    (items.StartTime.includes("16:")) &&<Popup
+                    (items.StartTime.includes("16:")) && <Popup
 
-                    trigger={
-                      <input className="input-color-09" type="text" value={items.Title} />
-                    }
-                    position="center"
-                  >
-                   {popdata(items)}         {/* this is function that is returrning pop up data */}
-            
-    
-                  </Popup>
+                      trigger={
+                        <input className="input-color-09" type="text" value={items.Title} />
+                      }
+                      position="center"
+                    >
+                      {popdata(items)}         {/* this is function that is returrning pop up data */}
+
+
+                    </Popup>
                   ))
                 }
               </div>

@@ -8,7 +8,7 @@ import MySignUp from "../MySignUp";
 
 const Navbar = () => {
   const { data: session } = useSession()
-  if (session)
+  
   return (
     <>
   
@@ -38,7 +38,10 @@ const Navbar = () => {
               alt=""
             />
           </div>
+
+
           
+          {(session)&&(
           <div className="User-Login">
           <Popup
                 trigger={
@@ -57,12 +60,29 @@ const Navbar = () => {
               <h3>{session.user.name || session.user.Username}  </h3>
               <p>{session.user.Role || "Checker"}</p>
             </div>
-          </div>
+          </div> )
+
+
+
+          ||
+
+
+          (<div className="User-Login">
+         
+            <div>
+              <h3>Username </h3>
+              <p>Role</p>
+            </div>
+          </div> )
+} 
+
     
         </div>
       </div>
     </>
   );
 };
+
+
 
 export default Navbar;

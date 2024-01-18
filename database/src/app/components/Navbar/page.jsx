@@ -43,7 +43,7 @@ const Navbar = () => {
           <Popup
                 trigger={
                   <div>
-                      <img className="User-Login-Pic" src={session.user.image || "/img/Super-Admin.png" } alt="user image" />
+                      <img className="User-Login-Pic" src={session.user.image || "/img/Super-Admin.png" }  />
                   </div>
                 }
                 position="bottom"

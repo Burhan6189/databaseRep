@@ -2,6 +2,7 @@
 import Navbar from "@/app/components/Navbar/page";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import Popup from "reactjs-popup";
 
 const today = new Date();
@@ -90,10 +91,10 @@ const PatientDashboard = (props) => {
     });
 
     if (printdata) {
-      alert('successfully updated')
+      toast.success('successfully updated')
     }
     else {
-      alert("not updated")
+      toast.error("not updated")
     }
 
   }
@@ -127,7 +128,7 @@ const PatientDashboard = (props) => {
         Price: "",
       });
     } else {
-      alert("Treatment details are incomplete");
+      toast.error("Treatment details are incomplete");
     }
   };
 

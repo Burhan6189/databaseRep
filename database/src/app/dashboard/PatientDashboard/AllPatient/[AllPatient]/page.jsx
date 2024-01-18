@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import toast from "react-hot-toast";
 
 
 const AllPatient = (props) => {
@@ -21,11 +22,12 @@ const AllPatient = (props) => {
     deletefun();
 
     if (deletefun) {
+      toast.success("Patient data is deleted")
       window.location.href = "/dashboard/PatientDashboard/AllPatient";
     } else if (!data) {
-      alert("Data does not Exist");
+      toast.error("Data does not Exist");
     } else {
-      alert(" Something is wrong");
+      toast.error(" Something is wrong");
     }
 
   }

@@ -5,6 +5,7 @@ import Navbar from "@/app/components/Navbar/page";
 import { color } from "framer-motion";
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import Popup from "reactjs-popup";
 
 const today = new Date();
@@ -79,7 +80,7 @@ const PatientDashboard = () => {
         Price: "",
       });
     } else {
-      alert("Treatment details are incomplete");
+      toast.error("Treatment details are incomplete");
     }
   };
 
@@ -101,7 +102,7 @@ const PatientDashboard = () => {
         body: JSON.stringify(patientDetails),
       });
 
-      alert("Success");
+      toast.success("Successfully Added");
       setPopupDetails({
         Date: "",
         Time: "",
@@ -116,7 +117,7 @@ const PatientDashboard = () => {
       });
       window.location.href = "/dashboard/PatientDashboard/AllPatient";
     } else {
-      alert("All fields are required");
+      toast.error("All fields are required");
     }
   };
 

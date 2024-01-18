@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import toast from "react-hot-toast";
 
 const page = () => {
 
@@ -63,16 +64,16 @@ const page = () => {
         body: JSON.stringify({ Title, Description, Mydate, StartTime, EndTime, Type })
       });
       if (savedata) {
-        alert("data is added")
-        window.location.href = ("/dashboard/Appoinments");
+        toast.success("Your Appointment is Booked")
+       setInterval(()=>window.location.href = ("/dashboard/Appoinments") ,1200) 
       }
       else {
-        alert("data is not added")
+        toast.error("Data is not added")
       }
     }
     else {
 
-      alert("All fields are required");
+      toast.error("All fields are required");
     }
 
   }
@@ -106,11 +107,12 @@ const page = () => {
       method: "DELETE"
     });
     if (deleted) {
-      alert("data is deleted successfully")
-      window.location.href = ("/dashboard/Appoinments");
+      toast.success("data is deleted successfully")
+      setInterval(()=>window.location.href = ("/dashboard/Appoinments"), 1200)
+      
     }
     else {
-      alert("could not delete")
+      toast.error("could not delete")
     }
 
   }

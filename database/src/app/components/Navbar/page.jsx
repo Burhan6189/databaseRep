@@ -63,15 +63,15 @@ const Navbar = () => {
           </div> )
 
 
-
           ||
 
 
           (<div className="User-Login">
          
             <div>
-              <h3>Username </h3>
-              <p>Role</p>
+
+              <h3>Loading...</h3>
+
             </div>
           </div> )
 } 

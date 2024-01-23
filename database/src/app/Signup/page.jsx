@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import bcrypt from "bcryptjs";
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const [Username, setUsername] = useState("");
@@ -12,14 +13,14 @@ const Signup = () => {
 
   const myfun = async () => {
     if (Username == "" || Email == "" || Password == "" || Role == "") {
-      alert("all field are required");
+      toast.error("all field are required");
     } else if (Username != "" && Email != "" && Password != "" && Role != "") {
       const fetchdata = await fetch("/api/projects");
       const jsondata = await fetchdata.json();
 
       jsondata.map((items) => {
         if (Username === items.Username || Email === items.Email) {
-          alert("User with this Username/Email is Already Exist");
+          toast.error("User with this Username/Email is Already Exist");
           setStatus(false);
         } else {
           setStatus(true);
@@ -34,7 +35,7 @@ const Signup = () => {
           body: JSON.stringify({ Username, Email, Password: hashedPassword, Role }),
         });
 
-        alert("Successfully registered");
+        toast.success("Successfully registered");
 
         window.location.href = "/Login";
       }
